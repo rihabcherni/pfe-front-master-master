@@ -1,0 +1,38 @@
+.panne-container{
+   display: grid;
+   grid-template-columns: 100%;
+ }
+
+.card-panne{
+   display: grid;
+   grid-template-columns: repeat(2 ,1fr);   
+}
+
+.card-panne3{
+   display: grid;
+   grid-template-columns: repeat(3 ,1fr);   
+}
+
+.card-panne4{
+   display: grid;
+   grid-template-columns: repeat(4 ,1fr);   
+}
+
+.card-panne8{
+   display: grid;
+   grid-template-columns: repeat(8 ,1fr);   
+}
+
+@media screen and (max-width: 800px) {
+   .panne-container{
+      display: grid;
+      grid-template-columns: 100%;   
+   }
+   .card-panne{
+      display: grid;
+      grid-template-columns:100%;
+   }
+   .right{
+      margin-top: 50px;
+   }
+ }

@@ -1,0 +1,18 @@
+.MuiTablePagination-selectLabel{
+    font-size: 16px !important;
+    color: rgb(102, 214, 4);
+    margin-top: 10px;
+}
+.title-group-table{
+    font-size:20px;
+    color:green;
+}
+.MuiTablePagination-displayedRows {
+    font-size: 16px !important;
+    color: rgb(102, 214, 4);
+    margin-top: 12px;
+}
+.Group-table .MuiTypography-root  {
+    font-size: 16px;
+    color:rgb(102, 214, 4);
+}

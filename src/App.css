@@ -1,0 +1,298 @@
+::-webkit-scrollbar {
+    width: 8px;
+  }
+  
+  /* Track */
+  ::-webkit-scrollbar-track {
+    background: #f1f1f1;
+  }
+  
+  /* Handle */
+  ::-webkit-scrollbar-thumb {
+    background: #888;
+  }
+  
+  /* Handle on hover */
+  ::-webkit-scrollbar-thumb:hover {
+    background: #555;
+  }
+
+  a{
+      text-decoration: none;
+  }
+  li{
+      list-style: none;
+  }
+    .ag-paging-panel{
+        background-color: #4bae4f;
+    }
+    .ag-paging-row-summary-panel, .ag-paging-page-summary-panel{
+      color:white;
+    }
+    .ag-header-group-cell-with-group {
+      background-color: rgb(235, 233, 233);
+      border: 2px solid white;
+    }
+    
+    .ag-paging-panel .ag-icon{
+      font-weight: bolder;
+      background-color: rgb(94, 215, 128);
+      border-radius: 8px;
+      width: 30px;
+      height: 30px;
+      text-align: center;
+      padding-top: 5px;
+    }
+    .ag-header-cell{
+      padding:0 20px !important;
+      text-align: center;
+    }
+    .ag-cell{
+      padding:0 15px !important;
+    }
+    .tableIcon{
+      max-width: 200px !important;
+      min-width: 200px !important;
+      width: 200px;
+    }
+    .profile-page{
+      width: 100% ;
+      margin:1% 0;
+      padding:0 20%;
+    }
+
+
+
+
+
+
+    :root{
+      --light-red-color: 	#32CD32;
+      --dark-red-color: rgb(167, 167, 167);
+      --white-color: #fff;
+      --light-black-color: #404040;
+      --border-radius: 10px;
+  }
+  .card-template{
+      display: flex;
+      color: var(--light-black-color);
+      border: #d8d8df solid 1px;
+      box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+      border-radius:var(--border-radius);
+      max-height: 200px;
+      margin: 10px;
+  }
+  
+  .card-template-1{
+      flex-direction: row;
+  }
+  
+  .card-template .left-part{
+      display: flex;
+      padding:10px 10px;
+      align-items: center;
+      flex-direction: column;
+      justify-content: flex-start;
+  }
+  
+  .card-template-1 .left-part{
+      background: var(--light-red-color);
+      border-top-left-radius: var(--border-radius);
+      border-bottom-left-radius: var(--border-radius);
+      border-right: 2px solid var(--dark-red-color);
+      color:white;
+  }
+  
+  .card-template .left-part img{
+      width: 80px;
+      height: 80px;
+      border-radius: 50%;
+      margin: 25px 0 -20px 0;
+
+  }
+  
+  .card-template .right-part *{
+      position: relative;
+      z-index: 1;
+  }
+  .card-template .right-part li{
+    margin-left: 10px;
+}
+  .card-template .right-part{
+      padding: 5px;
+      flex: 1;
+      position: relative;
+      text-align: left;
+  }
+  .icon-card{
+   font-size: 15px !important;
+   color: green !important;
+}
+  
+  .card-template-1 .right-part {
+      border-top-right-radius: var(--border-radius);
+      border-bottom-right-radius: var(--border-radius);
+      background: linear-gradient(to right, var(--light-red-color) 50%, var(--white-color) 50%);
+      background-size: 200% 100%;
+      background-position: right bottom;
+      transition: all .5s ease-in-out;
+      padding:0 1px;
+  }
+  
+  .card-template-1 .right-part:hover{
+      transition: all 2s ease;
+      background-position: left bottom;
+  }
+  .card-template-1 .right-part:hover *{
+    color: white !important;
+}
+
+  .Group-table .MuiToolbar-root , .MuiTable-root, .table-zone .MuiList-root {
+    background-color: white;
+  }
+
+
+  .img-profile{
+    margin:"2% 18%" ;
+    border-radius:"50%";
+    width:"200px";
+    height:"200px"
+}
+
+.not{
+  color: rgb(242, 27, 27);
+  font-size: 36px;
+  font-family: arial;
+}
+.button-card{
+  background-color: rgb(72, 186, 6);
+  color: white;
+  width: 100%;
+  height: 40px;
+  border-radius: 5px;
+  box-shadow: 5px 5px 10px rgb(64, 63, 63);
+  border: 1px gray;
+  cursor: pointer;
+}
+.button-card:hover{
+  background-color: red;
+}
+.remise-value{
+    border-radius:3px;
+    border:2px solid rgb(107, 205, 32);
+    margin-top: -15px;
+   font-size:18px;
+   font-weight:600;
+   background-color:#24a81f;
+   color:white;
+   width:60px;
+   height:30px
+}
+
+.remise-value2{
+  border-radius:3px;
+  border:2px solid rgb(107, 205, 32);
+ font-size:16px;
+ font-weight:600;
+ background-color:#24a81f;
+ color:white;
+ width:40px;
+ height:30px
+}
+
+input[type="number"] {
+  -webkit-appearance: textfield;
+  -moz-appearance: textfield;
+  appearance: textfield;
+}
+
+input[type=number]::-webkit-inner-spin-button,
+input[type=number]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+}
+
+.number-input {
+  border: 2px solid #ddd;
+  display: inline-flex;
+}
+
+.number-input,
+.number-input * {
+  box-sizing: border-box;
+}
+
+.number-input button {
+  outline:none;
+  -webkit-appearance: none;
+  background-color: transparent;
+  border: none;
+  align-items: center;
+  justify-content: center;
+  width: 3rem;
+  height: 3rem;
+  cursor: pointer;
+  margin: 0;
+  position: relative;
+}
+
+.number-input button:before,
+.number-input button:after {
+  display: inline-block;
+  position: absolute;
+  content: '';
+  width: 1rem;
+  height: 2px;
+  background-color: #212121;
+  transform: translate(-50%, -50%);
+}
+.number-input button.plus:after {
+  transform: translate(-50%, -50%) rotate(90deg);
+}
+
+.number-input input[type=number] {
+  font-family: sans-serif;
+  max-width: 5rem;
+  padding: .5rem;
+  border: solid #ddd;
+  border-width: 0 2px;
+  font-size: 2rem;
+  height: 3rem;
+  font-weight: bold;
+  text-align: center;
+}
+.table-prix table, .table-prix th, .table-prix td {
+  border: 1.5px solid gray;
+  border-collapse: collapse;
+  font-size: 16px;
+}
+
+.table-prix table{
+  width: 100%;
+}
+
+/******************************* select ***************************/
+
+.dropdown {margin:0 auto 10px auto;}
+.dropdown-result{
+  background-color: rgb(255, 255, 255);
+  width: 100%;
+  border-radius: 5px;
+  height: 50px;
+  border-color: #7a7a7a;
+  padding: 0 10px;
+ }
+.dropdown-placeholder{
+  background-color: rgb(255, 255, 255);
+  width: 100%;
+  height: 30px;
+  padding: 0 10px;
+}
+.dropdown  option {
+  font-size: 18px;
+  background-color: #a8e898;
+  padding: 0 10px;
+}
+.dropdown select:focus > option:checked { 
+  background: rgb(23, 146, 4) !important;
+  padding: 0 10px;
+}
