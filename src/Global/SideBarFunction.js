@@ -95,7 +95,7 @@ import ReactTooltip from 'react-tooltip';
           <ListItemButton sx={{ maxHeight:35, justifyContent: open ? 'initial' : 'center',  px: 1}}>
             <p data-tip={item.name }  data-for='icon-single' >
               <ListItemIcon sx={{  minWidth: 0, mr: open ? 1 :'auto',  justifyContent: 'center', }}  >
-                <IconButton color="secondary"  size="medium" >  {item.icon }  </IconButton>
+                <IconButton color="secondary"  size= {item.size }  >  {item.icon }  </IconButton>
               </ListItemIcon>
             </p>
             <ListItemText component="div" sx={{opacity: open ? 1 : 0, textDecoration:"none"}}

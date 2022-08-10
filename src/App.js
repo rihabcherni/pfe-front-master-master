@@ -54,6 +54,16 @@ import InterfaceResponsableCommerciale from './interface/responsable-commerciale
 /**** ---------------------responsable personnel ------------------------ ****/
 import InterfaceResponsablePersonnel from './interface/responsable-personnel/InterfaceResponsablePersonnel';
 import DashboardResponsablePersonnel from './interface/responsable-personnel/pages/DashboardResponsablePersonnel';
+import AffectationCamionEtablissement from './interface/responsable-personnel/pages/AffectationCamionEtablissement';
+import AffectationCamionOuvrier from './interface/responsable-personnel/pages/AffectationCamionOuvrier';
+import ListeCamion from './interface/responsable-personnel/pages/ListeCamion';
+import ListeGestionnaire from './interface/responsable-personnel/pages/ListeGestionnaire';
+import ListeMecancien from './interface/responsable-personnel/pages/ListeMecancien';
+import ListeOuvrier from './interface/responsable-personnel/pages/ListeOuvrier';
+import ListeReparateurPoubelle from './interface/responsable-personnel/pages/ListeReparateurPoubelle';
+import ListeResponsableCommerciale from './interface/responsable-personnel/pages/ListeResponsableCommerciale';
+import ListeResponsablePersonnel from './interface/responsable-personnel/pages/ListeResponsablePersonnel';
+import MapResponablePersonnel from './interface/responsable-personnel/pages/MapResponablePersonnel';
 
 
 
@@ -312,6 +322,17 @@ const AppRoutes=()=> {
 						<Route path='/login' element={<Navigate to="/responsable-personnel"/>}></Route>
 						<Route path='/responsable-personnel' element={<InterfaceResponsablePersonnel/>}>	
 							<Route index element={<DashboardResponsablePersonnel/>}/>
+
+							<Route path='affectation-camions-etablissements' element={<AffectationCamionEtablissement/>}/>
+							 <Route path='affectation-ouvriers-camions' element={<AffectationCamionOuvrier/>}/>
+							 <Route path='camion' element={<ListeCamion/>}/>
+							 <Route path='personnel/liste-gestionnaire' element={<ListeGestionnaire/>}/>
+							 <Route path='personnel/mecaniciens-camion' element={<ListeMecancien/>}/>
+							 <Route path='personnel/ouvriers' element={<ListeOuvrier/>}/>
+							 <Route path='personnel/reparateurs-poubelle' element={<ListeReparateurPoubelle/>}/>
+							 <Route path='personnel/responsable-commerciale' element={<ListeResponsableCommerciale/>}/>
+							 <Route path='personnel/responsable-personnel' element={<ListeResponsablePersonnel/>}/>
+							 <Route path='map' element={<MapResponablePersonnel/>}/>
 							<Route path='profile' element={<ProfileUpdate/>}/>	
 						</Route>
 
