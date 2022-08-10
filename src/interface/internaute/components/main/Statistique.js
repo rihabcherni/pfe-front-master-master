@@ -90,35 +90,36 @@ export default function Statistique() {
     ],
   };
   return (
-    <Segment id='statistiques' style={{ padding: '10em 0em 0em', height:"102vh" }} vertical>
+    <Segment id='statistiques' style={{ padding: '10em 0em 0em', height:"100vh" }} vertical>
       <p className='title-section'> Statistiques </p>
-      <div style={{display:"grid", gridTemplateColumns:'1fr', columnGap:'3%', margin:"-50px 0px 0"}}>
-        <div style={{display:"grid", gridTemplateColumns:'65% 34%',padding:"40px 20px 0", marginTop:"20px"}} >        
-          <div className="container2">
-            <CardStatistique data={tableData.nbr_etablissement} nom='Etablissements'
-              icon={ <ApartmentIcon className='card-icon' style={{fontSize:"50px", color:'green'}}/>}/>
+      <div style={{  margin:"-50px 30px 0"}}>
+            <div className="card-dashboard" style={{display:"grid", gridTemplateColumns:'60% 35%',padding:"20px 20px 0", marginTop:"20px"}} >        
+              <div className="container2">
+                <CardStatistique data={tableData.nbr_etablissement} nom='Etablissements'
+                  icon={ <ApartmentIcon className='card-icon' style={{fontSize:"50px", color:'green'}}/>}/>
 
-            <CardStatistique data={tableData.nbr_poubelle_vendus} nom='Poubelles Vendues'
-              icon={ <FaTrash className='card-icon' style={{width:"35px", color:'green'}}/>}/>
+                <CardStatistique data={tableData.nbr_poubelle_vendus} nom='Poubelles Vendues'
+                  icon={ <FaTrash className='card-icon' style={{width:"35px", color:'green'}}/>}/>
 
-            <CardStatistique data={tableData.nbr_ouvrier} nom='Ouvriers' 
-              icon={ <FaUserAlt className='card-icon' style={{width:"40px", color:'green'}}/>}/>
+                <CardStatistique data={tableData.nbr_ouvrier} nom='Ouvriers' 
+                  icon={ <FaUserAlt className='card-icon' style={{width:"40px", color:'green'}}/>}/>
 
-            <CardStatistique data={tableData.nbr_zone_travail} nom='Zones de travail'
-              icon={ <PinDropIcon className='card-icon' style={{fontSize:"48px", color:'green'}}/>}/>
+                <CardStatistique data={tableData.nbr_zone_travail} nom='Zones de travail'
+                  icon={ <PinDropIcon className='card-icon' style={{fontSize:"48px", color:'green'}}/>}/>
 
-            <CardStatistique data={tableData.nbr_zone_depot} nom='Zones de depots'
-              icon={ <img src={ZoneDepotImg} className='card-icon' style={{width:"55px", margin:"5px 0 -10px"}}/>}/>
-            
-            <CardStatistique data={tableData.nbr_camion} nom='Camions'
-              icon={ <FaTruckMoving className='card-icon' style={{width:"44px",color:'green'}}/>}/>
-          </div> 
-          <div style={{ textAlign:"center"}}>
-            <p style={{color:"black", fontSize:"18px", fontWeight:"bold"}}>
-              Quantités totales des déchets collectés
-            </p><QuantiteTotaleCollecteZone/>
-          </div> 
-        </div> 
+                <CardStatistique data={tableData.nbr_zone_depot} nom='Zones de depots'
+                  icon={ <img src={ZoneDepotImg} className='card-icon' style={{width:"55px", margin:"5px 0 -10px"}}/>}/>
+                
+                <CardStatistique data={tableData.nbr_camion} nom='Camions'
+                  icon={ <FaTruckMoving className='card-icon' style={{width:"44px",color:'green'}}/>}/>
+              </div> 
+              <div style={{ textAlign:"center"}}>
+                <p style={{color:"black", fontSize:"18px", fontWeight:"bold"}}>
+                  Quantités totales des déchets collectés
+                </p>
+                <QuantiteTotaleCollecteZone/>
+              </div> 
+            </div> 
       </div>
     </Segment>  
   )

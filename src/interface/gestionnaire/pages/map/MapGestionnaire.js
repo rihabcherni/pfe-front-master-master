@@ -111,7 +111,7 @@ export default function MapGestionnaire() {
       { (uniqueEtablissements!==null)&&(showUniqueEtablissement===true)?
           <div style={{alignSelf: 'center'}}>
             <div className='scroller' style={{minWidth:354, maxWidth: 700,maxHeight:605, minHeight:605,  border:"1px solid #f0f0f0"}}>
-                  <h3 style={{color:"green", textAlign:"center",paddingTop:"20px"}}>{uniqueEtablissements[0].type_etablissement}: {uniqueEtablissements[0].nom_etablissement} </h3>
+                  <h3 style={{color:"green", textAlign:"center",paddingTop:"20px"}}>{uniqueEtablissements[0].niveau_etablissement} {uniqueEtablissements[0].type_etablissement} : {uniqueEtablissements[0].nom_etablissement} </h3>
                       <ul>
                           <li><b>adresse:</b> {uniqueEtablissements[0].adresse}</li>
                           <li><b>nombre personnes:</b>  {uniqueEtablissements[0].nbr_personnes}</li>
@@ -261,7 +261,7 @@ export default function MapGestionnaire() {
                                   <Accordion sx={{ border:"0.5px solid #C8C8C8"}}>
                                       <AccordionSummary expandIcon={<ExpandMoreIcon />} aria-controls="panel1a-content" id="panel1a-header" sx={{backgroundColor:"#F0F0F0"}}>
                                           <img style={{width:"30px", height:"30px", marginRight:"10px"}} src={EtablissementIcon} alt='etablissement-icon'/>
-                                          <p style={{marginTop:"7px", textAlign:"left"}}><b>{etb.nom_etablissement}:</b> {`${etb.type_etablissement}`}</p>
+                                          <p style={{marginTop:"7px", textAlign:"left"}}><b>{etb.nom_etablissement}:</b>  {`${etb.niveau_etablissement}`}  {`${etb.type_etablissement}`}</p>
                                       </AccordionSummary>
                                       <AccordionDetails  sx={{backgroundColor:"#F0F0E0", padding:"0 8px 3px 2px"}}>  
                                           <p><b>nombre des personnes: </b>{`${etb.nbr_personnes}`} </p>               

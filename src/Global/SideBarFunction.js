@@ -3,12 +3,13 @@ import MuiAppBar from '@mui/material/AppBar';
 import MuiDrawer from '@mui/material/Drawer';
 import { styled } from '@mui/material/styles';
 import { Link  } from 'react-router-dom';
-import {Tooltip, List, ListItem, IconButton,ListItemButton ,ListItemText,ListItemIcon,Collapse} from "@mui/material";
+import {List, ListItem, IconButton,ListItemButton ,ListItemText,ListItemIcon,Collapse} from "@mui/material";
 import ExpandLessIcon from "@mui/icons-material/ExpandLess";
 import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
+import ReactTooltip from 'react-tooltip';
 
   export const drawerWidth = 270;
-
+  
   export  function hasChildren(item) {
       const { items: children } = item;
       if (children === undefined) {
@@ -86,21 +87,20 @@ import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
     const Component = hasChildren(item) ? MultiLevel : SingleLevel;
     return <Component item={item}  open={open}/>;
   };
-
+  
   const SingleLevel = ({ item ,open}) => {
     return (
-        <Link key={item.id}   to={item.path}> 
-            <ListItemButton sx={{ maxHeight:35, justifyContent: open ? 'initial' : 'center',  px: 1}}>
-                <Tooltip title={item.name}  placement="right" arrow sx={{opacity: open ? 1 : 0, textDecoration:"none"}}>
-                    <ListItemIcon sx={{  minWidth: 0, mr: open ? 1 :'auto',  justifyContent: 'center', }}  >
-                      <IconButton color="secondary"  size="medium" >
-                              {item.icon } 
-                      </IconButton>
-                    </ListItemIcon> 
-                </Tooltip>
-                    <ListItemText component="div" sx={{opacity: open ? 1 : 0, textDecoration:"none"}}
-                    primary= {item.name}  primaryTypographyProps={{color: 'secondary', fontSize: '14px', variant: 'body2', }}/>
-            </ListItemButton>
+      <Link key={item.id}   to={item.path}> 
+        {open ? <></> : <ReactTooltip place="right" id="icon-single" type="success" effect="solid"/>}
+          <ListItemButton sx={{ maxHeight:35, justifyContent: open ? 'initial' : 'center',  px: 1}}>
+            <p data-tip={item.name }  data-for='icon-single' >
+              <ListItemIcon sx={{  minWidth: 0, mr: open ? 1 :'auto',  justifyContent: 'center', }}  >
+                <IconButton color="secondary"  size="medium" >  {item.icon }  </IconButton>
+              </ListItemIcon>
+            </p>
+            <ListItemText component="div" sx={{opacity: open ? 1 : 0, textDecoration:"none"}}
+              primary= {item.name}  primaryTypographyProps={{color: 'secondary', fontSize: '14px', variant: 'body2', }}/>
+          </ListItemButton>
       </Link>
     );
   };
@@ -113,10 +113,11 @@ import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
     };
     return (
       <React.Fragment>
+        {open ? <></> : <ReactTooltip place="right" id="icon-multiple" type="success" effect="solid"/>}
         <ListItem button onClick={handleClick}  sx={{ maxHeight:35 }}>
-          <Tooltip title={item.name} placement="right" arrow >
-              <ListItemIcon sx={{marginLeft:-1.3}}> <IconButton color="secondary" size="medium" >{item.icon}</IconButton></ListItemIcon>
-          </Tooltip>
+        <p data-tip={item.name }  data-for='icon-multiple' >
+          <ListItemIcon sx={{marginLeft:-1.3}}> <IconButton color="secondary" size="medium" >{item.icon}</IconButton></ListItemIcon>
+        </p>
           <ListItemText component="div" color="secondary" sx={{ opacity: open ? 1 : 0, textDecoration:"none",margin:"0 0 0 -1.3px"}} primary= {item.name}  primaryTypographyProps={{color: 'secondary', fontSize: '14px', variant: 'body2', }}/>
              {openSubmenu ? <ExpandLessIcon sx={{color:"white"}} /> : <ExpandMoreIcon sx={{color:"white"}} />}
         </ListItem>

@@ -13,7 +13,7 @@ export default function AffichageRightProfile({toggleDrawer}) {
           show1=[ ["Nom","nom"],  ["Prénom","prenom"], ["Carte d'identité nationnale","CIN"],  ["Numéro de téléphone","numero_telephone"], ["Email","email"], ["Adresse","adresse"],];
           user="gestionnaire";
           fileName="gestionnaire";
-      }else if(localStorage.getItem("Role")=== "responsable_etablissement"){
+    }else if(localStorage.getItem("Role")=== "responsable_etablissement"){
           show1=[ ["Nom","nom"],  ["Prénom","prenom"],["Numéro de téléphone","numero_telephone"],["Numero fixe","numero_fixe"], ["Email","email"], ["Adresse","adresse"],];
           user="responsable_etablissement"
           fileName="responsable_etablissement"
@@ -21,6 +21,14 @@ export default function AffichageRightProfile({toggleDrawer}) {
           show1=[ ["Nom","nom"], ["Prénom","prenom"],  ["nom entreprise","nom_entreprise"], ["matricule fiscale","matricule_fiscale"],  ["Numéro de téléphone","numero_telephone"],["Numero fixe","numero_fixe"],["Email","email"], ["Adresse","adresse"],];
           user="client_dechets"
           fileName="client"
+    }else if(localStorage.getItem("Role")=== "responsable_commerciale"){
+      show1=[ ["Nom","nom"], ["Prénom","prenom"], ["Carte d'identité nationnale","CIN"],["Numéro de téléphone","numero_telephone"],["Email","email"]];
+      user="responsable-commerciale"
+      fileName="responsable_commercial"
+    }else if(localStorage.getItem("Role")=== "responsable_personnel"){
+      show1=[ ["Nom","nom"], ["Prénom","prenom"], ["Carte d'identité nationnale","CIN"],["Numéro de téléphone","numero_telephone"],["Email","email"]];
+      user="responsable-personnel"
+      fileName="responsable_personnel"
     }
   }
   var myHeaders = new Headers();

@@ -9,27 +9,26 @@ const Progress = ({done}) => {
 	const [colorNumber, setColorNumber] = useState("");
 	
 	setTimeout(() => {
-    if(done< 25){
-      setColor("green")
-      setColorNumber("black")
-    }else if (done>=25 && done<50){
-      setColor("yellow")
-      setColorNumber("black")
-    }else if (done>=50 && done<75){
-      setColor("orange")
-      setColorNumber("white")
-    }else if (done>=75 && done<100){
-      setColor("red")
-      setColorNumber("white")
-    }
+        if(done< 25){
+            setColor("green")
+            setColorNumber("black")
+        }else if (done>=25 && done<50){
+            setColor("yellow")
+            setColorNumber("black")
+        }else if (done>=50 && done<75){
+            setColor("orange")
+            setColorNumber("white")
+        }else if (done>=75 && done<100){
+            setColor("red")
+            setColorNumber("white")
+        }
 		const newStyle = {
 			opacity: 1,
 			width: `${done}%`,
-      backgroundColor:`${color}`,
-      boxShadow: `0 3px 3px -5px ${color}, 0 2px 5px ${color}`,
-      color: `${colorNumber}` 
-		}
-		
+            backgroundColor:`${color}`,
+            boxShadow: `0 3px 3px -5px ${color}, 0 2px 5px ${color}`,
+            color: `${colorNumber}` 
+		}	
 		setStyle(newStyle);
 	}, 100);
 	
@@ -95,6 +94,7 @@ export default function GroupMuiTable() {
                                     columns={[
                                         { title: 'Etablissement', field: 'nom_etablissement', type: 'string'  },
                                         { title: 'Type', field: 'type_etablissement', type: 'string'  },
+                                        { title: 'Niveau', field: 'niveau_etablissement', type: 'string'  },
                                         { title: 'Nombres personnes', field: 'nbr_personnes'}, 
                                         { title: 'Quantite plastique', field: 'quantite_dechets_plastique', cellStyle: {
                                             textAlign:"center",color: 'blue',width:"400px"},},

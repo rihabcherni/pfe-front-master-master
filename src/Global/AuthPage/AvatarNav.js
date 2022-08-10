@@ -31,6 +31,12 @@ export default function AvatarNav(props) {
     }else if(localStorage.getItem("Role")=== "client_dechet"){
         user="client-dechets"
         fileName="client"
+    }else if(localStorage.getItem("Role")=== "responsable_commerciale"){
+      user="responsable-commerciale"
+      fileName="responsable_commercial"
+    }else if(localStorage.getItem("Role")=== "responsable_personnel"){
+      user="responsable-personnel"
+      fileName="responsable_personnel"
     }
   }
   const logoutSubmit= (e)=>{

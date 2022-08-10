@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import ReactApexChart from "react-apexcharts";
 import {TailSpin} from 'react-loader-spinner'
 
-export default function QuantiteTotaleActuelle () { 
+export default function QuantiteTotaleActuelleStock () { 
     var requestOptions = { method: 'GET', redirect: 'follow'};   
     const [tableData,setTableData] = useState(null)
     const [chart, setChart] = useState(null)
@@ -32,7 +32,7 @@ export default function QuantiteTotaleActuelle () {
         }
       });
     }
-    const getData = () => {fetch("http://127.0.0.1:8000/api/internaute/quantite-dechete-totale-actuelle", requestOptions)
+    const getData = () => {fetch("http://127.0.0.1:8000/api/somme-total-stock-dechet-zone-depot", requestOptions)
       .then(response => response.json()).then(result => setTableData(result)).catch(error => console.log('error', error));
     }  
     useEffect(() => { 

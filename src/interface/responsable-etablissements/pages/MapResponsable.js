@@ -204,7 +204,7 @@ var requestOptions = {
                             <Accordion sx={{ border:"0.5px solid #C8C8C8"}}>
                                 <AccordionSummary expandIcon={<ExpandMoreIcon />} aria-controls="panel1a-content" id="panel1a-header" sx={{backgroundColor:"#F0F0F0"}}>
                                     <img style={{width:"30px", height:"30px", marginRight:"10px"}} src={EtablissementIcon} alt='etablissement-icon'/>
-                                    <p style={{marginTop:"7px", textAlign:"left"}}><b>{etablissement[0].nom_etablissement}:</b> {`${etablissement[0].type_etablissement}`}</p>
+                                    <p style={{marginTop:"7px", textAlign:"left"}}><b>{etablissement[0].nom_etablissement}:</b> {`${etablissement[0].niveau_etablissement}`} {`${etablissement[0].type_etablissement}`}</p>
                                 </AccordionSummary>
                                 <AccordionDetails  sx={{backgroundColor:"#F0F0E0", padding:"0 8px 3px 2px"}}>  
                                     <p><b>nombre des personnes: </b>{`${etablissement[0].nbr_personnes}`} </p>   

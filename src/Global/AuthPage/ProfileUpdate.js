@@ -16,6 +16,8 @@ export default function ProfileUpdate() {
     if(localStorage.getItem("Role")=== "gestionnaire"){ user="Gestionnaire";}
     else if(localStorage.getItem("Role")=== "responsable_etablissement"){ user="responsable_etablissement";}
     else if(localStorage.getItem("Role")=== "client_dechet"){user="client";}
+    else if(localStorage.getItem("Role")=== "responsable_commerciale"){user="responsable_commercial";}
+    else if(localStorage.getItem("Role")=== "responsable_personnel"){user="responsable_personnel";}
   }
   const [profile, setProfile]=useState([]);
   const [profileImg, setProfileImg]=useState("");

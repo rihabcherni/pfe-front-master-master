@@ -14,6 +14,9 @@ import { Link } from 'react-router-dom';
 import {StyledTypography} from '../../../../../style'
 import ArrowRightAltIcon from '@mui/icons-material/ArrowRightAlt';
 import '../../../css/panne.css'
+import PanneCamionFilterAnnee from './PanneCamionFilterAnnee';
+import PannePoubelleFilterAnnee from './PannePoubelleFilterAnnee';
+
 function TabPanel(props) {
   const { children, value, index, ...other } = props;
   return (
@@ -161,8 +164,7 @@ export default function Pannes() {
           </div>
           <div className='card-panne'>
             <Item>
-              <ChartPanne url='http://127.0.0.1:8000/api/pannes-poubelle-mois' labelNbr='Nombre panne poubelle'
-                labelCout='Cout panne poubelle' titre="Nombre des pannes totales par mois/année"/>  
+               <PannePoubelleFilterAnnee/>
             </Item>
             <Item>   
               <StyledTypography> Filtrage des pannes des poubelles selon durée et coût :</StyledTypography>
@@ -227,8 +229,7 @@ export default function Pannes() {
 
           <div className='card-panne'>
             <Item>
-              <ChartPanne url='http://127.0.0.1:8000/api/pannes-camion-mois' labelNbr='Nombre panne camion'
-                labelCout='Cout panne camion' titre="Nombre des pannes totales par mois/année"/>    
+              <PanneCamionFilterAnnee/>       
             </Item>
             <Item>
               <StyledTypography> Filtrage des pannes des camions selon durée et coût :</StyledTypography>
