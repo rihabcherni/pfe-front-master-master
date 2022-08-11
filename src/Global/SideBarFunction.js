@@ -98,7 +98,7 @@ import ReactTooltip from 'react-tooltip';
                 <IconButton color="secondary"  size= {item.size }  >  {item.icon }  </IconButton>
               </ListItemIcon>
             </p>
-            <ListItemText component="div" sx={{opacity: open ? 1 : 0, textDecoration:"none"}}
+            <ListItemText component="div" sx={{opacity: open ? 1 : 0, textDecoration:"none",margin:"-8px 0 0 0"}}
               primary= {item.name}  primaryTypographyProps={{color: 'secondary', fontSize: '14px', variant: 'body2', }}/>
           </ListItemButton>
       </Link>
@@ -115,11 +115,11 @@ import ReactTooltip from 'react-tooltip';
       <React.Fragment>
         {open ? <></> : <ReactTooltip place="right" id="icon-multiple" type="success" effect="solid"/>}
         <ListItem button onClick={handleClick}  sx={{ maxHeight:35 }}>
-        <p data-tip={item.name }  data-for='icon-multiple' >
-          <ListItemIcon sx={{marginLeft:-1.3}}> <IconButton color="secondary" size="medium" >{item.icon}</IconButton></ListItemIcon>
-        </p>
-          <ListItemText component="div" color="secondary" sx={{ opacity: open ? 1 : 0, textDecoration:"none",margin:"0 0 0 -1.3px"}} primary= {item.name}  primaryTypographyProps={{color: 'secondary', fontSize: '14px', variant: 'body2', }}/>
-             {openSubmenu ? <ExpandLessIcon sx={{color:"white"}} /> : <ExpandMoreIcon sx={{color:"white"}} />}
+            <p data-tip={item.name }  data-for='icon-multiple' >
+              <ListItemIcon sx={{marginLeft:-1.2}}> <IconButton color="secondary" size="medium" >{item.icon}</IconButton></ListItemIcon>
+            </p>
+            <ListItemText component="div" color="secondary" sx={{ opacity: open ? 1 : 0, textDecoration:"none",margin:"-8px 10px 0 -8.3px"}} primary= {item.name}  primaryTypographyProps={{color: 'secondary', fontSize: '14px', variant: 'body2', }}/>
+            {openSubmenu ? <ExpandLessIcon sx={{color:"white"}} /> : <ExpandMoreIcon sx={{color:"white"}} />}
         </ListItem>
         <div style={{marginLeft:8}}>
           <Collapse in={openSubmenu} timeout="auto" unmountOnExit>
