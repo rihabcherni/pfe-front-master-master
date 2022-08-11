@@ -3,14 +3,14 @@ import { Route, Routes ,Navigate} from 'react-router-dom';
 /**** ---------------------gestionnaire ------------------------ ****/
 import StockPoubelle from '../interface/gestionnaire/pages/productionPoubelle/StockPoubelle';
 import MateriauxPrimaire from '../interface/gestionnaire/pages/productionPoubelle/MateriauxPrimaire';
-
-
 import InterfaceGestionnaire from '../interface/gestionnaire/InterfaceGestionnaire';
 import Dashboard from '../interface/gestionnaire/pages/Dashboard';
 import MapGestionnaire from '../interface/gestionnaire/pages/map/MapGestionnaire';
 import Poubelles from '../interface/gestionnaire/pages/GestionPoubelleEtablissement/Poubelles';
 import Camion from '../interface/gestionnaire/pages/TransportDechet/Camion';
 import Ouvrier from '../interface/gestionnaire/pages/personnel/Ouvrier';
+import ResponsableCommercial from '../interface/gestionnaire/pages/personnel/ResponsableCommercial';
+import ResponsablePersonnel from '../interface/gestionnaire/pages/personnel/ResponsablePersonnel';
 import ReparateurPoubelle from '../interface/gestionnaire/pages/personnel/ReparateurPoubelle';
 import ReparateurCamion from '../interface/gestionnaire/pages/personnel/ReparateurCamion';
 import ResponsableEtablissement from '../interface/gestionnaire/pages/clients/ResponsableEtablissement';
@@ -42,6 +42,10 @@ export default function LinkGestionnaire() {
             <Route path='poubelles' element={<Poubelles/>}/>
             <Route path='camions' element={<Camion/>}/>
             <Route path='personnel/ouvriers' element={<Ouvrier/>}/>
+            <Route path='personnel/responsable-commerciale' element={<ResponsableCommercial/>}/>
+            <Route path='personnel/responsable-personnel' element={<ResponsablePersonnel/>}/>
+
+            
             <Route path='personnel/reparateurs-poubelle' element={<ReparateurPoubelle/>}/>		
             <Route path='personnel/reparateurs-camion' element={<ReparateurCamion/>}/>
             <Route path='clients/responsables-etablissements' element={<ResponsableEtablissement/>}/>

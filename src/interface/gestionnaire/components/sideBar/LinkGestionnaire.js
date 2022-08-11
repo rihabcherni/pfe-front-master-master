@@ -27,6 +27,8 @@ export const linkDetailsGestionnaire = [
     {id: 7, name: "Personnel", icon: <HiUsers/>,
       items: [
         {id:1, name: "Gestionnaire",path:"/gestionnaire/liste-gestionnaire", icon: <AdminPanelSettingsIcon/>, size:"meduim"},
+        {id:1, name: "Responsable Commerciale",path:"/gestionnaire/personnel/responsable-commerciale", icon: <AdminPanelSettingsIcon/>, size:"meduim"},
+        {id:1, name: "Responsable Personnel",path:"/gestionnaire/personnel/responsable-personnel", icon: <AdminPanelSettingsIcon/>, size:"meduim"},
         {id:2,name: "Ouvriers", path:"/gestionnaire/personnel/ouvriers", icon: <HiUsers/>, size:"meduim"},
         {id:3,name: "Réparateurs poubelle", path:"/gestionnaire/personnel/reparateurs-poubelle", icon: <BsTools/>, size:"meduim"},
         {id:4,name: "Mecaniciens camion", path:"/gestionnaire/personnel/reparateurs-camion", icon: <BsTools/>, size:"meduim"},

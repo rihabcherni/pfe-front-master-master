@@ -1,7 +1,8 @@
 import React from 'react'
+import MateriauxPrimaire from '../../../gestionnaire/pages/productionPoubelle/MateriauxPrimaire'
 
 export default function ListeMateriauxPrimaires() {
   return (
-    <div>ListeMateriauxPrimaires</div>
+    <MateriauxPrimaire/>
   )
 }
