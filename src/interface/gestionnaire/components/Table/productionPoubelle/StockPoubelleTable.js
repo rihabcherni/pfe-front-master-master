@@ -6,8 +6,7 @@ import Api from '../../../../../Global/ComponentsTable/Api';
     ["Image produit","photo"],
     ["Type poubelle","type_poubelle"],
     ["Quantité disponible","quantite_disponible"],
-    ["Prix unitaire (DT)","prix_unitaire"],
-    ["Remise (%)","pourcentage_remise"],
+    ["Description technique","description"],
     ["Crée le","created_at"],
     ["Modifié le","updated_at"],
   ]; 
@@ -17,11 +16,10 @@ import Api from '../../../../../Global/ComponentsTable/Api';
     ["Image produit","photo"],
     ["Type poubelle","type_poubelle"],
     ["Quantité disponible","quantite_disponible"],
-    ["Prix unitaire (DT)","prix_unitaire"],
-    ["Remise (%)","pourcentage_remise"],
+    ["Description technique","description"]
   ]; 
 export default function StockPoubelleTable() {
-  const initialValue = {photo:"",type_poubelle: "",quantite_disponible: "",prix_unitaire:"", pourcentage_remise: "",error_list:[]};    
+  const initialValue = {photo:"",type_poubelle: "",quantite_disponible: "", description: "",error_list:[]};    
   const url = `http://127.0.0.1:8000/api/stock-poubelle`
   const columnDefs = [
     { headerName: "ID", field: "id", maxWidth:80, minWidth:50, pinned: 'left' },
@@ -30,8 +28,7 @@ export default function StockPoubelleTable() {
       src={`http://127.0.0.1:8000/storage/images/stock_poubelle/${params.data.photo}`}alt="poubelle stock" />},
     { headerName: "Type poubelle", field: "type_poubelle"  , maxWidth:200, minWidth:150},
     { headerName: "Quantité disponible", field: "quantite_disponible" , maxWidth:200, minWidth:170 },
-    { headerName: "Prix unitaire (DT)", field: "prix_unitaire" , maxWidth:200, minWidth:160 },
-    { headerName: "Remise (%)", field: "pourcentage_remise" , maxWidth:200, minWidth:140 },
+    { headerName: "Description technique", field: "description" , maxWidth:800, minWidth:400 },
   ]
   return (
     <div style={{width:"100%"}}>

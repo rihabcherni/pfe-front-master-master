@@ -28,7 +28,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faPhone  , faBuilding, faUser, faAt, faAddressCard ,faBriefcase, faTruck} from '@fortawesome/free-solid-svg-icons'
 const containerStyle = { width: '100%',height: '84vh', marginRight:"20px"};
 const center = { lat: 36.79707659935575,  lng:  10.198563045367104};
-const divStyle = { background: `white`, padding: 2, width:150, height:30}
+const divStyle = { background: `white`, padding: 2}
 export default function MapGestionnaire() {
   const { isLoaded } = useLoadScript({googleMapsApiKey:"AIzaSyCM_y_hH1jw8ucuvhzfmGdKMloxPwBjbAo"});
   const [etablissements, setEtablissements] = useState([]);
@@ -77,8 +77,18 @@ export default function MapGestionnaire() {
              icon={ EtablissementIcon} position={ {lat:etb.latitude, lng:etb.longitude} }> </Marker>     
                 {activeMarkerEtablissement === id ? ( 
                   <InfoWindow onCloseClick={() => setActiveMarkerEtablissement(null)} 
-                     position={ {lat:etb.latitude+0.025, lng:etb.longitude}}>
-                    <div style={divStyle}> <p>{etb.nom_etablissement}</p> </div>
+                     position={ {lat:etb.latitude+0.0025, lng:etb.longitude}}>
+                     <div style={divStyle}> 
+                      <div><b>établissement :</b>{etb.nom_etablissement}</div>
+                      <div style={{ display:"grid", gridTemplateColumns:"repeat(2,1fr)" , gap:"3%"}}>
+                        <div className="plastique"><b>plastique:</b>{etb.quantite_dechets_plastique}</div>
+                        <div className='papier'><b>papier:</b>{etb.quantite_dechets_papier}</div>
+                        <div className="canette"><b>canette:</b>{etb.quantite_dechets_canette}</div>
+                        <div className="composte"><b>composte:</b>{etb.quantite_dechets_composte}</div>
+                        <div><b>{etb.nbr_poubelle}poubelles</b></div>
+                        <div><b>{etb.nbr_personnes}personnes</b></div>
+                      </div>  
+                     </div>
                   </InfoWindow>
                 ) : null}
           </>)):(<div style={{color:"red"}}>pas des etablissements</div>)}
@@ -87,8 +97,16 @@ export default function MapGestionnaire() {
           <>
             <Marker key={id} onClick={() => handleActiveMarkerCamion(camion.camion.id)} icon={Camion} position={ {lat:camion.camion.latitude, lng:camion.camion.longitude} }>  </Marker>     
               {activeMarkerCamion === camion.camion.id ? ( 
-                <InfoWindow onCloseClick={() => setActiveMarkerCamion(null)} position={ {lat:camion.camion.latitude+0.025, lng:camion.camion.longitude}} >
-                  <div style={divStyle}> <p>{camion.camion.matricule}</p> </div>
+                <InfoWindow onCloseClick={() => setActiveMarkerCamion(null)} position={ {lat:camion.camion.latitude+0.0025, lng:camion.camion.longitude}} >
+                <div style={divStyle}> 
+                  <div ><b>matricule:</b>{camion.camion.matricule}</div>
+                  <div style={{ display:"grid", gridTemplateColumns:"repeat(2,1fr)" , gap:"5%"}}>
+                    <div className='plastique'><b>plastique:</b>{camion.camion.volume_actuelle_plastique}</div>
+                    <div className='papier'><b>papier:</b>{camion.camion.volume_actuelle_papier}</div>
+                    <div  className='composte'><b>composte:</b>{camion.camion.volume_actuelle_composte}</div>
+                    <div className='canette'><b>canette:</b>{camion.camion.volume_actuelle_canette}</div>
+                  </div> 
+                </div>
                 </InfoWindow>
               ) : null}
           </> ) ):(<div style={{color:"red"}}>pas des camions</div>) 
@@ -101,8 +119,16 @@ export default function MapGestionnaire() {
                           position={ {lat:zone.latitude, lng:zone.longitude} }>                                                   
                       </Marker>     
                     {activeMarkerZoneDepot === zone.id ? ( 
-                      <InfoWindow onCloseClick={() => setActiveMarkerZoneDepot(null)} position={ {lat:zone.latitude+0.025, lng:zone.longitude}} >
-                        <div style={divStyle}> <p>{zone.adresse}</p> </div>
+                      <InfoWindow onCloseClick={() => setActiveMarkerZoneDepot(null)} position={ {lat:zone.latitude+0.0025, lng:zone.longitude}} >                            
+                      <div style={divStyle}> 
+                        <div ><b>Adresse zone depot :</b>{zone.adresse}</div>
+                        <div style={{ display:"grid", gridTemplateColumns:"repeat(2,1fr)" , gap:"3%"}}>
+                          <div className="plastique"><b>plastique:</b>{zone.quantite_depot_actuelle_plastique}</div>
+                          <div className='papier'><b>papier:</b>{zone.quantite_depot_actuelle_papier}</div>
+                          <div className="canette"><b>canette:</b>{zone.quantite_depot_actuelle_canette}</div>
+                          <div className="composte"><b>composte:</b>{zone.quantite_depot_actuelle_composte}</div>
+                        </div>  
+                      </div>
                       </InfoWindow>
                      ) : null}
           </> ) ):(<div style={{color:"red"}}>pas des zones</div>) 

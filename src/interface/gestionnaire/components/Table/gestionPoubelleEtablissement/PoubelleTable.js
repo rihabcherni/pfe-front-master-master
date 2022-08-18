@@ -46,8 +46,9 @@ const createUpdate=[ ["ID","id"],["Etablissement","etablissement_id"],["Bloc ét
 ];  
 
 const show=[ ["ID","id"],
-  ["nom","nom"],
-  ["nom_poubelle_responsable","nom_poubelle_responsable"],
+["Type","type"],
+["nom","nom"],
+["nom_poubelle_responsable","nom_poubelle_responsable"],
   ["Etablissement","etablissement"],
   ["Bloc établissement","bloc_etablissement"],
   ["Etage","etage"],

@@ -32,7 +32,7 @@ import Api from '../../../../../Global/ComponentsTable/Api';
 export default function ClientTable() {
   const initialValue = { nom_entreprise:"", nom: "", prenom: "",matricule_fiscale:"", numero_telephone: "",numero_fixe:"", 
   email: "", mot_de_passe:"", adresse:"",created_at:"", updated_at:"", error_list:[]};
-  const url = `http://127.0.0.1:8000/api/client`
+  const url = `http://127.0.0.1:8000/api/client-dechets`
   const columnDefs = [
     { headerName: "ID", field: "id",  maxWidth:100,minWidth:80, pinned: 'left' },
     { headerName: "Nom entreprise", field: "nom_entreprise", minWidth: 150 , maxWidth: 180},
