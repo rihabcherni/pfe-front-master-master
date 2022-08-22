@@ -35,8 +35,7 @@ export default function ZoneTravailTable() {
 
   return (
     <div style={{width:"100%"}}>
-        <h2 align="center" style={{color:"green", fontSize:"30px"}}>Zone de travail</h2>
-        <Api tableName='Zone de travail' url={url} initialValue={initialValue} columnDefs={columnDefs} show={show} createUpdate={createUpdate}/>  
+        <Api tableNameSing='Zone de travail' tableNamePlu='Zones de travail' url={url} initialValue={initialValue} columnDefs={columnDefs} show={show} createUpdate={createUpdate}/>  
     </div>
   );
 }

@@ -79,12 +79,12 @@ export default function ContactUsable() {
   }
   return (
     <div style={{ boxShadow: '0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19)'}}>
-        <h2 align="center" style={{color:"green", fontSize:"30px"}}>Contact Us</h2>
         <Grid  container direction="row" justifyContent="space-between" alignItems="flex-start" >
         <Item  style={{margin:"20px 20px 0",backgroundColor:'#DCDCDC'}}>
           <ManageSearchIcon variant="contained" color="success"  style={{marginBottom:"-7px"}} />
           <input type="text"  onInput={onQuickFilterChanged}  id="quickFilter"  placeholder="recherche..."  style={{backgroundColor:'#DCDCDC', border:'none',padding:"8px" }}/>
         </Item>
+        <h2 align="center" style={{color:"green", fontSize:"30px"}}>Contact Us</h2>
         <Item>
                 <select style={{marginRight:'5px' , padding:"10px" , borderRadius:"5px",border:"none"}}  onChange={(e)=>onPaginationChange(e.target.value)}>
                   <option value='5'>5</option>

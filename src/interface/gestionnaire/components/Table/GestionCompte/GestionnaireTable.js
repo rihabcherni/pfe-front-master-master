@@ -44,8 +44,7 @@ export default function GestionnaireTable() {
 
   return (
     <>
-        <h2 align="center" style={{color:"green", fontSize:"30px"}}>Gestionnaire Reschool Ecology</h2>
-        <Api tableName='ouvrier' url={url} initialValue={initialValue} columnDefs={columnDefs} show={show} createUpdate={createUpdate}/> 
+        <Api tableNamePlu='Gestionnaires' tableNameSing='Gestionnaire' url={url} initialValue={initialValue} columnDefs={columnDefs} show={show} createUpdate={createUpdate}/> 
     </>
   );
 }

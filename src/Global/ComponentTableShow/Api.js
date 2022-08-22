@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import 'ag-grid-community/dist/styles/ag-grid.css';
 import 'ag-grid-community/dist/styles/ag-theme-alpine.css';
-import EditIcon from '@mui/icons-material/Edit';
 import VisibilityIcon from '@mui/icons-material/Visibility';
 import '../../App.css'
 import { Table} from './Table'
@@ -24,11 +23,11 @@ export default function Api({tableName,initialValue, url, columnDefs, show}) {
   var requestOptions = { method: 'GET', headers: myHeaders, redirect: 'follow'}; 
   const getData = () => {
     if(localStorage.getItem('auth_token')){
-      fetch(url, requestOptions).then(resp => resp.json()).then(resp => {setTableData(resp); console.log(resp)}).catch(err => {
+      fetch(url, requestOptions).then(resp => resp.json()).then(resp => {setTableData(resp.data); console.log(resp)}).catch(err => {
         console.log("Error Reading data " + err);
       });
     }else{
-      fetch(url).then(resp => resp.json()).then(resp => {setTableData(resp);; console.log(resp)}).catch(err => {
+      fetch(url).then(resp => resp.json()).then(resp => {setTableData(resp.data); console.log(resp)}).catch(err => {
         console.log("Error Reading data " + err);
       });
     }

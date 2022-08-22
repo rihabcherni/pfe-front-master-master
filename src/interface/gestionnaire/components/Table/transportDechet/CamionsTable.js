@@ -71,8 +71,7 @@ export default function CamionsTable() {
   ]
   return (
     <div style={{width:"100%"}}>
-      <h2 align="center" style={{color:"green", fontSize:"30px"}}>Camions</h2>
-      <Api tableName='Camion' url={url} initialValue={initialValue} columnDefs={columnDefs} show={show} createUpdate={createUpdate}/> 
+      <Api tableNameSing='camion' tableNamePlu='camions' url={url} initialValue={initialValue} columnDefs={columnDefs} show={show} createUpdate={createUpdate}/> 
     </div>
   );
 }

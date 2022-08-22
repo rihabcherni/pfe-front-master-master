@@ -23,8 +23,7 @@ export default function BlocPoubelleTable() {
   ]
   return (
     <div style={{width:"100%"}}>
-      <h2 align="center" style={{color:"green", fontSize:"30px"}}>Bloc Poubelle</h2>
-      <Api tableName='Bloc poubelle'  url={url} initialValue={initialValue} columnDefs={columnDefs} show={show}  createUpdate={createUpdate}/>  
+      <Api tableNameSing='Bloc poubelle' tableNamePlu='Blocs poubelles'  url={url} initialValue={initialValue} columnDefs={columnDefs} show={show}  createUpdate={createUpdate}/>  
     </div>
   );
 } 

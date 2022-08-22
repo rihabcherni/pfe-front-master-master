@@ -37,9 +37,8 @@ export default function FournisseurTable() {
         { headerName: "Adresse", field: "adresse" , maxWidth:400, minWidth:180}
       ] 
         return (
-            <div style={{width:"100%"}}>
-                  <h2 align="center" style={{color:"green", fontSize:"30px"}}>Fournisseur</h2>
-                  <Api tableName='Fournisseur' url={url} initialValue={initialValue} columnDefs={columnDefs} show={show} createUpdate={createUpdate}/>   
-            </div>
+          <div style={{width:"100%"}}>
+            <Api tableNameSing='fournisseur' tableNamePlu='fournisseurs' url={url} initialValue={initialValue} columnDefs={columnDefs} show={show} createUpdate={createUpdate}/>   
+          </div>
         );
       }

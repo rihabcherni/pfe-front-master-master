@@ -29,8 +29,7 @@ export default function DetailCommandeDechetTable() {
     ]  
     return (
         <div style={{width:"100%"}}>
-              <h2 align="center" style={{color:"green", fontSize:"30px"}}>Détails commandes déchets</h2>
-              <Api tableName='Détails commande déchets' url={url} initialValue={initialValue} columnDefs={columnDefs} show={show} createUpdate={createUpdate}/> 
+              <Api tableNameSing='Détails commande déchets' tableNamePlu='Détails commandes déchets' url={url} initialValue={initialValue} columnDefs={columnDefs} show={show} createUpdate={createUpdate}/> 
         </div>
     );
   }

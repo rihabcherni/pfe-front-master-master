@@ -3,13 +3,14 @@ import '../../../../../App.css'
 import Api from '../../../../../Global/ComponentsTable/Api';
   const show=[
             ["ID","id"],
-            ["etablissement_id","etablissement_id"],
-            ["bloc etablissement","nom_bloc_etablissement"],
+             ["Etablissement","etablissement_id"],
+            ["Bloc etablissement","nom_bloc_etablissement"],
            ];    
 
   const createUpdate=[
-            ["ID","id"],["etablissement_id","etablissement_id"],
-            ["bloc etablissement","nom_bloc_etablissement"],
+            ["ID","id"],
+            // ["Etablissement","etablissement_id"],
+            ["Bloc etablissement","nom_bloc_etablissement"],
            ]; 
 export default function BlocEtablissementTable() {
   const initialValue = {etablissement_id:"", nom_bloc_etablissement: "",error_list:[]};    
@@ -20,8 +21,7 @@ export default function BlocEtablissementTable() {
   ]
   return (
     <div style={{width:"100%"}}>
-      <h2 align="center" style={{color:"green", fontSize:"30px"}}> Bloc Etablissement</h2>
-      <Api tableName='Bloc établissement' url={url} initialValue={initialValue} columnDefs={columnDefs} show={show} createUpdate={createUpdate}/>  
+      <Api tableNameSing='bloc établissement'  tableNamePlu='blocs établissements' url={url} initialValue={initialValue} columnDefs={columnDefs} show={show} createUpdate={createUpdate}/>  
     </div>
   );
 }

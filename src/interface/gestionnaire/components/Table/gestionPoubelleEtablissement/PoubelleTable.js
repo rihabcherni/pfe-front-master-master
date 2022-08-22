@@ -46,9 +46,9 @@ const createUpdate=[ ["ID","id"],["Etablissement","etablissement_id"],["Bloc ét
 ];  
 
 const show=[ ["ID","id"],
-["Type","type"],
-["nom","nom"],
-["nom_poubelle_responsable","nom_poubelle_responsable"],
+  ["Type","type"],
+  ["nom","nom"],
+  ["nom_poubelle_responsable","nom_poubelle_responsable"],
   ["Etablissement","etablissement"],
   ["Bloc établissement","bloc_etablissement"],
   ["Etage","etage"],
@@ -72,8 +72,7 @@ export default function PoubelleTable() {
   ]
   return (
     <div style={{width:"100%"}}>
-      <h2 align="center" style={{color:"green", fontSize:"30px"}}>Poubelle</h2>
-      <Api tableName='Poubelle' url={url} initialValue={initialValue} columnDefs={columnDefs} show={show} createUpdate={createUpdate}/>  
+      <Api tableNameSing='poubelle' tableNamePlu='poubelles' url={url} initialValue={initialValue} columnDefs={columnDefs} show={show} createUpdate={createUpdate}/>  
     </div>
   );
 }        

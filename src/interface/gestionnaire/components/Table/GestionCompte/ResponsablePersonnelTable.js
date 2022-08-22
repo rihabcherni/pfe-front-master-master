@@ -38,8 +38,7 @@ export default function ResponsablePersonnelTable() {
   ]
   return (
     <div style={{width:"100%"}}>
-        <h2 align="center" style={{color:"green", fontSize:"30px"}}>Responsable personnel</h2>
-        <Api  tableName='commande déchets' url={url} initialValue={initialValue} columnDefs={columnDefs} show={show} createUpdate={createUpdate}/> 
+        <Api tableNameSing='responsable personnel' tableNamePlu='responsables personnel' url={url} initialValue={initialValue} columnDefs={columnDefs} show={show} createUpdate={createUpdate}/> 
     </div>
   );
 }

@@ -50,7 +50,7 @@ export default function DialogAddUpdate({tableName,open,handleClose,data,onChang
 
   }, [])
   for (let i = 0; i < createUpdate.length; i++) {
-    if(createUpdate[i][0]==="photo" ){
+    if(createUpdate[i][1]==="photo" ){
       rows.push(
         <>
           <input type="file" accept="image/*"  name={createUpdate[i][0]} id={createUpdate[i][0]} onChange={e=>onChange(e)}/> 
@@ -119,7 +119,6 @@ export default function DialogAddUpdate({tableName,open,handleClose,data,onChang
         </FormControl>
        )
       }
-   
     }
     if(id){
       if( (createUpdate[i][1]=="quantite_total_collecte_plastique")||(createUpdate[i][1]=="quantite_total_collecte_composte")|| (createUpdate[i][1]=="quantite_total_collecte_papier")||(createUpdate[i][1]=="quantite_total_collecte_canette")){

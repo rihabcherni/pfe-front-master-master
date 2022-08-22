@@ -46,8 +46,7 @@ export default function ClientTable() {
   ]
   return (
     <div style={{width:"100%"}}>
-        <h2 align="center" style={{color:"green", fontSize:"30px"}}>Client de déchets</h2>
-        <Api tableName='client dechet' url={url} initialValue={initialValue} columnDefs={columnDefs} show={show} createUpdate={createUpdate}/>  
+        <Api tableNamePlu='clients de déchets' tableNameSing='client de déchets' url={url} initialValue={initialValue} columnDefs={columnDefs} show={show} createUpdate={createUpdate}/>  
     </div>
   );
 }

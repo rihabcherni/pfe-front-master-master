@@ -46,8 +46,7 @@ export default function ReparationPoubelleTable() {
     ]
   return (
     <div style={{width:"100%"}}>
-        <h2 align="center" style={{color:"green", fontSize:"30px"}}>Réparation Poubelle</h2>
-        <Api tableName='Réparation poubelle' url={url} initialValue={initialValue} columnDefs={columnDefs} show={show} createUpdate={createUpdate}/> 
+        <Api tableNameSing='Réparation poubelle' tableNamePlu='Réparations poubelles' url={url} initialValue={initialValue} columnDefs={columnDefs} show={show} createUpdate={createUpdate}/> 
     </div>
   );
 }

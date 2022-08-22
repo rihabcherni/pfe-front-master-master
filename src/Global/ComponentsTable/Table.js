@@ -1,6 +1,4 @@
-import { styled } from '@mui/material/styles';
-import Paper from '@mui/material/Paper';
-import React, { useState, useCallback , useRef } from 'react';
+import React, { useState, useCallback , useRef, useEffect } from 'react';
 import { AgGridReact } from 'ag-grid-react';
 import 'ag-grid-community/dist/styles/ag-grid.css';
 import 'ag-grid-community/dist/styles/ag-theme-material.css';
@@ -9,7 +7,15 @@ import AddIcon from '@mui/icons-material/Add';
 import FileDownloadIcon from '@mui/icons-material/FileDownload';
 import ManageSearchIcon from '@mui/icons-material/ManageSearch';
 import Button  from '@mui/material/Button'
-
+import {GrDocumentCsv, GrDocumentPdf,GrDocumentExcel}  from 'react-icons/gr'
+import Menu from '@mui/material/Menu';
+import MenuItem from '@mui/material/MenuItem';
+import ListItemText from '@mui/material/ListItemText';
+import ListItemIcon from '@mui/material/ListItemIcon';
+import AutoDeleteIcon from '@mui/icons-material/AutoDelete';
+import { styled } from '@mui/material/styles';
+import Paper from '@mui/material/Paper';
+import { Typography } from '@mui/material';
 export const Item = styled(Paper)(({ theme }) => 
   (
     {
@@ -47,14 +53,31 @@ export const columnTypes =  {
    },
  },
 }
-export  function Table({handleClickOpen ,tableData, columnDefs}) {
+export  function Table({ tableNamePlu,handleClickOpen ,handleClickOpenTrash,tableData, columnDefs, url}) {   
+  const [anchorEl, setAnchorEl] = React.useState(null);
+  const open = Boolean(anchorEl);
+  const handleClick = (event) => {
+    setAnchorEl(event.currentTarget);
+  };
+  const handleClose = () => {
+    setAnchorEl(null);
+  };
   const gridRef = useRef();
   const [gridApi, setGridApi] = useState(null)
   const onGridReady = (params) => {
     setGridApi(params)
   }
-  const onBtnExport = useCallback(() => {
-    gridRef.current.api.exportDataAsCsv();
+  const onBtnExportCSV = useCallback(() => {
+    window.open(url+'-csv', '_blank');
+    handleClose()
+  }, []);
+  const onBtnExportEXCEL = useCallback(() => {
+    window.open(url+'-excel', '_blank');
+    handleClose()
+    }, []);
+  const onBtnExportAllPdf = useCallback(() => {
+    fetch(url+'-all-pdf', {type: "GET"}).then((res) => res.json());
+    handleClose()
   }, []);
   const onQuickFilterChanged = useCallback(() => {
     gridRef.current.api.setQuickFilter(
@@ -69,6 +92,8 @@ return (
             <ManageSearchIcon variant="contained" color="success"  style={{marginBottom:"-5px"}} />
             <input type="text"  onInput={onQuickFilterChanged}  id="quickFilter"  placeholder="recherche..."  style={{backgroundColor:'#DCDCDC', border:'none',padding:"8px" }}/>
           </Item>
+          
+          <Typography align="center" variant='h4' color="primary" sx={{margin:"25px", fontWeight:"bold"}}>{tableNamePlu}</Typography>
           <Item  style={{margin:"20px ",backgroundColor:'#DCDCDC'}}>
                   <select style={{marginRight:'5px' , padding:"10px" , borderRadius:"5px",border:"none"}}  onChange={(e)=>onPaginationChange(e.target.value)}>
                     <option value='5'>5</option>
@@ -76,8 +101,23 @@ return (
                     <option value='50'>50</option>
                     <option value='100'>100</option>
                   </select>
-                <Button variant="contained" color="primary" onClick={onBtnExport} style={{marginRight:"5px"}}><FileDownloadIcon/></Button>
                 <Button variant="contained" color="success" onClick={handleClickOpen}><AddIcon/></Button>
+                <Button id="basic-button" aria-controls={open ? 'basic-menu' : undefined} sx={{ marginLeft:"5px" }}
+                    aria-haspopup="true" aria-expanded={open ? 'true':undefined} onClick={handleClick} variant="contained" color="warning" >
+                   <FileDownloadIcon/>
+                </Button>
+                <Menu  id="basic-menu"  anchorEl={anchorEl} open={open}  onClose={handleClose} MenuListProps={{'aria-labelledby': 'basic-button',}}>
+                  <MenuItem onClick={onBtnExportEXCEL}>
+                      <ListItemIcon> <GrDocumentExcel style={{marginTop:'-4px'}}/></ListItemIcon><ListItemText sx={{marginLeft:'-15px'}}>Excel</ListItemText>
+                  </MenuItem>
+                  <MenuItem onClick={onBtnExportCSV}>
+                      <ListItemIcon> <GrDocumentCsv style={{marginTop:'-4px'}}/></ListItemIcon><ListItemText sx={{marginLeft:'-15px'}}>CSV</ListItemText>
+                  </MenuItem>
+                  <MenuItem onClick={onBtnExportAllPdf}>
+                      <ListItemIcon> <GrDocumentPdf style={{marginTop:'-4px'}}/></ListItemIcon><ListItemText sx={{marginLeft:'-15px'}}>PDF</ListItemText>
+                  </MenuItem>
+                </Menu>
+                <Button variant="contained" color="error" sx={{ marginLeft:"5px" }} onClick={handleClickOpenTrash}><AutoDeleteIcon/></Button>
           </Item>
       </Grid>
       <div className="ag-theme-material" style={{ height: '415px',width:"100%"}}>

@@ -81,8 +81,9 @@ export default function InterfaceGestionnaire() {
                             <List> {linkDetailsGestionnaire.map((lien, key)=> <><MenuItem key={key} item={lien} open={open}/></>)}</List>
                     </Drawer>              
                         <Box component="main" sx={{ flexGrow: 1,p:2 }}>
-                            <DrawerHeader />
-                            <Outlet/>
+                          <div style={{ marginTop:"50px" }}>
+                             <Outlet/>
+                          </div> 
                         </Box>            
                   </Box>
 
