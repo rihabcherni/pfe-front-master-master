@@ -14,7 +14,7 @@ const show=[
  ];
 export default function HistoriqueViderPoubelleResponsable() {
   const initialValue = { poubelle_id:"", nom_poubelle:"",type_poubelle:"",etat:"", quantite:"", date_depot:"",created_at:"", updated_at:"",error_list:[]};
-  const url = `http://127.0.0.1:8000/api/historique-vider-poubelle-gestionnaire`
+  const url = `${process.env.REACT_APP_API_KEY}/api/historique-vider-poubelle-gestionnaire`
   const columnDefs = [
     { headerName: "ID", field: "id", maxWidth:80, minWidth:50, pinned: 'left' },
     { headerName: "Id poubelle", field: "poubelle_id", maxWidth:120, minWidth:120},

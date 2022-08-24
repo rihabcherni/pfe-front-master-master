@@ -24,12 +24,12 @@ import Api from '../../../Global/ComponentsTable/Api';
  ];
 export default function AddResponsable() {
   const initialValue = {photo:"",nom: "", prenom: "", numero_telephone: "",numero_fixe:"",mot_de_passe:"", email: "", mot_de_passe:"",adresse:"",created_at:"", updated_at:"", error_list:[]};
-  const url = `http://127.0.0.1:8000/api/auth-responsable-etablissement/add-resp-etablissement`
+  const url = `${process.env.REACT_APP_API_KEY}/api/auth-responsable-etablissement/add-resp-etablissement`
   const columnDefs = [
     { headerName: "ID", field: "id", maxWidth:80, minWidth:50, pinned: 'left' },
     { headerName: "Photo", field: "photo", maxWidth:100, minWidth:100, cellRenderer: (params) =>
       <img  style={{height:"50px",marginLeft:"5px", width:"50px", borderRadius:"50%"}} 
-          src={`http://127.0.0.1:8000/storage/images/responsable_etablissement/${params.data.photo}`} alt="responsable" />},
+          src={`${process.env.REACT_APP_API_KEY}/storage/images/responsable_etablissement/${params.data.photo}`} alt="responsable" />},
     { headerName: "Nom", field: "nom", maxWidth: 200 , minWidth:120},
     { headerName: "Prénom", field: "prenom", maxWidth: 200 , minWidth:120},
     { headerName: "Numéro télèphone", field: "numero_telephone", maxWidth: 200 , minWidth:160},

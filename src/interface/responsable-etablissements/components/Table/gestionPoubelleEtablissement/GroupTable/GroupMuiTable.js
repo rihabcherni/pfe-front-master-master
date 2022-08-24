@@ -68,7 +68,7 @@ export default function GroupMuiTable() {
       redirect: 'follow'
     };
     const getData = () => {
-      fetch("http://127.0.0.1:8000/api/auth-responsable-etablissement/bloc-etablissement-resp", requestOptions)
+      fetch(`${process.env.REACT_APP_API_KEY}/api/auth-responsable-etablissement/bloc-etablissement-resp`, requestOptions)
         .then(response => response.json())
         .then(result => setData(result.bloc_etablissement))
         .catch(error => console.log('error', error));  

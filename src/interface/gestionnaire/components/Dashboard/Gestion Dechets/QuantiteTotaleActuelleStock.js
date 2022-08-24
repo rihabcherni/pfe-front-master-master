@@ -32,7 +32,7 @@ export default function QuantiteTotaleActuelleStock () {
         }
       });
     }
-    const getData = () => {fetch("http://127.0.0.1:8000/api/somme-total-stock-dechet-zone-depot", requestOptions)
+    const getData = () => {fetch(`${process.env.REACT_APP_API_KEY}/api/somme-total-stock-dechet-zone-depot`, requestOptions)
       .then(response => response.json()).then(result => setTableData(result)).catch(error => console.log('error', error));
     }  
     useEffect(() => { 

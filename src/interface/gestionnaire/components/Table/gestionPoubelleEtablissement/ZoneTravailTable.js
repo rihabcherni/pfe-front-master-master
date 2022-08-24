@@ -23,7 +23,7 @@ import Api from '../../../../../Global/ComponentsTable/Api';
  ];
 export default function ZoneTravailTable() {
   const initialValue = { region: "",quantite_total_collecte_plastique: "" ,quantite_total_collecte_composte: "",quantite_total_collecte_papier: "",quantite_total_collecte_canette: "", created_at: "", updated_at: "", error_list:[]};
-  const url = `http://127.0.0.1:8000/api/zone-travail`
+  const url = `${process.env.REACT_APP_API_KEY}/api/zone-travail`
   const columnDefs = [
       { headerName: "ID", field: "id", maxWidth:100, minWidth:50, pinned: 'left'  },
       { headerName: "region", field: "region",  minWidth:120, },
@@ -35,7 +35,9 @@ export default function ZoneTravailTable() {
 
   return (
     <div style={{width:"100%"}}>
-        <Api tableNameSing='Zone de travail' tableNamePlu='Zones de travail' url={url} initialValue={initialValue} columnDefs={columnDefs} show={show} createUpdate={createUpdate}/>  
+        <Api tableNameSing='Zone de travail' tableNamePlu='Zones de travail' url={url} 
+        initialValue={initialValue} columnDefs={columnDefs} columnDefsTrash={columnDefs} 
+         show={show} createUpdate={createUpdate}/>  
     </div>
   );
 }

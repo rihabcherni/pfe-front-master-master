@@ -55,7 +55,7 @@ const Item = styled.div`
   color: green;
 `
 
-const myPlanning = "http://127.0.0.1:8000/api/auth-responsable-etablissement/planning-responsable";
+const myPlanning = `${process.env.REACT_APP_API_KEY}/api/auth-responsable-etablissement/planning-responsable`;
 
 export default function Planning() {
 

@@ -21,7 +21,7 @@ const Logo= styled.div`
   weight: 10%;
   height: 10px;
 `
-axios.defaults.baseURL= "http://127.0.0.1:8000/api";
+axios.defaults.baseURL= `${process.env.REACT_APP_API_KEY}/api`;
 let token='';
 if(localStorage.getItem('auth_token')!==''){
 	 token=localStorage.getItem('auth_token');
@@ -31,11 +31,14 @@ if(localStorage.getItem('auth_token')!==''){
     });
 }
 const Login=()=>{
+  const [loginRecaptcha, setLoginRecaptcha] = useState("");
+
   function onChange(value) {
+    setLoginRecaptcha(value);
     console.log("Captcha value:", value);
   }
     const navigate = useNavigate();
-    const [loginInput, setLoginInput] = useState({email: '',mot_de_passe: '',showPassword: false,error_list:[],
+    const [loginInput, setLoginInput] = useState({email: '',mot_de_passe: '' ,recaptcha:'',showPassword: false,error_list:[],
     });
     const handleInput =  (e) => {
       e.persist();
@@ -46,18 +49,19 @@ const Login=()=>{
       const data = {
         email: loginInput.email,
         mot_de_passe:loginInput.mot_de_passe,
+        recaptcha:loginInput.recaptcha,
       }
       axios.get('sanctum/csrf-cookie').then(response => {
         axios.post(`api/login`,data).then(res =>{
-          if(res.data.status === 200){
+          if(res.data.status === 200 ){
             localStorage.setItem('profile', JSON.stringify(res.data.user));
             localStorage.setItem('auth_token',res.data.token);
             localStorage.setItem('Role',res.data.Role);
             window.location.reload();   
+            console.log(res.data)
             setTimeout(navigate("/gestionnaire"),10000) ;  
             Swal('Success',res.data.message,"success");
           }else if(res.data.status === 401){
-            Swal ( 'Oops' ,  res.data.error ,"error" )
             setLoginInput({...loginInput,error_list:res.data.validation_errors});
           }
         }) 
@@ -129,10 +133,18 @@ const Login=()=>{
                       </FormControl>
                       <br/>
                       <br/>
-                      <ReCAPTCHA
-                          sitekey='6Ld4vbMgAAAAAMKnTX3uhIXnHmrEm6CyzoPBSIJq'   
-                          onChange={onChange}
-                        />          
+                      <FormControl fullWidth sx={{ marginTop: 2 }} variant="outlined" color="success" >
+                        <ReCAPTCHA sitekey='6Ld4vbMgAAAAAMKnTX3uhIXnHmrEm6CyzoPBSIJq' onChange={onChange}  />          
+                        <OutlinedInput id="recaptcha" type='text' name="recaptcha" value={loginInput.recaptcha=loginRecaptcha}
+                            onChange={handleInput} 
+                            startAdornment={<InputAdornment position="start"><PersonIcon/></InputAdornment> }  
+                            error={!!loginInput.error_list.recaptcha}  label=" recaptcha" 
+                            sx={{ display:"none" }}
+                          />
+                        <FormHelperText error={true}>
+                            {loginInput.error_list.recaptcha}           
+                        </FormHelperText> 
+                      </FormControl>
                       <Button type='submit' color='primary' variant="contained" style={btnstyle} fullWidth> Se connecter </Button>
                       <Typography sx={{textAlign:"center"}}>
                         <Link href="/oublier-mot-de-passe" >
@@ -140,8 +152,7 @@ const Login=()=>{
                         </Link>
                       </Typography>
                 </form>
-            </Paper>
-        
+            </Paper>        
         </Grid>
     )
 }

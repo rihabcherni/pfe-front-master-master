@@ -9,7 +9,7 @@ import TableRow from '@mui/material/TableRow';
 import Paper from '@mui/material/Paper';
 import { Skeleton } from '@mui/material';
 
-const PoubellesLesPlusRemplises = "http://127.0.0.1:8000/api/auth-responsable-etablissement/poubelle-plus-remplis-etablissement";
+const PoubellesLesPlusRemplises = `${process.env.REACT_APP_API_KEY}/api/auth-responsable-etablissement/poubelle-plus-remplis-etablissement`;
 
 const StyledTableCell = styled(TableCell)(({ theme }) => ({
   [`&.${tableCellClasses.head}`]: {

@@ -11,7 +11,7 @@ const FiltrageRevenuReschoolMois = () => {
 
   useEffect(() => {
     ;(async function getStatus() {
-      const response = await fetch(`http://127.0.0.1:8000/api/EtablissementListe`,requestOptionsetab)
+      const response = await fetch(`${process.env.REACT_APP_API_KEY}/api/EtablissementListe`,requestOptionsetab)
       const json = await response.json()
       setEtab(json)            
       setEtab0("")            
@@ -30,7 +30,7 @@ const FiltrageRevenuReschoolMois = () => {
           getOptionValue={(option) => option.value} getOptionLabel={(option) => option.value} 
           placeholder={etab0===""? "Établissement": etab0}/>
       </div>
-      <ChartFilterEtab url={`http://127.0.0.1:8000/api/revenu-reschool-mois-filter/`+etab0}
+      <ChartFilterEtab url={`${process.env.REACT_APP_API_KEY}/api/revenu-reschool-mois-filter/`+etab0}
       title={`Nos revenus des déchets collectés  par mois en Dinars à `+ etab0}/>  
     </>
    

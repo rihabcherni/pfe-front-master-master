@@ -42,7 +42,7 @@ export default function CamionsTable() {
   const initialValue = { zone_travail_id:"",zone_depot_id:"", matricule:"", volume_maximale_camion:"",longitude:"", latitude:"",heure_sortie:"",heure_entree:"",volume_maximale_poubelle:"",
   volume_actuelle_plastique:"",volume_actuelle_papier:"",volume_actuelle_composte:"",volume_actuelle_canette:"",volume_carburant_consomme:"",Kilometrage:"",created_at:"", updated_at:"",error_list:[]};    
    
-  const url = `http://127.0.0.1:8000/api/camion`
+  const url = `${process.env.REACT_APP_API_KEY}/api/camion`
   const columnDefs = [
     { headerName: "ID", field: "id", maxWidth:80, minWidth:50, pinned: 'left' },
     {headerName: 'Détails Zone de travil',  children: [ 
@@ -71,7 +71,9 @@ export default function CamionsTable() {
   ]
   return (
     <div style={{width:"100%"}}>
-      <Api tableNameSing='camion' tableNamePlu='camions' url={url} initialValue={initialValue} columnDefs={columnDefs} show={show} createUpdate={createUpdate}/> 
+      <Api tableNameSing='camion' tableNamePlu='camions' 
+      url={url} initialValue={initialValue} columnDefs={columnDefs} columnDefsTrash={columnDefs}
+      show={show} createUpdate={createUpdate}/> 
     </div>
   );
 }

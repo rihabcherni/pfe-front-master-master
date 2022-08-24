@@ -113,7 +113,7 @@ export default function BarChart () {
       const [chart, setChart] = useState(null)
 
       const getData = () => {
-        fetch("http://127.0.0.1:8000/api/auth-client-dechet/quantite-dechet-total-client", requestOptions)
+        fetch(`${process.env.REACT_APP_API_KEY}/api/auth-client-dechet/quantite-dechet-total-client`, requestOptions)
         .then(response => response.json())
         .then(result => setTableData(result))
         .catch(error => console.log('error', error));

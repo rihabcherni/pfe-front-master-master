@@ -12,7 +12,7 @@ import Api from '../../../../../Global/ComponentsTable/Api';
 ];
 export default function BlocPoubelleTable() {
   const initialValue = {id:"", etage_etablissement_id: "",error_list:[]};    
-  const url = `http://127.0.0.1:8000/api/auth-responsable-etablissement/bloc-poubelle-responsable`
+  const url = `${process.env.REACT_APP_API_KEY}/api/auth-responsable-etablissement/bloc-poubelle-responsable`
   const columnDefs = [
     { headerName: "Numero bloc poubelle", field: "id", maxWidth:200, minWidth:50, pinned: 'left' },
     { headerName: "bloc etablissement", field: "nom_bloc", },

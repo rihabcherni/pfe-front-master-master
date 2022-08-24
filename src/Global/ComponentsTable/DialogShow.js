@@ -37,7 +37,7 @@ export default function DialogZoneTravailShow({tableName,open,handleClose,data, 
     if(show[i][0]==="photo"){
       rows.push(
         <img style={{height:"200px", width:"200px", borderRadius:"50%"}} 
-        src={`http://127.0.0.1:8000/storage/images/ouvrier/${data[show[i][0]]}`} alt="gestionnaire"/>
+        src={`${process.env.REACT_APP_API_KEY}/storage/images/ouvrier/${data[show[i][0]]}`} alt="gestionnaire"/>
       );
     }
   }

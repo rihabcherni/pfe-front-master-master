@@ -11,7 +11,7 @@ export default function ProduitPoubelle() {
     };
     const [produit, setProduit] = useState(null)
     const getData = () => {
-    fetch("http://127.0.0.1:8000/api/stock-poubelle", requestOptions)
+    fetch(`${process.env.REACT_APP_API_KEY}/api/stock-poubelle`, requestOptions)
       .then(response => response.json())
       .then(result => setProduit(result.data))
       .catch(error => console.log('error', error));
@@ -30,7 +30,7 @@ export default function ProduitPoubelle() {
                   {produit.slice(i, i + sliderItems).map((da, index) => {
                     return  ( 
                     <div className='card' key={index.toString()} item={da} style={{textAlign:"center" , margin:"0 20px"}}>
-                        <li ><img src={`http://127.0.0.1:8000/storage/images/stock_poubelle/${da.photo}`} style={{height:"200px", width:"200px"}}/></li>
+                        <li ><img src={`${process.env.REACT_APP_API_KEY}/storage/images/stock_poubelle/${da.photo}`} style={{height:"200px", width:"200px"}}/></li>
                         <li style={{color:"green", fontSize:"18px"}}>Poubelle {da.type_poubelle}</li>
                         <Rating name="text-feedback" value={random(0,5)}  readOnly precision={0.1} emptyIcon={<StarIcon style={{ opacity: 0.55 }} fontSize="inherit" />} />  
                     </div>) ;

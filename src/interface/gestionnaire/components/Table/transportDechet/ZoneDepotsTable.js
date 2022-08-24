@@ -29,7 +29,7 @@ import Api from '../../../../../Global/ComponentsTable/Api';
 export default function ZoneDepotsTable() {
   const initialValue = { adresse:"" ,longitude:"" ,latitude:"", quantite_depot_maximale:"",quantite_depot_actuelle_plastique:"",
   quantite_depot_actuelle_papier:"",quantite_depot_actuelle_composte:"",quantite_depot_actuelle_canette:"",created_at:"", updated_at:"",error_list:[]};    
-  const url = `http://127.0.0.1:8000/api/zone-depot`
+  const url = `${process.env.REACT_APP_API_KEY}/api/zone-depot`
   const columnDefs = [
     { headerName: "ID", field: "id", maxWidth:80, minWidth:50, pinned: 'left' },
     { headerName: "Adresse", field: "adresse", maxWidth:500, minWidth:200},
@@ -43,7 +43,8 @@ export default function ZoneDepotsTable() {
   ]
   return (
     <div style={{width:"100%"}}>
-      <Api tableNameSing='Zone de depots' tableNamePlu='Zones de depots' url={url} initialValue={initialValue} columnDefs={columnDefs} show={show} createUpdate={createUpdate}/>   
+      <Api tableNameSing='Zone de depots' tableNamePlu='Zones de depots' url={url} initialValue={initialValue} 
+       columnDefs={columnDefs} show={show} columnDefsTrash={columnDefs} createUpdate={createUpdate}/>   
     </div>
   );
 }

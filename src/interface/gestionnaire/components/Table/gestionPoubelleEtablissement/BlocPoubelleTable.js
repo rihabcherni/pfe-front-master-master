@@ -14,7 +14,7 @@ import Api from '../../../../../Global/ComponentsTable/Api';
  ]; 
 export default function BlocPoubelleTable() {
   const initialValue = {id:"", etage_etablissement_id: "",error_list:[]};    
-  const url = `http://127.0.0.1:8000/api/bloc-poubelle`
+  const url = `${process.env.REACT_APP_API_KEY}/api/bloc-poubelle`
   const columnDefs = [
     { headerName: "ID", field: "id", maxWidth:80, minWidth:50, pinned: 'left' },
     { headerName: "Etablissement", field: "etablissement", },
@@ -23,7 +23,9 @@ export default function BlocPoubelleTable() {
   ]
   return (
     <div style={{width:"100%"}}>
-      <Api tableNameSing='Bloc poubelle' tableNamePlu='Blocs poubelles'  url={url} initialValue={initialValue} columnDefs={columnDefs} show={show}  createUpdate={createUpdate}/>  
+      <Api tableNameSing='Bloc poubelle' tableNamePlu='Blocs poubelles'  
+        url={url} initialValue={initialValue} columnDefs={columnDefs} columnDefsTrash={columnDefs} 
+        show={show}  createUpdate={createUpdate}/>  
     </div>
   );
 } 

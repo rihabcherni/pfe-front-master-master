@@ -26,7 +26,7 @@ import Api from '../../../../../Global/ComponentsTable/Api';
            ];  
 export default function DepotTable() {
   const initialValue = { zone_depot_id:"", camion_id:"", date_depot:"", quantite_depose_plastique:"", quantite_depose_papier:"", quantite_depose_canette:"", quantite_depose_composte:"",created_at:"", updated_at:"",error_list:[]};    
-  const url = `http://127.0.0.1:8000/api/depot`
+  const url = `${process.env.REACT_APP_API_KEY}/api/depot`
     const columnDefs = [
       { headerName: "ID", field: "id", maxWidth:80, minWidth:50, pinned: 'left' },
       {headerName: 'Détails Camion',  children: [ 
@@ -47,7 +47,8 @@ export default function DepotTable() {
     ]
   return (
     <div style={{width:"100%"}}>
-      <Api tableNameSing='dépot' tableNamePlu='dépots' url={url} initialValue={initialValue} columnDefs={columnDefs} show={show} createUpdate={createUpdate}/>  
+      <Api tableNameSing='dépot' tableNamePlu='dépots' url={url} initialValue={initialValue} 
+      columnDefs={columnDefs} columnDefsTrash={columnDefs} show={show} createUpdate={createUpdate}/>  
     </div>
   );
 }

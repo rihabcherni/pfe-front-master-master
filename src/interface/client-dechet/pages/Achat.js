@@ -15,7 +15,7 @@ export default function Achat() {
   };
   const [produit, setProduit] = useState(null)
   const getData = () => {
-  fetch("http://127.0.0.1:8000/api/dechets", requestOptions)
+  fetch(`${process.env.REACT_APP_API_KEY}/api/dechets`, requestOptions)
     .then(response => response.json())
     .then(result => setProduit(result.data))
     .catch(error => console.log('error', error));
@@ -49,7 +49,7 @@ export default function Achat() {
                             />
                     </Box></li>
                   </div>
-                    <img src={`http://127.0.0.1:8000/storage/images/dechet/${p.photo}`} style={{height:"180px", width:"200px"}}/>
+                    <img src={`${process.env.REACT_APP_API_KEY}/storage/images/dechet/${p.photo}`} style={{height:"180px", width:"200px"}}/>
                     <div style={{height:"130px"}}>
                         {p.pourcentage_remise!==0 ?
                             <>

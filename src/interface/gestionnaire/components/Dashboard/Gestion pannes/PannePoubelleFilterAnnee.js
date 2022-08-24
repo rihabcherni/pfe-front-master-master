@@ -51,11 +51,11 @@ export default function PannePoubelleFilterAnnee() {
                     </Tabs>
                 </Box>
                 <TabPanel value={value} index={0} >
-                  <ChartPanne url='http://127.0.0.1:8000/api/pannes-poubelle-mois' labelNbr='Nombre panne poubelle'
+                  <ChartPanne url={process.env.REACT_APP_API_KEY+"/api/pannes-poubelle-mois"} labelNbr='Nombre panne poubelle'
                    labelCout='Cout panne poubelle' titre="Nombre des pannes totales par mois/année"/>                   
                 </TabPanel>
                 <TabPanel value={value} index={1}>
-                    <div style={{ padding:"20px" }}><TableStatPanne url="http://127.0.0.1:8000/api/pannes-poubelle-annee"/></div>
+                    <div style={{ padding:"20px" }}><TableStatPanne url={process.env.REACT_APP_API_KEY+"/api/pannes-poubelle-annee"}/></div>
                 </TabPanel>
               </Box>
     </div>

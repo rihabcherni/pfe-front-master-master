@@ -24,7 +24,7 @@ const CardStatistique =( {data , nom ,icon})=>{
  )
 }
 export default function GlobalStatistiques() {
-    const dashboardURL = 'http://127.0.0.1:8000/api/dashboard'
+    const dashboardURL = `${process.env.REACT_APP_API_KEY}/api/dashboard`
     const [data, setData] = useState([])
     useEffect(() => {
         ;(async function getStatus() {

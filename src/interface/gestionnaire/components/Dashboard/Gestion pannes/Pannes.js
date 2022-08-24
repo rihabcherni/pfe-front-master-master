@@ -49,7 +49,7 @@ export  function Right({tableData ,type}){
   {(type==="camion")?
     <>
       <TabPanel value={value1} index={0}>
-          <ChartPanne url='http://127.0.0.1:8000/api/pannes-camion-mois' labelNbr='Nombre panne camion' labelCout='Cout panne camion' titre="nombre pannes totales par mois/année"/>         
+          <ChartPanne url={process.env.REACT_APP_API_KEY+"/api/pannes-camion-mois"} labelNbr='Nombre panne camion' labelCout='Cout panne camion' titre="nombre pannes totales par mois/année"/>         
       </TabPanel>
       <TabPanel value={value1} index={1}>
         <StyledTypography> Filtrage des pannes camions selon durée et cout :</StyledTypography>
@@ -61,7 +61,7 @@ export  function Right({tableData ,type}){
     </>:
     <>
         <TabPanel value={value1} index={0}>
-            <ChartPanne url='http://127.0.0.1:8000/api/pannes-poubelle-mois' labelNbr='Nombre panne poubelle' labelCout='Cout panne poubelle' titre="nombre pannes totales par mois/année"/>         
+            <ChartPanne url={process.env.REACT_APP_API_KEY+"/api/pannes-poubelle-mois"} labelNbr='Nombre panne poubelle' labelCout='Cout panne poubelle' titre="nombre pannes totales par mois/année"/>         
         </TabPanel>
         <TabPanel value={value1} index={1}>
             <StyledTypography> Filtrage des pannes poubelles selon durée et cout :</StyledTypography>
@@ -79,7 +79,7 @@ export default function Pannes() {
   const handleChange = (event, newValue) => { setValue(newValue); };
   var requestOptions = { method: 'GET',redirect: 'follow'};
   const [tableData, setTableData] = useState(null)
-  const getData = () => { fetch("http://127.0.0.1:8000/api/pannes-dashboard", requestOptions)
+  const getData = () => { fetch(`${process.env.REACT_APP_API_KEY}/api/pannes-dashboard`, requestOptions)
     .then(response => response.json()).then(result => setTableData(result)).catch(error => console.log('error', error))}
   useEffect(() => {getData()}, [])
   if(tableData!==null){

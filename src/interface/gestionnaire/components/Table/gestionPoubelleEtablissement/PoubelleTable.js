@@ -61,7 +61,7 @@ const show=[ ["ID","id"],
  ];
 export default function PoubelleTable() {
   const initialValue = { bloc_poubelle_id:"", nom:"",qrcode:"", type:"",Etat:"",created_at:"", updated_at:"",error_list:[]}
-  const url = `http://127.0.0.1:8000/api/poubelle`
+  const url = `${process.env.REACT_APP_API_KEY}/api/poubelle`
   const columnDefs = [
     { headerName: "ID", field: "id", maxWidth:90, minWidth:60, pinned: 'left'},
     { headerName: "Nom", field: "nom" , maxWidth:200, minWidth:170},
@@ -72,7 +72,9 @@ export default function PoubelleTable() {
   ]
   return (
     <div style={{width:"100%"}}>
-      <Api tableNameSing='poubelle' tableNamePlu='poubelles' url={url} initialValue={initialValue} columnDefs={columnDefs} show={show} createUpdate={createUpdate}/>  
+      <Api tableNameSing='poubelle' tableNamePlu='poubelles' 
+      url={url} initialValue={initialValue} columnDefs={columnDefs} columnDefsTrash={columnDefs} 
+      show={show} createUpdate={createUpdate}/>  
     </div>
   );
 }        

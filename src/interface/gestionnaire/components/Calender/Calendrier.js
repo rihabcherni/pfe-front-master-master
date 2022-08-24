@@ -100,7 +100,7 @@ const ButtonsWrapper = styled('div')`
   justify-content: flex-end;
 `;
 
-const url = "http://127.0.0.1:8000/api";
+const url = `${process.env.REACT_APP_API_KEY}/api`;
 const totalDays = 42;
 const defaultEvent = {
   title: '',

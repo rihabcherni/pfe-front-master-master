@@ -5,7 +5,7 @@ export default function BlocPoubelle({etablissement_id, bloc_etablissement_id, e
     useEffect(() => {
         if( etablissement_id !== undefined && bloc_etablissement_id !== undefined && etage_etablissement_id !== undefined){
             ;(async function getStatus() {
-                const response =await fetch(`http://127.0.0.1:8000/api/bloc-poubelle-liste/${etablissement_id}/${bloc_etablissement_id}/${etage_etablissement_id}`,requestOptionsetab)
+                const response =await fetch(`${process.env.REACT_APP_API_KEY}/api/bloc-poubelle-liste/${etablissement_id}/${bloc_etablissement_id}/${etage_etablissement_id}`,requestOptionsetab)
                 const json = await response.json()
                 setBlocPoubelle(json)            
                 setTimeout(getStatus, 100000)

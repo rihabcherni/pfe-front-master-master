@@ -41,7 +41,7 @@ import Api from '../../../../../Global/ComponentsTable/Api';
 export default function EtablissementTable() {
   const initialValue = { zone_travail_id:"",nom_etablissement:"", nbr_personnes:"",adresse:"",longitude:"",latitude:""
  ,quantite_dechets_plastique:"",quantite_dechets_composte:"",quantite_dechets_papier:"",quantite_dechets_canette:"",created_at:"", updated_at:"",error_list:[]};    
-  const url = `http://127.0.0.1:8000/api/etablissement`
+  const url = `${process.env.REACT_APP_API_KEY}/api/etablissement`
   const columnDefs = [
     { headerName: "ID", field: "id", maxWidth:80, minWidth:50, pinned: 'left'},
     { headerName: "zone travail", field: "region", maxWidth: 200, minWidth:160 },
@@ -57,7 +57,9 @@ export default function EtablissementTable() {
   ]
   return (
     <div style={{width:"100%"}}>
-      <Api tableNameSing='établissement' tableNamePlu='établissements'  url={url} initialValue={initialValue} columnDefs={columnDefs} show={show} createUpdate={createUpdate}/> 
+      <Api tableNameSing='établissement' tableNamePlu='établissements'  
+       url={url} initialValue={initialValue} columnDefs={columnDefs} columnDefsTrash={columnDefs} 
+       show={show} createUpdate={createUpdate}/> 
     </div>
   );
 }

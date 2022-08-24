@@ -58,7 +58,7 @@ const createUpdate=[
 ];
 export default function PoubelleTable() {
   const initialValue = { bloc_poubelle_id:"", nom:"",qrcode:"", type:"",Etat:"",created_at:"", updated_at:"",error_list:[]}
-  const url = `http://127.0.0.1:8000/api/auth-responsable-etablissement/poubelle-responsable`
+  const url = `${process.env.REACT_APP_API_KEY}/api/auth-responsable-etablissement/poubelle-responsable`
   const columnDefs = [
     { headerName: "ID", field: "id", maxWidth:80, minWidth:50, pinned: 'left' },
     { headerName: "Bloc etablissement", field: "nom_bloc", maxWidth:300, minWidth:100},

@@ -14,7 +14,7 @@ import Api from '../../../../../Global/ComponentsTable/Api';
            ]; 
 export default function BlocEtablissementTable() {
   const initialValue = {etablissement_id:"", nom_bloc_etablissement: "",error_list:[]};    
-  const url = `http://127.0.0.1:8000/api/auth-responsable-etablissement/bloc-etablissement-responsable`
+  const url = `${process.env.REACT_APP_API_KEY}/api/auth-responsable-etablissement/bloc-etablissement-responsable`
   const columnDefs = [
     { headerName: "ID", field: "id", maxWidth:80, minWidth:50, pinned: 'left' },
     { headerName: "bloc etablissement", field: "nom_bloc_etablissement", },

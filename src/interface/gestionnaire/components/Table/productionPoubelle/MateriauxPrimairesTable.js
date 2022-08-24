@@ -21,7 +21,7 @@ import Api from '../../../../../Global/ComponentsTable/Api';
            ];    
 export default function MateriauxPrimairesTable() {
   const initialValue = { id_fournisseur: "", nom_materiel: "",prix_unitaire: "", quantite: "",prix_total:"",error_list:[]};    
-  const url = `http://127.0.0.1:8000/api/materiaux-primaires`
+  const url = `${process.env.REACT_APP_API_KEY}/api/materiaux-primaires`
   const columnDefs = [
     { headerName: "ID", field: "id", maxWidth:80, minWidth:50, pinned: 'left' },
     {headerName: 'Détails materiaux',  children: [  { headerName: "Nom materiel", field: "nom_materiel", maxWidth:200, minWidth:135},
@@ -36,7 +36,9 @@ export default function MateriauxPrimairesTable() {
   
   return (
     <div style={{width:"100%"}}>
-      <Api tableNameSing='materiau primaire' tableNamePlu='materiaux primaires' url={url} initialValue={initialValue} columnDefs={columnDefs} show={show} createUpdate={createUpdate}/>  
+      <Api tableNameSing='materiau primaire' tableNamePlu='materiaux primaires' 
+      url={url} initialValue={initialValue} columnDefs={columnDefs} columnDefsTrash={columnDefs} 
+      show={show} createUpdate={createUpdate}/>  
     </div>
   );
 }

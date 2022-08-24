@@ -10,7 +10,7 @@ const TotalDechetCollectéMois = () => {
     const [quantitemois, setQuantiteMois] = useState([])
     useEffect(() => {
         ;(async function getStatus() {
-        const response = await fetch('http://127.0.0.1:8000/api/somme-dechets-depot-par-mois')
+        const response = await fetch(`${process.env.REACT_APP_API_KEY}/api/somme-dechets-depot-par-mois`)
         const json = await response.json()
         setTimeout(getStatus, 60000)
         setQuantiteMois(json)

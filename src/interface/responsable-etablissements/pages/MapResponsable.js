@@ -60,7 +60,7 @@ var requestOptions = {
   headers: myHeaders,
 };
   useEffect(() => {
-  fetch("http://127.0.0.1:8000/api/auth-responsable-etablissement/responsable-map", requestOptions)
+  fetch(`${process.env.REACT_APP_API_KEY}/api/auth-responsable-etablissement/responsable-map`, requestOptions)
   .then((e) => {return e.json();}).then((data) => { setEtablissement(data.etablissement);setCamion(data.camion);  setZoneDepot(data.zone_depot); });
   },[])
 

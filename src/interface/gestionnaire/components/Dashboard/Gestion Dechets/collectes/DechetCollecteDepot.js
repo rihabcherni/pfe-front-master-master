@@ -4,7 +4,7 @@ import Card from '@mui/material/Card'
 import Typography from '@mui/material/Typography'
 import {StyledTypography} from '../../../../../../style'
 
-const DechetsURL = 'http://127.0.0.1:8000/api/internaute/quantite-dechete-totale-collecte'
+const DechetsURL = `${process.env.REACT_APP_API_KEY}/api/internaute/quantite-dechete-totale-collecte`
 
 export default function DechetCollecteDepot() {
     const [dechets, setDechets] = useState([])

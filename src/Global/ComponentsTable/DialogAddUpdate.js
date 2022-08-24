@@ -42,7 +42,7 @@ export default function DialogAddUpdate({tableName,open,handleClose,data,onChang
  const [etab, setEtab] = useState([])
   useEffect(() => {
     ;(async function getStatus() {
-      const response = await fetch(`http://127.0.0.1:8000/api/EtablissementListe`,requestOptionsetab)
+      const response = await fetch(`${process.env.REACT_APP_API_KEY}/api/EtablissementListe`,requestOptionsetab)
       const json = await response.json()
       setEtab(json)            
       setTimeout(getStatus, 1000)

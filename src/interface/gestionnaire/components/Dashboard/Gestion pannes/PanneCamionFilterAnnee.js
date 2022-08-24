@@ -51,11 +51,11 @@ export default function PanneCamionFilterAnnee() {
                     </Tabs>
                 </Box>
                 <TabPanel value={value} index={0} >
-                    <ChartPanne url='http://127.0.0.1:8000/api/pannes-camion-mois' labelNbr='Nombre panne camion'
+                    <ChartPanne url={process.env.REACT_APP_API_KEY+"/api/pannes-camion-mois"} labelNbr='Nombre panne camion'
                       labelCout='Cout panne camion' titre="Nombre des pannes totales par mois/année"/>                   
                 </TabPanel>
                 <TabPanel value={value} index={1}>
-                    <div style={{ padding:"20px" }}><TableStatPanne url="http://127.0.0.1:8000/api/pannes-camion-annee"/></div>
+                    <div style={{ padding:"20px" }}><TableStatPanne url={process.env.REACT_APP_API_KEY+"/api/pannes-camion-annee"}/></div>
                 </TabPanel>
               </Box>
     </div>

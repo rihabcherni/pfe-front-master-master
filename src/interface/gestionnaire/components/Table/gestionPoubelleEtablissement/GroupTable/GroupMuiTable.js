@@ -61,7 +61,7 @@ const ProgressDone = styled.div`
 
 export default function GroupMuiTable() {
     const [tableZone, setTableZone] =  useState([]);
-    const url = `http://127.0.0.1:8000/api/region-map`
+    const url = `${process.env.REACT_APP_API_KEY}/api/region-map`
     useEffect(() => {
         getData()
     }, [])

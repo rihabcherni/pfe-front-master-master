@@ -44,7 +44,7 @@ export default function Statistique() {
   };
   const [tableData, setTableData] = useState(null)
   const getData = () => {
-      fetch("http://127.0.0.1:8000/api/internaute/dashborad", requestOptions)
+      fetch(`${process.env.REACT_APP_API_KEY}/api/internaute/dashborad`, requestOptions)
       .then(response => response.json())
       .then(result => setTableData(result))
       .catch(error => console.log('error', error));

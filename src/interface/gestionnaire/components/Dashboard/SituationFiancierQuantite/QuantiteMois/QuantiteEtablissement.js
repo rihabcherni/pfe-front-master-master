@@ -13,7 +13,7 @@ const QuantiteEtablissement = ({etab0 , annee0}) => {
   useEffect(() => {
     if(etab0!== null){
       ;(async function getStatus() {
-          const response = await fetch(`http://127.0.0.1:8000/api/gest-quantite-collecte-etablissement-mois/${etab0}`,requestOptions)
+          const response = await fetch(`${process.env.REACT_APP_API_KEY}/api/gest-quantite-collecte-etablissement-mois/${etab0}`,requestOptions)
           const json = await response.json()
           setQuantiteMois(json)            
       })()

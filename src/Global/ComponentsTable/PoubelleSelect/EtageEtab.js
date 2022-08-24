@@ -5,7 +5,7 @@ export default function EtageEtab({etablissement_id, bloc_etablissement_id, data
     useEffect(() => {
         if( etablissement_id !== undefined && bloc_etablissement_id !== undefined){
             ;(async function getStatus() {
-                const response =await fetch(`http://127.0.0.1:8000/api/etage-etablissement-liste/${etablissement_id}/${bloc_etablissement_id}`,requestOptionsetab)
+                const response =await fetch(`${process.env.REACT_APP_API_KEY}/api/etage-etablissement-liste/${etablissement_id}/${bloc_etablissement_id}`,requestOptionsetab)
                 const json = await response.json()
                 setEtage(json)            
                 setTimeout(getStatus, 100000)

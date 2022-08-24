@@ -24,12 +24,23 @@ const show=[
    ];
 export default function ResponsableCommercialTable() {
     const initialValue = {photo:"",nom: "", prenom: "",CIN:"", numero_telephone: "", email: "",created_at:"", updated_at:"", error_list:[]};
-    const url = `http://127.0.0.1:8000/api/responsable-commercial`
+    const url = `${process.env.REACT_APP_API_KEY}/api/responsable-commercial`
   const columnDefs = [
     { headerName: "ID", field: "id", maxWidth:80, minWidth:50, pinned: 'left' },
     { headerName: "Photo", field: "photo", maxWidth:100, minWidth:100, cellRenderer: (params) =>
       <img  style={{height:"50px",marginLeft:"5px", width:"50px", borderRadius:"50%"}} 
-          src={`http://127.0.0.1:8000/storage/images/responsable_commercial/${params.data.photo}`} alt="responsable commercial" />},
+          src={`${process.env.REACT_APP_API_KEY}/storage/images/responsable_commercial/${params.data.photo}`} alt="responsable commercial" />},
+    { headerName: "Nom", field: "nom", maxWidth: 200 , minWidth:120},
+    { headerName: "Prénom", field: "prenom", maxWidth: 200 , minWidth:120},
+    { headerName: "CIN", field: "CIN", maxWidth: 200 , minWidth:120},
+    { headerName: "Numéro télèphone", field: "numero_telephone", maxWidth: 200 , minWidth:160},
+    { headerName: "E-mail", field: "email", maxWidth: 300 , minWidth:210},
+  ]
+  const columnDefsTrash = [
+    { headerName: "ID", field: "id", maxWidth:80, minWidth:50, pinned: 'left' },
+    { headerName: "Photo", field: "photo", maxWidth:100, minWidth:100, cellRenderer: (params) =>
+      <img  style={{height:"50px",marginLeft:"5px", width:"50px", borderRadius:"50%"}} 
+          src={`${process.env.REACT_APP_API_KEY}/storage/trashImages/responsable_commercial/${params.data.photo}`} alt="responsable commercial" />},
     { headerName: "Nom", field: "nom", maxWidth: 200 , minWidth:120},
     { headerName: "Prénom", field: "prenom", maxWidth: 200 , minWidth:120},
     { headerName: "CIN", field: "CIN", maxWidth: 200 , minWidth:120},
@@ -38,7 +49,9 @@ export default function ResponsableCommercialTable() {
   ]
   return (
     <div style={{width:"100%"}}>
-        <Api tableNameSing='Responsable commercial' tableNamePlu='Responsables commercial' url={url} initialValue={initialValue} columnDefs={columnDefs} show={show} createUpdate={createUpdate}/> 
+        <Api tableNameSing='Responsable commercial' tableNamePlu='Responsables commercial' url={url} 
+        initialValue={initialValue} columnDefs={columnDefs} columnDefsTrash={columnDefsTrash} 
+        show={show} createUpdate={createUpdate}/> 
     </div>
   );
 }

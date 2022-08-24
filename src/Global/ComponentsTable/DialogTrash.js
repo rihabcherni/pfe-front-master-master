@@ -116,7 +116,6 @@ export default function DialogTrash({tableNamePlu,handleClickOpenTrash,handleClo
     
       }, [])
       console.log(data)  
-      console.log(`${url}s/liste-suppression`)  
       return (
     <div>
       <BootstrapDialog onClose={handleClose} aria-labelledby="alert-dialog-title" maxWidth='md'
@@ -153,18 +152,3 @@ export default function DialogTrash({tableNamePlu,handleClickOpenTrash,handleClo
     </div>
   );
 }   
-
-
-
-
-
-
-
-
-
-
-
-{/* {url}<br/>
-             {url+`/suppression-definitif/{id} `}  <br/>
-             {url+`/annuler-suppression-total `} <br/>
-         */}

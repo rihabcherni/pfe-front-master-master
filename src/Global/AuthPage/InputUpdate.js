@@ -26,7 +26,7 @@ export default function InputUpdate() {
     const [validation, setValidation] = useState([])
     const [data, setData] = useState(initialValue)
     const handleFormSubmit= (e) =>  {
-              fetch("http://127.0.0.1:8000/api/modifier-profile", {
+              fetch(`${process.env.REACT_APP_API_KEY}/api/modifier-profile`, {
                 method: "post", 
                 body: JSON.stringify(data), 
                 headers: {

@@ -41,28 +41,28 @@ export default function MapGestionnaire() {
   const [showUniqueCamion, setShowUniqueCamion] = useState(null);
   const [showUniqueZoneDepot, setShowUniqueZoneDepot] = useState(null);
   useEffect(() => {
-    fetch("http://127.0.0.1:8000/api/google-map").then((e) => {return e.json();}).then((data) => { setEtablissements(data);  });
-    fetch("http://127.0.0.1:8000/api/google-map-camion").then((e) => { return e.json(); }).then((data) => {setCamions(data);});
-    fetch("http://127.0.0.1:8000/api/zone-depot").then((e) => { return e.json();}).then((data) => {setZoneDepots(data.data); });
+    fetch(`${process.env.REACT_APP_API_KEY}/api/google-map`).then((e) => {return e.json();}).then((data) => { setEtablissements(data);  });
+    fetch(`${process.env.REACT_APP_API_KEY}/api/google-map-camion`).then((e) => { return e.json(); }).then((data) => {setCamions(data);});
+    fetch(`${process.env.REACT_APP_API_KEY}/api/zone-depot`).then((e) => { return e.json();}).then((data) => {setZoneDepots(data.data); });
   },[])
     const [activeMarkerEtablissement, setActiveMarkerEtablissement] = useState(null);
     async function handleActiveMarkerEtablissement  (marker) {
       if (marker === activeMarkerEtablissement) { return;}
       setActiveMarkerEtablissement(marker);
       if(marker!==null){
-      await fetch(`http://127.0.0.1:8000/api/google-map/${marker+1}`).then((e) => { return e.json()}).then((data) => { setUniqueEtablissements(data)})}
+      await fetch(`${process.env.REACT_APP_API_KEY}/api/google-map/${marker+1}`).then((e) => { return e.json()}).then((data) => { setUniqueEtablissements(data)})}
     };
     const [activeMarkerCamion, setActiveMarkerCamion] = useState(null);
     async function handleActiveMarkerCamion  (marker) {
       if (marker === activeMarkerCamion){ return;}
       setActiveMarkerCamion(marker);
-      if(marker!==null){await fetch(`http://127.0.0.1:8000/api/google-map-camion/${marker}`).then((e)=>{return e.json()}).then((data)=>{setUniqueCamions(data)})}
+      if(marker!==null){await fetch(`${process.env.REACT_APP_API_KEY}/api/google-map-camion/${marker}`).then((e)=>{return e.json()}).then((data)=>{setUniqueCamions(data)})}
     };
     const [activeMarkerZoneDepot, setActiveMarkerZoneDepot] = useState(null);
     async function handleActiveMarkerZoneDepot  (marker) {
       if (marker === activeMarkerZoneDepot) { return;}
       setActiveMarkerZoneDepot(marker);
-      if(marker!==null){ await fetch(`http://127.0.0.1:8000/api/zone-depot/${marker}`).then((e)=>{ return e.json()}).then((data)=>{setUniqueZoneDepot(data.data)})}
+      if(marker!==null){ await fetch(`${process.env.REACT_APP_API_KEY}/api/zone-depot/${marker}`).then((e)=>{ return e.json()}).then((data)=>{setUniqueZoneDepot(data.data)})}
     };
   if (!isLoaded) return <div><Skeleton sx={{ height:500 }} animation="wave" variant="rectangular" /></div>;
   return (
@@ -148,7 +148,7 @@ export default function MapGestionnaire() {
                       <Col>
                         <div className="card-template card-template-1">
                           <div className="left-part">
-                                    <img src={`http://127.0.0.1:8000/storage/images/ouvrier/${uniqueEtablissements[5].photo}`}  alt="Avatar"/>
+                                    <img src={`${process.env.REACT_APP_API_KEY}/storage/images/ouvrier/${uniqueEtablissements[5].photo}`}  alt="Avatar"/>
                                 </div>
                                 <div className="right-part">
                                     <h3 style={{textAlign:'center'}}><i>{uniqueEtablissements[5].nom +" " + uniqueEtablissements[5].prenom}</i></h3>
@@ -425,7 +425,7 @@ export default function MapGestionnaire() {
                   <Col>
                       <div className="card-template card-template-1">
                           <div className="left-part">
-                                    <img src={`http://127.0.0.1:8000/storage/images/ouvrier/${ouvrier.photo}`}  alt="Avatar"/>
+                                    <img src={`${process.env.REACT_APP_API_KEY}/storage/images/ouvrier/${ouvrier.photo}`}  alt="Avatar"/>
                                     <h3> <i>{ouvrier.poste}</i></h3>    
                                 </div>
                                 <div className="right-part">

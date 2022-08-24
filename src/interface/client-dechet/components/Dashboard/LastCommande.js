@@ -42,7 +42,7 @@ export default function LastCommande() {
     redirect: 'follow'
   };
   const getData = () => {
-    fetch("http://127.0.0.1:8000/api/auth-client-dechet/commande-client", requestOptions)
+    fetch(`${process.env.REACT_APP_API_KEY}/api/auth-client-dechet/commande-client`, requestOptions)
       .then(response => response.json())
       .then(result => setData(result))
       .catch(error => console.log('error', error));

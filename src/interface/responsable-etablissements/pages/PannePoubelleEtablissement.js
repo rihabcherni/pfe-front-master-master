@@ -41,7 +41,7 @@ export default function PannePoubelleEtablissement() {
     };
     const [panne, setPanne] = useState(null)
     const getData = () => {
-      fetch("http://127.0.0.1:8000/api/auth-responsable-etablissement/panne-etablissement-poubelle-responsable", requestOptions)
+      fetch(`${process.env.REACT_APP_API_KEY}/api/auth-responsable-etablissement/panne-etablissement-poubelle-responsable`, requestOptions)
       .then(response => response.json())
       .then(result => setPanne(result))
       .catch(error => console.log('error', error));
@@ -73,7 +73,7 @@ export default function PannePoubelleEtablissement() {
         {panne.map((row) => (
           <StyledTableRow key={row.id}>
             <StyledTableCell align="center">{row.id}</StyledTableCell>
-            <StyledTableCell align="center"><img src={`http://127.0.0.1:8000/storage/images/pannePoubelle/${row.image_panne_poubelle}`} style={{height:"100px", width:"100px"}}/>
+            <StyledTableCell align="center"><img src={`${process.env.REACT_APP_API_KEY}/storage/images/pannePoubelle/${row.image_panne_poubelle}`} style={{height:"100px", width:"100px"}}/>
             </StyledTableCell>
             <StyledTableCell align="center">poubelle {row.poubelle_id}</StyledTableCell>
             <StyledTableCell align="center">poubelle {row.reparateur_poubelle_id}</StyledTableCell>

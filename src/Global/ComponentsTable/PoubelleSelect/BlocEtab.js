@@ -7,7 +7,7 @@ export default function BlocEtab({etablissement_id, data,onChange}) {
     useEffect(() => {
         if(etablissement_id !== undefined){
             ;(async function getStatus() {
-                const response =await fetch(`http://127.0.0.1:8000/api/bloc-etablissement-liste/${etablissement_id}`,requestOptionsetab)
+                const response =await fetch(`${process.env.REACT_APP_API_KEY}/api/bloc-etablissement-liste/${etablissement_id}`,requestOptionsetab)
                 const json = await response.json()
                 setBlocEtab(json)            
                 setTimeout(getStatus, 100000)

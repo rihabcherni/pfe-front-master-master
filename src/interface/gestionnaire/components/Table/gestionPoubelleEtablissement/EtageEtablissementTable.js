@@ -15,7 +15,7 @@ import Api from '../../../../../Global/ComponentsTable/Api';
            ];     
 export default function EtageEtablissementTable() {
   const initialValue = {quantite_disponible_plastique: "", quantite_disponible_canette: "",quantite_disponible_composte: "", quantite_disponible_papier: "",error_list:[]};    
-  const url = `http://127.0.0.1:8000/api/etage-etablissement`
+  const url = `${process.env.REACT_APP_API_KEY}/api/etage-etablissement`
   const columnDefs = [
     { headerName: "ID", field: "id", maxWidth:80, minWidth:50, pinned: 'left' },
     { headerName: "Etage établissement", field: "nom_etage_etablissement", cellStyle:{backgroundColor:"#f4f0ec", fontSize:"14px", textAlign:"center"}},
@@ -24,7 +24,9 @@ export default function EtageEtablissementTable() {
   ]
   return (
     <div style={{width:"100%"}}>
-      <Api tableNameSing='étage établissement' tableNamePlu='étages établissements' url={url} initialValue={initialValue} columnDefs={columnDefs} show={show} createUpdate={createUpdate}/> 
+      <Api tableNameSing='étage établissement' tableNamePlu='étages établissements' 
+      url={url} initialValue={initialValue} columnDefs={columnDefs} columnDefsTrash={columnDefs} 
+      show={show} createUpdate={createUpdate}/> 
     </div>
   );
 }

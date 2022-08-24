@@ -14,7 +14,7 @@ import Swal from 'sweetalert';
 import RestoreFromTrashIcon from '@mui/icons-material/RestoreFromTrash';
 import PictureAsPdfIcon from '@mui/icons-material/PictureAsPdf';
 import DialogTrash from './DialogTrash';
-export default function Api({tableNameSing, tableNamePlu,initialValue, url, columnDefs, show, createUpdate}) {
+export default function Api({tableNameSing, tableNamePlu,initialValue, url, columnDefs,columnDefsTrash, show, createUpdate}) {
   const [tableData, setTableData] = useState(null)
   const [open, setOpen] =useState(false);
   const [openShow, setOpenShow] =useState(false);
@@ -221,7 +221,7 @@ export default function Api({tableNameSing, tableNamePlu,initialValue, url, colu
             </div>
           })
 
-        tableColumnTrash= columnDefs.concat(
+        tableColumnTrash= columnDefsTrash.concat(
             { headerName: "Crée le", field: "created_at", type: ['dateColumn', 'nonEditableColumn'], maxWidth: 200, minWidth:180 },
             { headerName: "modifié le", field: "updated_at", type: ['dateColumn', 'nonEditableColumn'], maxWidth: 200, minWidth:180  },
             { headerName: "supprimé le", field: "deleted_at", type: ['dateColumn', 'nonEditableColumn'], maxWidth: 200, minWidth:180  },

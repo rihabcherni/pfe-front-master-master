@@ -15,7 +15,7 @@ import Api from '../../../../../Global/ComponentsTable/Api';
            ];   
 export default function BlocEtablissementTable() {
   const initialValue = {etablissement_id:"", nom_bloc_etablissement: "",error_list:[]};    
-  const url = `http://127.0.0.1:8000/api/bloc-etablissement`
+  const url = `${process.env.REACT_APP_API_KEY}/api/bloc-etablissement`
   const columnDefs = [
     { headerName: "ID", field: "id", maxWidth:80, minWidth:50, pinned: 'left' },
     { headerName: "Bloc etablissement", field: "nom_bloc_etablissement", cellStyle:{backgroundColor:"#f4f0ec", fontSize:"14px"} },
@@ -23,7 +23,9 @@ export default function BlocEtablissementTable() {
   ]
   return (
     <div style={{width:"100%"}}>
-      <Api tableNameSing='Bloc établissement' tableNamePlu='Blocs établissements'  url={url} initialValue={initialValue} columnDefs={columnDefs} show={show} createUpdate={createUpdate}/>
+      <Api tableNameSing='Bloc établissement' tableNamePlu='Blocs établissements'  
+      url={url} initialValue={initialValue} columnDefs={columnDefs} columnDefsTrash={columnDefs} 
+      show={show} createUpdate={createUpdate}/>
     </div>
   );
 }

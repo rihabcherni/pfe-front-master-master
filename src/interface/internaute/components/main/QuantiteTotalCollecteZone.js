@@ -32,7 +32,7 @@ export default function QuantiteTotaleCollecteZone  () {
         }
       });
     }
-    const getData = () => {fetch("http://127.0.0.1:8000/api/internaute/quantite-dechete-totale-collecte", requestOptions)
+    const getData = () => {fetch(`${process.env.REACT_APP_API_KEY}/api/internaute/quantite-dechete-totale-collecte`, requestOptions)
       .then(response => response.json()).then(result => setTableData(result)).catch(error => console.log('error', error));
     }  
     useEffect(() => { 

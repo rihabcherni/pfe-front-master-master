@@ -14,7 +14,7 @@ import Api from '../../../../../Global/ComponentsTable/Api';
            ];
 export default function EtageEtablissementTable() {
   const initialValue = {bloc_etablissement_id:"", nom_etage_etablissement: "",error_list:[]};    
-  const url = `http://127.0.0.1:8000/api/auth-responsable-etablissement/etage-etablissement-responsable`
+  const url = `${process.env.REACT_APP_API_KEY}/api/auth-responsable-etablissement/etage-etablissement-responsable`
   const columnDefs = [
     { headerName: "ID", field: "id", maxWidth:80, minWidth:50, pinned: 'left' },
     { headerName: "Bloc etablissement", field: "nom_bloc", },

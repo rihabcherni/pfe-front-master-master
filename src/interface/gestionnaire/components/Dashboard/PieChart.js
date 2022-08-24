@@ -8,7 +8,7 @@ const Piechart = () => {
     const [zones, setZones] = useState([])
     useEffect(() => {
         ;(async function getStatus() {
-        const response = await fetch('http://127.0.0.1:8000/api/zone-travail')
+        const response = await fetch(`${process.env.REACT_APP_API_KEY}/api/zone-travail`)
         const json = await response.json()
         setTimeout(getStatus, 60000)
         setZones(json.data)

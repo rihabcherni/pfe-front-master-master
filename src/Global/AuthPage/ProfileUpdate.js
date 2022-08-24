@@ -34,7 +34,7 @@ export default function ProfileUpdate() {
     formdata.append("photo", e.target.files[0], e.target.files[0].name);
     var requestOptions = {  method: 'POST', headers: myHeaders, body: formdata,};
   
-    fetch("http://127.0.0.1:8000/api/modifier-photo", requestOptions)
+    fetch(`${process.env.REACT_APP_API_KEY}/api/modifier-photo`, requestOptions)
       .then(response => response.json()).then(result =>     
         {  window.location.reload();
           Swal('Success',result.message,"success")
@@ -42,7 +42,7 @@ export default function ProfileUpdate() {
 
   useEffect(() => {
     ;(async function getStatus() {
-       await fetch("http://127.0.0.1:8000/api/profile", requestOptions)
+       await fetch(`${process.env.REACT_APP_API_KEY}/api/profile`, requestOptions)
       .then(response => response.json()).then(result => {  setProfile(result)})
       .catch(error => console.log('error', error));
       })() }, [])
@@ -61,7 +61,7 @@ export default function ProfileUpdate() {
                   </div>               
                   <div className="avatar-preview">
                     {profileImg!==null ? 
-                      <img src={`http://127.0.0.1:8000/storage/images/${user}/${profile.photo}`} className="img" alt="Avatar"/> :
+                      <img src={`${process.env.REACT_APP_API_KEY}/storage/images/${user}/${profile.photo}`} className="img" alt="Avatar"/> :
                       <img src={profileImg} alt="" id="img" className="img" />}       
                   </div>
               </div>        

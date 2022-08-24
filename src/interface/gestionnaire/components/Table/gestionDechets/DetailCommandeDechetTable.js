@@ -18,7 +18,7 @@ import Api from '../../../../../Global/ComponentsTable/Api';
        ];   
 export default function DetailCommandeDechetTable() {
     const initialValue = { commande_dechet_id:"", dechet_id:"", quantite:"",created_at:"", updated_at:"",error_list:[]};    
-    const url = `http://127.0.0.1:8000/api/detail-commande-dechets` 
+    const url = `${process.env.REACT_APP_API_KEY}/api/detail-commande-dechets` 
     const columnDefs = [
       { headerName: "ID", field: "id", maxWidth:80, minWidth:50, pinned: 'left' },
       { headerName: "N° commande ", field: "commande_dechet_id", maxWidth: 200 , minWidth:150},
@@ -29,7 +29,9 @@ export default function DetailCommandeDechetTable() {
     ]  
     return (
         <div style={{width:"100%"}}>
-              <Api tableNameSing='Détails commande déchets' tableNamePlu='Détails commandes déchets' url={url} initialValue={initialValue} columnDefs={columnDefs} show={show} createUpdate={createUpdate}/> 
+              <Api tableNameSing='Détails commande déchets' tableNamePlu='Détails commandes déchets' url={url} 
+              initialValue={initialValue} columnDefs={columnDefs}  columnDefsTrash={columnDefs}
+              show={show} createUpdate={createUpdate}/> 
         </div>
     );
   }

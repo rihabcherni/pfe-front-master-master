@@ -3,8 +3,6 @@ import { Grid,Paper, Avatar, TextField, Button, Typography,Link,FormControl,Form
 import LockOutlinedIcon from '@mui/icons-material/LockOutlined';
 import LockIcon from '@mui/icons-material/Lock';
 import styled from 'styled-components'
-import LogoImage from '../../../Global/images/reschool-blanc.png'
-
 const paperStyle={
   padding :40,height:400,width:400, margin:"10% auto"
 }
@@ -15,16 +13,6 @@ const btnstyle={
   backgroundColor:'#21BA45',
   margin:'8px 0'
 }
-const Logo= styled.div`
-  // padding-top: 30px;  
-  padding-left: 40px;  
-  font-size: 20px;
-  font-weight: bold;
-  font-family: berlin;
-  color: #21BA45;
-  weight: 10%;
-  height: 10px;
-`
 export default function ModiferMotDePasse() {    
   const [data, setData] = useState(null)
   const [validation, setValidation] = useState([])
@@ -41,7 +29,7 @@ const handleFormSubmit= (e) =>  {
       headers: myHeaders,
       redirect: 'follow'
     };
-      fetch("http://127.0.0.1:8000/api/auth-gestionnaire/modifier-gestionnaire-password", requestOptions)
+      fetch(`${process.env.REACT_APP_API_KEY}/api/auth-gestionnaire/modifier-gestionnaire-password`, requestOptions)
       .then(response => response.json())
       .then(resp => {                    
         console.log(resp)
@@ -67,9 +55,6 @@ const handleFormSubmit= (e) =>  {
   }; 
   return (
     <Grid>
-    <Logo>
-         <img width='100px' src={LogoImage} />
-    </Logo>
     <Paper elevation={10} style={paperStyle}>
         <Grid align='center'>
              <Avatar style={avatarStyle}><LockOutlinedIcon/></Avatar>

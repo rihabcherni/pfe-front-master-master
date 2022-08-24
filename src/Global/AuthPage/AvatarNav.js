@@ -85,7 +85,7 @@ export default function AvatarNav(props) {
 
   const [profile, setProfile] = useState(null)
   const getData = () => {
-    fetch("http://127.0.0.1:8000/api/profile", requestOptions)
+    fetch(`${process.env.REACT_APP_API_KEY}/api/profile`, requestOptions)
     .then(response => response.json())
     .then(result => setProfile(result))
     .catch(error => console.log('error', error));
@@ -96,7 +96,7 @@ export default function AvatarNav(props) {
     let image = [];
     if(profile!==null ){
         if(profile.photo!==null){
-            image.push(<><Avatar alt={profile.nom} src={`http://127.0.0.1:8000/storage/images/${fileName}/${profile.photo}`}/></>);
+            image.push(<><Avatar alt={profile.nom} src={`${process.env.REACT_APP_API_KEY}/storage/images/${fileName}/${profile.photo}`}/></>);
         }else{image.push(<><Avatar alt="user image" src={ProfilePhoto}/></>)} 
         }else{image.push(<><Avatar alt="user image" src={ProfilePhoto} /></>);}  
   return (

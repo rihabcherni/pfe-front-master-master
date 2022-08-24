@@ -3,7 +3,7 @@ import '../../../../css/dechetCard.css'
 import Card from '@mui/material/Card'
 import Typography from '@mui/material/Typography'
 
-const DechetsURL = 'http://127.0.0.1:8000/api/somme-dechets-vendus'
+const DechetsURL = `${process.env.REACT_APP_API_KEY}/api/somme-dechets-vendus`
 
 export default function DechetsTotalesVendus() {
     const [dechets, setDechets] = useState([])

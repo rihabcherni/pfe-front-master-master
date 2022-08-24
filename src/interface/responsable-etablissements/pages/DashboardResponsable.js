@@ -19,7 +19,7 @@ export default function DashboardResponsable() {
   var requestOptions = { method: 'GET', headers: myHeaders,redirect: 'follow'};
   const [etablissement, setEtablissement] = useState([])
   const getData = () => {
-    fetch("http://127.0.0.1:8000/api/auth-responsable-etablissement/etablissement-responsable", requestOptions).then(response => response.json())
+    fetch(`${process.env.REACT_APP_API_KEY}/api/auth-responsable-etablissement/etablissement-responsable`, requestOptions).then(response => response.json())
     .then(result => setEtablissement(result.nom_etablissement)).catch(error => console.log('error', error));
   }
   useEffect(() => { getData()}, [])

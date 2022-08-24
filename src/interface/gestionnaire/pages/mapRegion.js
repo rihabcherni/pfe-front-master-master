@@ -33,7 +33,7 @@ const MapRegion = () => {
   const [composte, setComposte] = useState("...");
   const [etablissements, setEtablissements] = useState([]);
   function showMapData(stateRegion) {
-    fetch("http://127.0.0.1:8000/api/region-map")
+    fetch(`${process.env.REACT_APP_API_KEY}/api/region-map`)
       .then((e) => {
         return e.json();
       })

@@ -9,7 +9,7 @@ const ChartVendsMois = () => {
   const [ventes, setVentes] = useState([])
   useEffect(() => {
     ;(async function getStatus() {
-      const vdata = await fetch('http://127.0.0.1:8000/api/somme-dechets-vendus')
+      const vdata = await fetch(`${process.env.REACT_APP_API_KEY}/api/somme-dechets-vendus`)
       const vjson = await vdata.json()
       setTimeout(getStatus, 60000)
       setVentes(vjson)

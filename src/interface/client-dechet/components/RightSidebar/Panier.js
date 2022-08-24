@@ -32,7 +32,7 @@ export default function Panier() {
         <>
           <div style={{display:"grid", gridTemplateColumns:"5% 37% 47% 1%", padding:"7px"}}>          
               <span className='remise-value2'>-{child.pourcentage_remise}%</span>
-              <img src={`http://127.0.0.1:8000/storage/images/stock_poubelle/${child.photo}`} style={{height:"150px", width:"150px"}}/>
+              <img src={`${process.env.REACT_APP_API_KEY}/storage/images/stock_poubelle/${child.photo}`} style={{height:"150px", width:"150px"}}/>
                 <div>
                     <li>poubelle {child.type_poubelle}</li>
                     <li style={{color:"green" , fontWeight:"bold"}}>{child.prix_unitaire -((child.prix_unitaire * child.pourcentage_remise)/100)} TND</li>
