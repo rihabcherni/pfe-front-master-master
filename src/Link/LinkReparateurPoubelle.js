@@ -13,25 +13,22 @@ export default function LinkReparateurPoubelle() {
     <Routes>
       <Route path='/' element={<div><InterfaceInternaute/></div>}></Route>
       <Route path='/login' element={<Navigate to="/reparateur-poubelle"/>}></Route>
-
       <Route path='/reparateur-poubelle' element={<InterfaceReparateurPoubelle/>}>	
         <Route index element={<DashboardReparateurPoubelle/>}/>
         <Route path='modifier-mot-de-passe' element={<ModifierMotDePasse/>}/>
         <Route path='profile' element={<ProfileUpdate/>}/>	
       </Route>
-
       <Route path='/responsable-technique' element={<Page401/>}>	
         <Route index element={<Page401/>}/>
         <Route path='modifier-mot-de-passe' element={<Page401/>}/>
         <Route path='profile' element={<Page401/>}/>	
       </Route>
-
       <Route path='/mecanicien' element={<Page401/>}>	
         <Route index element={<Page401/>}/>
+        <Route path='pannes-camions' element={<Page401/>}/>
         <Route path='modifier-mot-de-passe' element={<Page401/>}/>
         <Route path='profile' element={<Page401/>}/>	
       </Route>
-
       <Route path='/responsable-personnel' element={<Page401/>}>	
         <Route index element={<Page401/>}/>
         <Route path='modifier-mot-de-passe' element={<Page401/>}/>
@@ -47,7 +44,6 @@ export default function LinkReparateurPoubelle() {
         <Route path='map' element={<Page401/>}/>
         <Route path='profile' element={<Page401/>}/>	
       </Route>
-
       <Route path='/client-dechets' element={<Page401/>}>
         <Route index element={<Page401/>}/>
         <Route path='reclamation' element={<Page401/>}/>				
@@ -56,7 +52,6 @@ export default function LinkReparateurPoubelle() {
         <Route path='historique-client-dechets' element={<Page401/>}/>
         <Route path='profile' element={<Page401/>}/>			
       </Route>
-
       <Route path='/responsable-etablissement' element={<Page401/>}>	
         <Route index element={<Page401/>}/>
         <Route path='dashboard' element={<Page401/>}/>
@@ -67,7 +62,6 @@ export default function LinkReparateurPoubelle() {
         <Route path='historique-vidage-poubelle' element={<Page401/>}/>		
         <Route path='ajouter-responsable' element={<Page401/>}/>				
       </Route>
-
       <Route path='/gestionnaire' element={<Page401/>}>
         <Route index element={<Page401/>}/>	
         <Route path='modifier-mot-de-passe' element={<Page401/>}/>
@@ -91,13 +85,16 @@ export default function LinkReparateurPoubelle() {
         <Route path='profile' element={<Page401/>}/>	
         <Route path='historique-vidage-poubelle' element={<Page401/>}/>						
       </Route>
-
       <Route path='/responsable-commerciale' element={<Page401/>}>	
         <Route index element={<Page401/>}/>
         <Route path='modifier-mot-de-passe' element={<Page401/>}/>
         <Route path='profile' element={<Page401/>}/>	
       </Route>
-
+      <Route path='/ouvrier' element={<Page401/>}>	
+        <Route index element={<Page401/>}/>
+        <Route path='modifier-mot-de-passe' element={<Page401/>}/>
+        <Route path='profile' element={<Page401/>}/>	
+      </Route>
       <Route path='*' element={<div><Navigate replace to="/page-404" /><Page404/> </div>}/>		   	
     </Routes>	
   )

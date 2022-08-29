@@ -34,7 +34,6 @@ export default function LinkGestionnaire() {
     <Routes>
 		  <Route path='/' element={<div><InterfaceInternaute/></div>}></Route>
     	<Route path='/login' element={<Navigate to="/gestionnaire"/>}></Route>
-
       <Route path='/gestionnaire' element={<InterfaceGestionnaire/>}>
             <Route index element={<Dashboard/>}/>	
             <Route path='modifier-mot-de-passe' element={<ModifierMotDePasse/>}/>
@@ -65,7 +64,6 @@ export default function LinkGestionnaire() {
             <Route path='contact-us' element={<ContactUs/>}/>
             <Route path='profile' element={<ProfileUpdate/>}/>				
       </Route>
-			
       <Route path='/client-dechets' element={<Page401/>}>
         <Route index element={<Page401/>}/>			
         <Route path='reclamation' element={<Page401/>}/>				
@@ -73,30 +71,47 @@ export default function LinkGestionnaire() {
         <Route path='achat-dechets' element={<Page401/>}/>
         <Route path='historique-client-dechets' element={<Page401/>}/>
         <Route path='profile' element={<Page401/>}/>			
+      </Route>		
+      <Route path='/responsable-etablissement' element={<Page401/>}>	
+        <Route index element={<Page401/>}/>
+        <Route path='dashboard' element={<Page401/>}/>
+        <Route path='map' element={<Page401/>}/>
+        <Route path='poubelle' element={<Page401/>}/>
+        <Route path='panne-poubelle' element={<Page401/>}/>
+        <Route path='profile' element={<Page401/>}/>	
+        <Route path='historique-vidage-poubelle' element={<Page401/>}/>		
+        <Route path='ajouter-responsable' element={<Page401/>}/>		
       </Route>
-				
-    <Route path='/responsable-etablissement' element={<Page401/>}>	
-			<Route index element={<Page401/>}/>
-			<Route path='dashboard' element={<Page401/>}/>
-			<Route path='map' element={<Page401/>}/>
-			<Route path='poubelle' element={<Page401/>}/>
-			<Route path='panne-poubelle' element={<Page401/>}/>
-			<Route path='profile' element={<Page401/>}/>	
-			<Route path='historique-vidage-poubelle' element={<Page401/>}/>		
-			<Route path='ajouter-responsable' element={<Page401/>}/>		
-		</Route>
-
-		<Route path='/responsable-commerciale' element={<Page401/>}>	
-			<Route index element={<Page401/>}/>
-			<Route path='profile' element={<Page401/>}/>	
-		</Route>
-
-		<Route path='/responsable-personnel' element={<Page401/>}>	
-			<Route index element={<Page401/>}/>
-			<Route path='profile' element={<Page401/>}/>	
-		</Route>
-
-		<Route path='*' element={<Page404/>}/>
+      <Route path='/responsable-commerciale' element={<Page401/>}>	
+        <Route index element={<Page401/>}/>
+        <Route path='profile' element={<Page401/>}/>	
+      </Route>
+      <Route path='/responsable-personnel' element={<Page401/>}>	
+        <Route index element={<Page401/>}/>
+        <Route path='profile' element={<Page401/>}/>	
+      </Route>
+      <Route path='/responsable-technique' element={<Page401/>}>	
+          <Route index element={<Page401/>}/>
+          <Route path='modifier-mot-de-passe' element={<Page401/>}/>
+          <Route path='profile' element={<Page401/>}/>	
+      </Route>
+      <Route path='/reparateur-poubelle' element={<Page401/>}>	
+          <Route index element={<Page401/>}/>
+          <Route path='modifier-mot-de-passe' element={<Page401/>}/>
+          <Route path='profile' element={<Page401/>}/>	
+      </Route>
+      <Route path='/mecanicien' element={<Page401/>}>	
+          <Route index element={<Page401/>}/>
+          <Route path='pannes-camions' element={<Page401/>}/>
+          <Route path='modifier-mot-de-passe' element={<Page401/>}/>
+          <Route path='profile' element={<Page401/>}/>	
+      </Route>
+      <Route path='/ouvrier' element={<Page401/>}>	
+          <Route index element={<Page401/>}/>
+          <Route path='modifier-mot-de-passe' element={<Page401/>}/>
+          <Route path='profile' element={<Page401/>}/>	
+      </Route>
+      <Route path='*' element={<Page404/>}/>
     </Routes>	
   )
 }

@@ -67,6 +67,27 @@ export default function LinkClientDechet() {
             <Route index element={<Page401/>}/>
             <Route path='profile' element={<Page401/>}/>	
         </Route>
+        <Route path='/responsable-technique' element={<Page401/>}>	
+            <Route index element={<Page401/>}/>
+            <Route path='modifier-mot-de-passe' element={<Page401/>}/>
+            <Route path='profile' element={<Page401/>}/>	
+        </Route>
+        <Route path='/reparateur-poubelle' element={<Page401/>}>	
+            <Route index element={<Page401/>}/>
+            <Route path='modifier-mot-de-passe' element={<Page401/>}/>
+            <Route path='profile' element={<Page401/>}/>	
+        </Route>
+        <Route path='/mecanicien' element={<Page401/>}>	
+            <Route index element={<Page401/>}/>
+            <Route path='pannes-camions' element={<Page401/>}/>
+            <Route path='modifier-mot-de-passe' element={<Page401/>}/>
+            <Route path='profile' element={<Page401/>}/>	
+        </Route>
+        <Route path='/ouvrier' element={<Page401/>}>	
+            <Route index element={<Page401/>}/>
+            <Route path='modifier-mot-de-passe' element={<Page401/>}/>
+            <Route path='profile' element={<Page401/>}/>	
+        </Route>
         <Route path='*' element={<Page404/>}/>
     </Routes>	
   )
