@@ -72,7 +72,7 @@ export default function PoubelleTable() {
  
   return (
     <div style={{width:"100%"}}>
-      <Api tableNameSing='poubelle' tableNamePlu='poubelles' url={url} initialValue={initialValue} columnDefs={columnDefs} show={show} createUpdate={createUpdate} />  
+      <Api tableNameSing='poubelle' tableNamePlu='poubelles' url={url} initialValue={initialValue} columnDefs={columnDefs} columnDefsTrash={columnDefs} show={show} createUpdate={createUpdate} />  
     </div>
   );
 }        

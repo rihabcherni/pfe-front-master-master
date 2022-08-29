@@ -18,7 +18,7 @@ import ClientDechet from '../interface/gestionnaire/pages/clients/ClientDechet';
 import Fournisseur from '../interface/gestionnaire/pages/productionPoubelle/Fournisseur';
 import CommandeDechets from '../interface/gestionnaire/pages/commande/CommandeDechets';
 import CalendrierGestionnaire from '../interface/gestionnaire/pages/CalendrierGestionnaire';
-import ModiferMotDePasse from '../interface/gestionnaire/pages/ModiferMotDePasse';
+import ModifierMotDePasse from '../Global/AuthPage/ModifierMotDePasse';
 import ContactUs from '../interface/gestionnaire/pages/ContactUs/ContactUs';
 import HistoriqueViderPoubelleGlobale from '../interface/gestionnaire/pages/HistoriqueViderPoubelleGlobale';
 /**** ----------------------responsable Etablissement ------------------------ ****/
@@ -37,7 +37,7 @@ export default function LinkGestionnaire() {
 
       <Route path='/gestionnaire' element={<InterfaceGestionnaire/>}>
             <Route index element={<Dashboard/>}/>	
-            <Route path='modifier-mot-de-passe' element={<ModiferMotDePasse/>}/>
+            <Route path='modifier-mot-de-passe' element={<ModifierMotDePasse/>}/>
             <Route path='map' element={<MapGestionnaire/>}/>
             <Route path='poubelles' element={<Poubelles/>}/>
             <Route path='camions' element={<Camion/>}/>

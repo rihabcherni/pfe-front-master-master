@@ -1,0 +1,38 @@
+.logo-error{
+    border-radius:50%;
+    margin:10px 10px -60px ;
+}
+.page-error{
+    background-color:#f9f9fb;
+    height : 100vh;
+}
+.image-error{
+    display:block;
+    margin:-20px auto 0;
+}
+.messgae-error1{
+    font-size:40px;
+    font-family:Fredoka
+}
+.messgae-error2{
+    color: #64ad02;
+    font-family: Fredoka;
+    margin-top: -7px 
+}
+.container-error{
+    text-align:center;
+}
+@media (max-width: 800px) {
+    .image-error{
+        width: 70%;
+        margin-top: 100px;
+    }
+    .logo-error{
+       width: 50px;
+    }
+}
+  @media (max-width: 500px) {
+    .image-error{
+        width: 50%;
+    }
+}

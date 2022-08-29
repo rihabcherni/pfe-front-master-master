@@ -78,7 +78,7 @@ export default function InterfaceGestionnaire() {
                                   <span style={{fontSize:"20px"}} > RE:School Ecology </span>
                                   <IconButton onClick={handleDrawerClose}><MenuIcon sx={{ fontSize: 25 }}/></IconButton>
                                 </div>
-                            <List> {linkDetailsGestionnaire.map((lien, key)=> <><MenuItem key={key} item={lien} open={open}/></>)}</List>
+                            <List> {linkDetailsGestionnaire.map(lien=> <><MenuItem key={lien.id} item={lien} open={open}/></>)}</List>
                     </Drawer>              
                         <Box component="main" sx={{ flexGrow: 1,p:2 }}>
                           <div style={{ marginTop:"50px" }}>

@@ -18,6 +18,10 @@ export default function ProfileUpdate() {
     else if(localStorage.getItem("Role")=== "client_dechet"){user="client";}
     else if(localStorage.getItem("Role")=== "responsable_commerciale"){user="responsable_commercial";}
     else if(localStorage.getItem("Role")=== "responsable_personnel"){user="responsable_personnel";}
+    else if(localStorage.getItem("Role")=== "responsable_technique"){user="responsable_technique";}
+    else if(localStorage.getItem("Role")=== "reparateur_poubelle"){user="reparateur_poubelle";}
+    else if(localStorage.getItem("Role")=== "mecanicien"){user="mecanicien";}
+    else if(localStorage.getItem("Role")=== "ouvrier"){user="ouvrier";}
   }
   const [profile, setProfile]=useState([]);
   const [profileImg, setProfileImg]=useState("");

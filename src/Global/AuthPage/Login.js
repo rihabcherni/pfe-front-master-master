@@ -11,16 +11,7 @@ import {useNavigate} from "react-router-dom";
 import Swal from "sweetalert"
 import styled from 'styled-components'
 import LogoImage from '../images/reschool-blanc.png'
-const Logo= styled.div`
-  padding-top: 30px;  
-  padding-left: 40px;  
-  font-size: 20px;
-  font-weight: bold;
-  font-family: berlin;
-  color: #21BA45;
-  weight: 10%;
-  height: 10px;
-`
+
 axios.defaults.baseURL= `${process.env.REACT_APP_API_KEY}/api`;
 let token='';
 if(localStorage.getItem('auth_token')!==''){
@@ -35,11 +26,9 @@ const Login=()=>{
 
   function onChange(value) {
     setLoginRecaptcha(value);
-    console.log("Captcha value:", value);
   }
     const navigate = useNavigate();
-    const [loginInput, setLoginInput] = useState({email: '',mot_de_passe: '' ,recaptcha:'',showPassword: false,error_list:[],
-    });
+    const [loginInput, setLoginInput] = useState({email: '',mot_de_passe: '' ,recaptcha:'',showPassword: false,error_list:[], });
     const handleInput =  (e) => {
       e.persist();
       setLoginInput({ ...loginInput, [e.target.name]: e.target.value });
@@ -76,13 +65,13 @@ const Login=()=>{
     const handleMouseDownPassword = (event) => {
       event.preventDefault();
     };    
-    const paperStyle={ padding :40,height:550,width:400, margin:"5% auto" }
+    const paperStyle={ padding :40,height:550,width:400, margin:"-4% auto 0" }
     const avatarStyle={  backgroundColor:'#21BA45',width:60,height:60}
     const btnstyle={ backgroundColor:'#21BA45',  margin:'8px 0'}
     return(
         <Grid>
-            <Logo>  <img width='100px' src={LogoImage} /> </Logo>
-            <Paper elevation={10} style={paperStyle}>
+            <img width='80px' src={LogoImage} /> 
+            <Paper elevation={20} style={paperStyle}>
                 <Grid align='center'>
                      <Avatar style={avatarStyle}><LockOutlinedIcon/></Avatar>
                      <h2 style={{paddingBottom:"30px", marginTop:"5px"}}>Connexion</h2>

@@ -48,5 +48,4 @@ export const linkDetailsGestionnaire = [
     , size:"meduim"},
     {id:11, name: "Calendrier",path:"/gestionnaire/calendrier", icon: <BsFillCalendarDateFill/>, size:"meduim"},
     {id:12, name: "Contact-us",path:"/gestionnaire/contact-us", icon: <ContactsIcon/>, size:"meduim"},
-
   ];

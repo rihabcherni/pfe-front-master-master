@@ -10,6 +10,8 @@ import ReclamationClientDechets from '../interface/client-dechet/pages/Reclamati
 import PanierClientDechets from '../interface/client-dechet/pages/PanierClientDechets';
 import Historique from '../interface/client-dechet/pages/Historique';
 import Achat from '../interface/client-dechet/pages/Achat';
+import ModifierMotDePasse from '../Global/AuthPage/ModifierMotDePasse';
+
 export default function LinkClientDechet() {
   return (
     <Routes>
@@ -17,6 +19,7 @@ export default function LinkClientDechet() {
         <Route path='/login' element={<Navigate to="/client-dechets"/>}></Route>
         <Route path='/client-dechets' element={<InterfaceClientDechet/>}>
             <Route index element={<DashboardClientDechet/>}/>
+            <Route path='modifier-mot-de-passe' element={<ModifierMotDePasse/>}/>
             <Route path='reclamation' element={<ReclamationClientDechets/>}/>				
             <Route path='panier' element={<PanierClientDechets/>}/>
             <Route path='achat-dechets' element={<Achat/>}/>
@@ -64,7 +67,7 @@ export default function LinkClientDechet() {
             <Route index element={<Page401/>}/>
             <Route path='profile' element={<Page401/>}/>	
         </Route>
-        <Route path='*' element={<div><Navigate replace to="/page-404" /><Page404/> </div>}/>		   	
+        <Route path='*' element={<Page404/>}/>
     </Routes>	
   )
 }

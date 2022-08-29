@@ -20,7 +20,7 @@ export default function Api({tableNameSing, tableNamePlu,initialValue, url, colu
   const [openShow, setOpenShow] =useState(false);
   const [openTrash, setOpenTrash] =useState(false);
   const [formData, setFormData] = useState(initialValue)
-  const [picture, setPicture] = useState(initialValue)
+  const [picture, setPicture] = useState("s")
   const [validation, setValidation] = useState([])
   const onBtnExportPdf = useCallback((oldData) => {
     fetch(url+'-pdf'+`/${oldData.id}`, {type: "GET"}).then((res) => res.json());
@@ -57,31 +57,14 @@ export default function Api({tableNameSing, tableNamePlu,initialValue, url, colu
   const handleClickOpenShow = () => {
     setOpenShow(true);
   };
-  const handleCloseShow = () => {
-    setOpenShow(false);
-  };
-
-  const handleClickOpenTrash = () => {
-    setOpenTrash(true);
-  };
-  const handleCloseTrash = () => {
-    setOpenTrash(false);
-  };
+  const handleCloseShow = () => {setOpenShow(false);};
+  const handleClickOpenTrash = () => {setOpenTrash(true);};
+  const handleCloseTrash = () => {setOpenTrash(false);};
   var myHeaders = new Headers();
   myHeaders.append("Authorization", `Bearer ${localStorage.getItem('auth_token')}`);
-  var requestOptions = {
-    method: 'GET',
-    headers: myHeaders,
-    redirect: 'follow'
-  };
-  var requestOptionsDelete = {
-    method: 'DELETE',
-    headers: myHeaders,
-    redirect: 'follow'
-  };
-  useEffect(() => {
-    getData()
-  }, [])
+  var requestOptions = {method: 'GET', headers: myHeaders, redirect: 'follow'};
+  var requestOptionsDelete = {method: 'DELETE', headers: myHeaders, redirect: 'follow'};
+  useEffect(() => {getData()}, [])
   const getData = () => {
     if(localStorage.getItem('auth_token')){
       fetch(url, requestOptions).then(resp => resp.json()).then(resp => {setTableData(resp.data);}).catch(err => {
@@ -94,18 +77,8 @@ export default function Api({tableNameSing, tableNamePlu,initialValue, url, colu
     }
   }
   const onChange = (e) => {
-    const { value, id } = e.target
-    setFormData({ ...formData, [id]: value })
-    // if(formData.photo){
-    //   if (e.target.files[0]) {
-    //     console.log("picture: ", e.target.files);
-    //     const reader = new FileReader();
-    //     reader.addEventListener("load", () => {
-    //       setFormData({ ...formData, photo:e.target.files[0].name })
-    //     });
-    //     reader.readAsDataURL();
-    //   }
-    // }
+      const { value, id } = e.target
+      setFormData({ ...formData, [id]: value })
   }
   const handleUpdate = (oldData) => {
     setFormData(oldData)

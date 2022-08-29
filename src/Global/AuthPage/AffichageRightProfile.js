@@ -29,6 +29,24 @@ export default function AffichageRightProfile({toggleDrawer}) {
       show1=[ ["Nom","nom"], ["Prénom","prenom"], ["Carte d'identité nationnale","CIN"],["Numéro de téléphone","numero_telephone"],["Email","email"]];
       user="responsable-personnel"
       fileName="responsable_personnel"
+    }else if(localStorage.getItem("Role")=== "responsable_technique"){
+      show1=[ ["Nom","nom"], ["Prénom","prenom"], ["Carte d'identité nationnale","CIN"],["Numéro de téléphone","numero_telephone"],["Email","email"], ["Adresse","adresse"],];
+      user="responsable-technique"
+      fileName="responsable_technique"
+    }else if(localStorage.getItem("Role")=== "mecanicien"){
+      show1=[ ["Nom","nom"], ["Prénom","prenom"], ["Carte d'identité nationnale","CIN"],["Numéro de téléphone","numero_telephone"],["Email","email"], ["Adresse","adresse"],];
+      user="mecanicien"
+      fileName="mecanicien"
+    }else if(localStorage.getItem("Role")=== "reparateur_poubelle"){
+      show1=[ ["Nom","nom"], ["Prénom","prenom"], ["Carte d'identité nationnale","CIN"],["Numéro de téléphone","numero_telephone"],["Email","email"], ["Adresse","adresse"],];
+      user="reparateur-poubelle"
+      fileName="reparateur_poubelle"
+    }else if(localStorage.getItem("Role")=== "ouvrier"){
+      show1=[ ["Nom","nom"], ["Prénom","prenom"],["camion","camion_id"],["Poste","poste"],
+       ["Carte d'identité nationnale","CIN"],["Numéro de téléphone","numero_telephone"],
+       ["Email","email"], ["Adresse","adresse"],];
+      user="ouvrier"
+      fileName="ouvrier"
     }
   }
   var myHeaders = new Headers();

@@ -1,3 +1,11 @@
+.swal-text {
+  padding: 17px;
+  display: block;
+  margin: 22px;
+  text-align: center;
+  color: #61534e;
+}
+
 ::-webkit-scrollbar {
     width: 8px;
   }
@@ -62,17 +70,6 @@
     }
 
 
-
-
-
-
-    :root{
-      --light-red-color: 	#32CD32;
-      --dark-red-color: rgb(167, 167, 167);
-      --white-color: #fff;
-      --light-black-color: #404040;
-      --border-radius: 10px;
-  }
   .card-template{
       display: flex;
       color: var(--light-black-color);

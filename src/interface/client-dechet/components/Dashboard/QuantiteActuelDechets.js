@@ -17,7 +17,7 @@ var requestOptions = {
 };
 const [tableData, setTableData] = useState(null)
 const getData = () => {
-fetch(`${process.env.REACT_APP_API_KEY}/api/somme-total-dechet-zone-depot`, requestOptions)
+fetch(`${process.env.REACT_APP_API_KEY}/api/somme-total-dechet-zone-travail`, requestOptions)
   .then(response => response.json())
   .then(result => setTableData(result))
   .catch(error => console.log('error', error));
@@ -33,8 +33,8 @@ if(tableData!==null){
         labels: ['Plastique', 'Papier', 'Composte', 'Canette'],
         datasets: [
           {label:  "Quantité",
-            data:  [tableData.somme_depot_actuelle_plastique,tableData.somme_depot_actuelle_papier,
-              tableData.somme_depot_actuelle_composte,tableData.somme_depot_actuelle_canette],
+            data:  [tableData.quantite_total_collecte_plastique,tableData.quantite_total_collecte_papier,
+              tableData.quantite_total_collecte_composte,tableData.quantite_total_collecte_canette],
             backgroundColor: [ '#321fdb', '#f9b115', '#2eb85c', '#e55353'],
           },
         ],

@@ -50,7 +50,8 @@ export default function Pie () {
     if(tableData!==null){
       return (
         <>
-          <ReactApexChart  options={chart.options} type="donut" series={[tableData.quantite_total_achetee_plastique, tableData.quantite_total_achetee_composte, tableData.quantite_total_achetee_papier, tableData.quantite_total_achetee_canette]}/>          
+          <ReactApexChart  options={chart.options} type="donut" 
+          series={[tableData.quantite_total_achetee_plastique, tableData.quantite_total_achetee_composte, tableData.quantite_total_achetee_papier, tableData.quantite_total_achetee_canette]}/>          
         </>
       );
     }else{

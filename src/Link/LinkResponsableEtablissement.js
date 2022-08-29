@@ -13,6 +13,7 @@ import DashboardResponsable from '../interface/responsable-etablissements/pages/
 import MapResponsable from '../interface/responsable-etablissements/pages/MapResponsable';
 import PannePoubelleEtablissement from '../interface/responsable-etablissements/pages/PannePoubelleEtablissement';
 import PoubelleEtablissement from '../interface/responsable-etablissements/pages/PoubelleEtablissement';
+import ModifierMotDePasse from '../Global/AuthPage/ModifierMotDePasse';
 
 export default function LinkResponsableEtablissement() {
   return (
@@ -22,6 +23,7 @@ export default function LinkResponsableEtablissement() {
         <Route path='/responsable-etablissement' element={<InterfaceResponsableEtablissement/>}>	
             <Route index element={<Planning/>}/>
             <Route path='dashboard' element={<DashboardResponsable/>}/>
+            <Route path='modifier-mot-de-passe' element={<ModifierMotDePasse/>}/>
             <Route path='map' element={<MapResponsable/>}/>
             <Route path='poubelle' element={<PoubelleEtablissement/>}/>
             <Route path='panne-poubelle' element={<PannePoubelleEtablissement/>}/>

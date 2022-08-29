@@ -27,7 +27,8 @@ export default function HistoriqueViderPoubelleResponsable() {
   return (
     <div style={{width:"100%"}}>
         <h2 align="center" style={{color:"green", fontSize:"30px"}}>Historique vider poubelles dans les établissement</h2>
-        <Api tableName='Historique vider poubelle' url={url} initialValue={initialValue} columnDefs={columnDefs} show={show}/>  
+        <Api tableName='Historique vider poubelle' initialValue={initialValue} url={url} 
+           columnDefs={columnDefs} show={show}/> 
     </div>
   );
 }

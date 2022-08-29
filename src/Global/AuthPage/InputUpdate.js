@@ -17,11 +17,23 @@ export default function InputUpdate() {
          show1=[ ["Nom","nom"],  ["Prénom","prenom"],  ["nom entreprise","nom_entreprise"], ["matricule fiscale","matricule_fiscale"],  ["Numero de telephone","numero_telephone"],["Numero fixe","numero_fixe"],["Email","email"], ["Adresse","adresse"],];
     } else if(localStorage.getItem("Role")=== "responsable_commerciale"){
       initialValue = { nom: "",prenom: "", CIN: "", numero_telephone: "", email: "", error_list:[]};
-      show1=[ ["Nom","nom"], ["Carte d'identité nationnale","CIN"],["Numero de telephone","numero_telephone"] ,["Prénom","prenom"],["Email","email"], ];
+      show1=[ ["Nom","nom"], ["Carte d'identité nationnale","CIN"],["Numero de telephone","numero_telephone"] ,["Prénom","prenom"],["Email","email"] ];
     }else if(localStorage.getItem("Role")=== "responsable_personnel"){
-      initialValue = { nom: "",prenom: "", CIN: "", numero_telephone: "", email: "", error_list:[]};
+      initialValue = { nom: "",prenom: "", CIN: "", numero_telephone: "", email: "", adresse:"", error_list:[]};
       show1=[ ["Nom","nom"], ["Carte d'identité nationnale","CIN"],["Numero de telephone","numero_telephone"] ,["Prénom","prenom"],["Email","email"], ];
-     } 
+    } else if(localStorage.getItem("Role")=== "responsable_technique"){
+      initialValue = { nom: "",prenom: "", CIN: "", numero_telephone: "", email: "", error_list:[]};
+      show1=[ ["Nom","nom"], ["Carte d'identité nationnale","CIN"],["Numero de telephone","numero_telephone"] ,["Prénom","prenom"],["Email","email"], ["Adresse","adresse"], ];
+    } else if(localStorage.getItem("Role")=== "reparateur_poubelle"){
+      initialValue = { nom: "",prenom: "", CIN: "", numero_telephone: "", email: "", error_list:[]};
+      show1=[ ["Nom","nom"], ["Carte d'identité nationnale","CIN"],["Numero de telephone","numero_telephone"] ,["Prénom","prenom"],["Email","email"], ["Adresse","adresse"], ];
+    } else if(localStorage.getItem("Role")=== "mecanicien"){
+      initialValue = { nom: "",prenom: "", CIN: "", numero_telephone: "", email: "", error_list:[]};
+      show1=[ ["Nom","nom"], ["Carte d'identité nationnale","CIN"],["Numero de telephone","numero_telephone"] ,["Prénom","prenom"],["Email","email"], ["Adresse","adresse"], ];
+    }  else if(localStorage.getItem("Role")=== "ouvrier"){
+      initialValue = {poste:"", camion_id:"", nom: "",prenom: "", CIN: "", numero_telephone: "", email: "", error_list:[]};
+      show1=[ ["Nom","nom"],["Poste","poste"],["camion","camion_id"], ["Carte d'identité nationnale","CIN"],["Prénom","prenom"],["Numero de telephone","numero_telephone"] ,["Email","email"], ["Adresse","adresse"], ];
+    } 
   }
     const [validation, setValidation] = useState([])
     const [data, setData] = useState(initialValue)

@@ -22,7 +22,7 @@ export default function EtageEtablissementTable() {
   ]
   return (
     <div style={{width:"100%"}}>
-      <Api tableNameSing='étage établissement' tableNamePlu='étages établissements' url={url} initialValue={initialValue} columnDefs={columnDefs} show={show} createUpdate={createUpdate} />  
+      <Api tableNameSing='étage établissement' tableNamePlu='étages établissements' url={url} initialValue={initialValue} columnDefs={columnDefs} columnDefsTrash={columnDefs} show={show} createUpdate={createUpdate} />  
     </div>
   );
 }

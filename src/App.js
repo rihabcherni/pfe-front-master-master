@@ -7,10 +7,16 @@ import Page404 from './Global/error-pages/Page404';
 import Login from './Global/AuthPage/Login';
 
 import ListeGestionnaireLink from './Link/LinkGestionnaire'
+import LinkOuvrier from './Link/LinkOuvrier'
 import LinkResponsableEtablissement from './Link/LinkResponsableEtablissement';
 import LinkClientDechet from './Link/LinkClientDechet';
 import LinkResponsableCommerciale from './Link/LinkResponsableCommerciale';
-import ListeLinkResponsablePersonnel  from './Link/ListeLinkResponsablePersonnel';
+import LinkResponsablePersonnel  from './Link/LinkResponsablePersonnel';
+import LinkMecanicien  from './Link/LinkMecanicien';
+import LinkResponsableTechnique  from './Link/LinkResponsableTechnique';
+import LinkReparateurPoubelle  from './Link/LinkReparateurPoubelle';
+import OublierMotdePasse from './Global/AuthPage/OublierMotdePasse';
+import ModifierMotPasseOublier from './Global/AuthPage/ModifierMotPasseOublier';
 
 axios.defaults.baseURL= `${process.env.REACT_APP_API_KEY}/`;
 axios.defaults.headers.post['Content-type']="application/json";
@@ -35,13 +41,30 @@ const AppRoutes=()=> {
 		}
 
 		if(localStorage.getItem("Role")=== "responsable_personnel"){
-			return	<ListeLinkResponsablePersonnel/>	   	
+			return	<LinkResponsablePersonnel/>	   	
 		}
+		if(localStorage.getItem("Role")=== "mecanicien"){
+			return	<LinkMecanicien/>	   	
+		}
+
+		if(localStorage.getItem("Role")=== "reparateur_poubelle"){
+			return	<LinkReparateurPoubelle/>	   	
+		}
+
+		if(localStorage.getItem("Role")=== "responsable_technique"){
+			return	<LinkResponsableTechnique/>	   	
+		}
+		if(localStorage.getItem("Role")=== "ouvrier"){
+			return	<LinkOuvrier/>	   	
+		}
+		
 	}
 	if (!("auth_token" in localStorage)) {
 	   return 	<Routes>
 					<Route path='/' element={<div><InterfaceInternaute/></div>}></Route>
-					<Route path='/login' element={<div><Login/></div>}></Route>
+					<Route path='/login' element={<Login/>}></Route>
+					<Route path='/oublier-mot-de-passe' element={<OublierMotdePasse/>}></Route>
+					<Route path='/modifier-mot-de-passe-oublier' element={<ModifierMotPasseOublier/>}></Route>
 					<Route path='*' element={<div><Navigate replace to="/page-404" /><Page404/> </div>}/>
 				</Routes>
 	}	

@@ -23,7 +23,7 @@ export default function Api({tableName,initialValue, url, columnDefs, show}) {
   var requestOptions = { method: 'GET', headers: myHeaders, redirect: 'follow'}; 
   const getData = () => {
     if(localStorage.getItem('auth_token')){
-      fetch(url, requestOptions).then(resp => resp.json()).then(resp => {setTableData(resp.data); console.log(resp)}).catch(err => {
+      fetch(url, requestOptions).then(resp => resp.json()).then(resp => {setTableData(resp.data);}).catch(err => {
         console.log("Error Reading data " + err);
       });
     }else{
@@ -59,5 +59,6 @@ export default function Api({tableName,initialValue, url, columnDefs, show}) {
           data={formData} onChange={onChange} tableName={tableName}/>
     </div>
   );
-}  }
+}  
+}
 

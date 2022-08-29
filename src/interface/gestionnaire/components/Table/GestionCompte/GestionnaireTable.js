@@ -4,12 +4,12 @@ import Api from '../../../../../Global/ComponentsTable/Api';
 
  const show=[
   ["ID","id"],
+  ["photo","photo"],
   ["Nom","nom"],
   ["Prénom","prenom"],
   ["CIN","CIN"],
   ["Numéro télèphone","numero_telephone"],
   ["E-mail","email"],
-  ["Mot de passe","mot_de_passe"],
   ["Adresse","adresse"],
   ["Crée le","created_at"],
   ["Modifié le","updated_at"],
@@ -17,12 +17,12 @@ import Api from '../../../../../Global/ComponentsTable/Api';
 
  const createUpdate=[
   ["ID","id"],
+  ["photo","photo"],
   ["Nom","nom"],
   ["Prénom","prenom"],
   ["CIN","CIN"],
   ["Numéro télèphone","numero_telephone"],
   ["E-mail","email"],
-  ["Mot de passe","mot_de_passe"],
   ["Adresse","adresse"],
  ];
 
@@ -56,7 +56,8 @@ export default function GestionnaireTable() {
 console.log(process.env)
   return (
     <>
-        <Api tableNamePlu='Gestionnaires' tableNameSing='Gestionnaire' url={url} initialValue={initialValue} columnDefs={columnDefs} columnDefsTrash={columnDefsTrash} show={show} createUpdate={createUpdate}/> 
+        <Api tableNamePlu='Gestionnaires' tableNameSing='Gestionnaire' url={url} initialValue={initialValue} 
+        columnDefs={columnDefs} columnDefsTrash={columnDefsTrash} show={show} createUpdate={createUpdate}/> 
     </>
   );
 }

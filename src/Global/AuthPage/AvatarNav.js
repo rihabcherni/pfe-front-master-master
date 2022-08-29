@@ -37,6 +37,18 @@ export default function AvatarNav(props) {
     }else if(localStorage.getItem("Role")=== "responsable_personnel"){
       user="responsable-personnel"
       fileName="responsable_personnel"
+    }else if(localStorage.getItem("Role")=== "responsable_technique"){
+      user="responsable-technique"
+      fileName="responsable_technique"
+    }else if(localStorage.getItem("Role")=== "reparateur_poubelle"){
+      user="reparateur-poubelle"
+      fileName="reparateur_poubelle"
+    }else if(localStorage.getItem("Role")=== "mecanicien"){
+      user="mecanicien"
+      fileName="mecanicien"
+    }else if(localStorage.getItem("Role")=== "ouvrier"){
+      user="ouvrier"
+      fileName="ouvrier"
     }
   }
   const logoutSubmit= (e)=>{

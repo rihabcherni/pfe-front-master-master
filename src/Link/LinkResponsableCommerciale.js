@@ -14,6 +14,7 @@ import ListeMateriauxPrimaires from'../interface/responsable-commerciale/pages/P
 import ListeStockPoubelle from'../interface/responsable-commerciale/pages/ProductionPoubelle/ListeStockPoubelle';
 import ListeClientDechets from'../interface/responsable-commerciale/pages/clients/ListeClientDechets';
 import ListeResponsableEtablissement from'../interface/responsable-commerciale/pages/clients/ListeResponsableEtablissement';
+import ModifierMotDePasse from '../Global/AuthPage/ModifierMotDePasse';
 
 export default function LinkResponsableCommerciale() {
   return (
@@ -22,6 +23,7 @@ export default function LinkResponsableCommerciale() {
       <Route path='/login' element={<Navigate to="/responsable-commerciale"/>}></Route>
       <Route path='/responsable-commerciale' element={<InterfaceResponsableCommerciale/>}>	
         <Route index element={<DashboardResponsableCommerciale/>}/>
+        <Route path='modifier-mot-de-passe' element={<ModifierMotDePasse/>}/>
         <Route path='profile' element={<ProfileUpdate/>}/>	
         <Route path='commandes-dechets' element={<ListeCommandeDechet/>}/>
         <Route path='types-dechets' element={<ListeDechets/>}/>

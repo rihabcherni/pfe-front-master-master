@@ -1,4 +1,7 @@
 import React , {useState , useEffect} from 'react';
+import { Stepper, Step } from "react-form-stepper";
+import { MdDescription , MdPhoto} from "react-icons/md";
+import StepWizard from "react-step-wizard";
 import Button from '@mui/material/Button';
 import Dialog from '@mui/material/Dialog';
 import DialogActions from '@mui/material/DialogActions';
@@ -35,6 +38,7 @@ const BootstrapDialogTitle = (props) => {
   );
 };
 BootstrapDialogTitle.propTypes = { children: PropTypes.node, onClose: PropTypes.func.isRequired,};
+
 export default function DialogAddUpdate({tableName,open,handleClose,data,onChange,handleFormSubmit,  validation, createUpdate}) {
  const {id}=data ;
  let rows = [];
@@ -53,7 +57,7 @@ export default function DialogAddUpdate({tableName,open,handleClose,data,onChang
     if(createUpdate[i][1]==="photo" ){
       rows.push(
         <>
-          <input type="file" accept="image/*"  name={createUpdate[i][0]} id={createUpdate[i][0]} onChange={e=>onChange(e)}/> 
+          <input type="file" accept="image/*"  name="photo" id="photo" onChange={e=>onChange(e)}/> 
           <FormHelperText error={true}> {validation[createUpdate[i][0]]}</FormHelperText> 
         </>
       );
@@ -78,7 +82,7 @@ export default function DialogAddUpdate({tableName,open,handleClose,data,onChang
         <div className="dropdown">
           <select className='dropdown-result' value={data.etablissement_id} name="etablissement_id" id="etablissement_id" onChange={(e) => onChange(e)}  >
             <option value="" disabled selected className='dropdown-placeholder'>Etablissement</option>
-            {etab.length!==0 ? etab.map((eta)=><option value={eta} className='dropdown-items'>{eta}</option>):<option value={"null"}>null</option>}    
+            {etab.length!==0 ? etab.map((eta , i)=><option key={i}  value={eta} className='dropdown-items'>{eta}</option>):<option value={"null"}>null</option>}    
           </select>
         </div>
       );

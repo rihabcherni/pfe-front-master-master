@@ -17,13 +17,27 @@ import { styled } from '@mui/material/styles';
 import Paper from '@mui/material/Paper';
 import { Typography } from '@mui/material';
 export const Item = styled(Paper)(({ theme }) => 
-  (
-    {
+  ( {
       backgroundColor: theme.palette.mode === 'dark' ? '#f0f0f0' : '#f0f0f0',
       ...theme.typography.body2,
       padding: theme.spacing(1),
       textAlign: 'center',
-      color: theme.palette.text.secondary,
+      color: theme.palette.text.secondary, display:'grid', gridTemplateColumns:"repeat(4,1fr)",
+      '@media (max-width: 800px)' : {
+        display:"grid",
+        gridTemplateColumns:"repeat(2,1fr)",
+        gap:'2%'
+      }
+    }
+  )
+);
+export const Item1 = styled(Paper)(({ theme }) => 
+  ( {
+      backgroundColor: theme.palette.mode === 'dark' ? '#f0f0f0' : '#f0f0f0',
+      ...theme.typography.body2,
+      padding: theme.spacing(1),
+      textAlign: 'center',
+      color: theme.palette.text.secondary, display:'grid', gridTemplateColumns:"10% 90%",
     }
   )
 );
@@ -87,22 +101,22 @@ export  function Table({ tableNamePlu,handleClickOpen ,handleClickOpenTrash,tabl
   const onPaginationChange=(pageSize)=>{gridApi.api.paginationSetPageSize(Number(pageSize)) }
 return (
   <div style={{ boxShadow: '0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19)'}}>
-      <Grid  container direction="row" justifyContent="space-between" alignItems="flex-start" >
-          <Item  style={{margin:"20px ",backgroundColor:'#DCDCDC'}}>
+      <Grid  wrap="nowrap" container direction="row" justifyContent="space-between" alignItems="flex-start" >
+          <Item1  style={{margin:"20px 10px ",backgroundColor:'#DCDCDC'}}>
             <ManageSearchIcon variant="contained" color="success"  style={{marginBottom:"-5px"}} />
-            <input type="text"  onInput={onQuickFilterChanged}  id="quickFilter"  placeholder="recherche..."  style={{backgroundColor:'#DCDCDC', border:'none',padding:"8px" }}/>
-          </Item>
-          
-          <Typography align="center" variant='h4' color="primary" sx={{margin:"25px", fontWeight:"bold"}}>{tableNamePlu}</Typography>
-          <Item  style={{margin:"20px ",backgroundColor:'#DCDCDC'}}>
-                  <select style={{marginRight:'5px' , padding:"10px" , borderRadius:"5px",border:"none"}}  onChange={(e)=>onPaginationChange(e.target.value)}>
+            <input type="text"  onInput={onQuickFilterChanged}  id="quickFilter"  placeholder="recherche..."  
+              style={{backgroundColor:'#DCDCDC', border:'none',padding:"8px" }}/>
+          </Item1>      
+          <Typography align="center" variant='h4' color="primary" sx={{margin:"25px 0", fontWeight:"bold"}}>{tableNamePlu}</Typography>
+          <Item  style={{margin:"20px 10px",backgroundColor:'#DCDCDC'}}>
+              <select style={{marginRight:'5px' , padding:"10px" , borderRadius:"5px",border:"none"}}  onChange={(e)=>onPaginationChange(e.target.value)}>
                     <option value='5'>5</option>
                     <option value='25'>25</option>
                     <option value='50'>50</option>
                     <option value='100'>100</option>
-                  </select>
-                <Button variant="contained" color="success" onClick={handleClickOpen}><AddIcon/></Button>
-                <Button id="basic-button" aria-controls={open ? 'basic-menu' : undefined} sx={{ marginLeft:"5px" }}
+              </select>
+              <div>
+                <Button id="basic-button" aria-controls={open ? 'basic-menu' : undefined} 
                     aria-haspopup="true" aria-expanded={open ? 'true':undefined} onClick={handleClick} variant="contained" color="warning" >
                    <FileDownloadIcon/>
                 </Button>
@@ -117,7 +131,9 @@ return (
                       <ListItemIcon> <GrDocumentPdf style={{marginTop:'-4px'}}/></ListItemIcon><ListItemText sx={{marginLeft:'-15px'}}>PDF</ListItemText>
                   </MenuItem>
                 </Menu>
-                <Button variant="contained" color="error" sx={{ marginLeft:"5px" }} onClick={handleClickOpenTrash}><AutoDeleteIcon/></Button>
+              </div>
+              <Button variant="contained" color="success" sx={{ marginLeft:"5px" }} onClick={handleClickOpen}><AddIcon/></Button>
+              <Button variant="contained" color="error" sx={{ marginLeft:"5px" }} onClick={handleClickOpenTrash}><AutoDeleteIcon/></Button>
           </Item>
       </Grid>
       <div className="ag-theme-material" style={{ height: '415px',width:"100%"}}>

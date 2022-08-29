@@ -39,7 +39,8 @@ export default function AddResponsable() {
   ]
   return (
     <div style={{width:"100%"}}>
-        <Api tableNameSing='responsable établissement' tableNamePlu='responsables établissements' url={url} initialValue={initialValue} columnDefs={columnDefs} show={show} createUpdate={createUpdate} />  
+        <Api tableNameSing='responsable établissement' tableNamePlu='responsables établissements' 
+        url={url} initialValue={initialValue} columnDefs={columnDefs}  columnDefsTrash={columnDefs} show={show} createUpdate={createUpdate} />  
     </div>
   );
 }

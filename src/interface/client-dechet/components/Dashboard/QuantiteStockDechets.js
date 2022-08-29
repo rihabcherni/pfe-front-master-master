@@ -15,7 +15,7 @@ var requestOptions = {
 };
 const [tableData, setTableData] = useState(null)
 const getData = () => {
-fetch(`${process.env.REACT_APP_API_KEY}/api/somme-total-dechet-zone-depot`, requestOptions)
+fetch(`${process.env.REACT_APP_API_KEY}/api/stock-dechet-actuelle`, requestOptions)
   .then(response => response.json())
   .then(result => setTableData(result))
   .catch(error => console.log('error', error));

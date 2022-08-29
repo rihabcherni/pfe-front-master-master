@@ -78,15 +78,11 @@ const BootstrapDialogTitle = (props) => {
 BootstrapDialogTitle.propTypes = { children: PropTypes.node, onClose: PropTypes.func.isRequired,};
 export default function DialogTrash({tableNamePlu,handleClickOpenTrash,handleClose,columnDefs, url}) {
   const [anchorEl, setAnchorEl] = React.useState(null);
-  const open = Boolean(anchorEl);
     const gridRef = useRef();
     const [gridApi, setGridApi] = useState(null)
     const onGridReady = (params) => {
       setGridApi(params)
     }
-    const handleClick = (event) => {
-      setAnchorEl(event.currentTarget);
-    };
     const onQuickFilterChanged = useCallback(() => {
       gridRef.current.api.setQuickFilter(
         document.getElementById('quickFilterTrash').value
@@ -98,9 +94,6 @@ export default function DialogTrash({tableNamePlu,handleClickOpenTrash,handleClo
     
     const onBtnRestoreAllTrashed = useCallback(() => {
       fetch(url+'-restore-all', {type: "GET"}).then((res) => res.json());
-    }, []);
-    const onBtnForverTrashedAll = useCallback(() => {
-      fetch(url+'-suppression-definitif-all', {type: "GET"}).then((res) => res.json());
     }, []); 
     
     const onPaginationChange=(pageSize)=>{gridApi.api.paginationSetPageSize(Number(pageSize)) }
@@ -115,7 +108,9 @@ export default function DialogTrash({tableNamePlu,handleClickOpenTrash,handleClo
         })()
     
       }, [])
-      console.log(data)  
+      const onBtnForverTrashedAll = useCallback(() => {
+        fetch(url+'-suppression-definitif-all', {type: "GET"}).then((res) => res.json());
+      }, []);
       return (
     <div>
       <BootstrapDialog onClose={handleClose} aria-labelledby="alert-dialog-title" maxWidth='md'

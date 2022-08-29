@@ -1,5 +1,5 @@
 import React from 'react'
-import ReparateurPoubelleTable from '../../components/Table/gestionPanne/ReparateurPoubelleTable'
+import ReparateurPoubelleTable from '../../components/Table/GestionCompte/ReparateurPoubelleTable'
 
 export default function ReparateurPoubelle() {
   return (

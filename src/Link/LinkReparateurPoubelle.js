@@ -4,38 +4,48 @@ import Page404 from '../Global/error-pages/Page404';
 import Page401 from '../Global/error-pages/Page401';
 import InterfaceInternaute from '../interface/internaute/InterfaceInternaute';
 import ProfileUpdate from '../Global/AuthPage/ProfileUpdate';
-import InterfaceResponsablePersonnel from '../interface/responsable-personnel/InterfaceResponsablePersonnel';
-import DashboardResponsablePersonnel from '../interface/responsable-personnel/pages/DashboardResponsablePersonnel';
-import AffectationCamionEtablissement from '../interface/responsable-personnel/pages/AffectationCamionEtablissement';
-import AffectationCamionOuvrier from '../interface/responsable-personnel/pages/AffectationCamionOuvrier';
-import ListeCamion from '../interface/responsable-personnel/pages/ListeCamion';
-import ListeGestionnaire from '../interface/responsable-personnel/pages/ListeGestionnaire';
-import ListeMecancien from '../interface/responsable-personnel/pages/ListeMecancien';
-import ListeOuvrier from '../interface/responsable-personnel/pages/ListeOuvrier';
-import ListeReparateurPoubelle from '../interface/responsable-personnel/pages/ListeReparateurPoubelle';
-import ListeResponsableCommerciale from '../interface/responsable-personnel/pages/ListeResponsableCommerciale';
-import ListeResponsablePersonnel from '../interface/responsable-personnel/pages/ListeResponsablePersonnel';
-import MapResponablePersonnel from '../interface/responsable-personnel/pages/MapResponablePersonnel';
+import InterfaceReparateurPoubelle from '../interface/reparateur-poubelle/InterfaceReparateurPoubelle';
+import DashboardReparateurPoubelle from '../interface/reparateur-poubelle/pages/DashboardReparateurPoubelle';
+import ModifierMotDePasse from '../Global/AuthPage/ModifierMotDePasse';
 
-export default function ListeLinkResponsablePersonnel() {
+export default function LinkReparateurPoubelle() {
   return (
     <Routes>
       <Route path='/' element={<div><InterfaceInternaute/></div>}></Route>
-      <Route path='/login' element={<Navigate to="/responsable-personnel"/>}></Route>
+      <Route path='/login' element={<Navigate to="/reparateur-poubelle"/>}></Route>
 
-      <Route path='/responsable-personnel' element={<InterfaceResponsablePersonnel/>}>	
-        <Route index element={<DashboardResponsablePersonnel/>}/>
-        <Route path='affectation-camions-etablissements' element={<AffectationCamionEtablissement/>}/>
-        <Route path='affectation-ouvriers-camions' element={<AffectationCamionOuvrier/>}/>
-        <Route path='camion' element={<ListeCamion/>}/>
-        <Route path='personnel/liste-gestionnaire' element={<ListeGestionnaire/>}/>
-        <Route path='personnel/mecaniciens-camion' element={<ListeMecancien/>}/>
-        <Route path='personnel/ouvriers' element={<ListeOuvrier/>}/>
-        <Route path='personnel/reparateurs-poubelle' element={<ListeReparateurPoubelle/>}/>
-        <Route path='personnel/responsable-commerciale' element={<ListeResponsableCommerciale/>}/>
-        <Route path='personnel/responsable-personnel' element={<ListeResponsablePersonnel/>}/>
-        <Route path='map' element={<MapResponablePersonnel/>}/>
+      <Route path='/reparateur-poubelle' element={<InterfaceReparateurPoubelle/>}>	
+        <Route index element={<DashboardReparateurPoubelle/>}/>
+        <Route path='modifier-mot-de-passe' element={<ModifierMotDePasse/>}/>
         <Route path='profile' element={<ProfileUpdate/>}/>	
+      </Route>
+
+      <Route path='/responsable-technique' element={<Page401/>}>	
+        <Route index element={<Page401/>}/>
+        <Route path='modifier-mot-de-passe' element={<Page401/>}/>
+        <Route path='profile' element={<Page401/>}/>	
+      </Route>
+
+      <Route path='/mecanicien' element={<Page401/>}>	
+        <Route index element={<Page401/>}/>
+        <Route path='modifier-mot-de-passe' element={<Page401/>}/>
+        <Route path='profile' element={<Page401/>}/>	
+      </Route>
+
+      <Route path='/responsable-personnel' element={<Page401/>}>	
+        <Route index element={<Page401/>}/>
+        <Route path='modifier-mot-de-passe' element={<Page401/>}/>
+        <Route path='affectation-camions-etablissements' element={<Page401/>}/>
+        <Route path='affectation-ouvriers-camions' element={<Page401/>}/>
+        <Route path='camion' element={<Page401/>}/>
+        <Route path='personnel/liste-gestionnaire' element={<Page401/>}/>
+        <Route path='personnel/mecaniciens-camion' element={<Page401/>}/>
+        <Route path='personnel/ouvriers' element={<Page401/>}/>
+        <Route path='personnel/reparateurs-poubelle' element={<Page401/>}/>
+        <Route path='personnel/responsable-commerciale' element={<Page401/>}/>
+        <Route path='personnel/responsable-personnel' element={<Page401/>}/>
+        <Route path='map' element={<Page401/>}/>
+        <Route path='profile' element={<Page401/>}/>	
       </Route>
 
       <Route path='/client-dechets' element={<Page401/>}>
@@ -84,6 +94,7 @@ export default function ListeLinkResponsablePersonnel() {
 
       <Route path='/responsable-commerciale' element={<Page401/>}>	
         <Route index element={<Page401/>}/>
+        <Route path='modifier-mot-de-passe' element={<Page401/>}/>
         <Route path='profile' element={<Page401/>}/>	
       </Route>
 
