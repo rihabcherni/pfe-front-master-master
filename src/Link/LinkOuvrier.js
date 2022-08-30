@@ -6,6 +6,13 @@ import InterfaceInternaute from '../interface/internaute/InterfaceInternaute';
 import ProfileUpdate from '../Global/AuthPage/ProfileUpdate';
 import InterfaceOuvrier from '../interface/ouvrier/InterfaceOuvrier';
 import DashboardOuvrier from '../interface/ouvrier/pages/DashboardOuvrier';
+import DetailsCamion from '../interface/ouvrier/pages/DetailsCamion';
+import ListeEtablissementOuvrier from '../interface/ouvrier/pages/ListeEtablissementOuvrier';
+import MapOuvrier from '../interface/ouvrier/pages/MapOuvrier';
+import PlanningOuvrier from '../interface/ouvrier/pages/PlanningOuvrier';
+import Poubelle from '../interface/ouvrier/pages/Poubelle';
+import ViderPoubelle from '../interface/ouvrier/pages/ViderPoubelle';
+import ZoneDepotDetails from '../interface/ouvrier/pages/ZoneDepotDetails';
 import ModifierMotDePasse from '../Global/AuthPage/ModifierMotDePasse';
 
 export default function LinkOuvrier() {
@@ -14,7 +21,14 @@ export default function LinkOuvrier() {
       <Route path='/' element={<div><InterfaceInternaute/></div>}></Route>
       <Route path='/login' element={<Navigate to="/ouvrier"/>}></Route>
       <Route path='/ouvrier' element={<InterfaceOuvrier/>}>	
-        <Route index element={<DashboardOuvrier/>}/>
+        <Route index element={<PlanningOuvrier/>}/>
+        <Route path='dashboard' element={<DashboardOuvrier/>}/>
+        <Route path='details-camion' element={<DetailsCamion/>}/>
+        <Route path='liste-etablissement' element={<ListeEtablissementOuvrier/>}/>
+        <Route path='map' element={<MapOuvrier/>}/>
+        <Route path='poubelles' element={<Poubelle/>}/>
+        <Route path='vider-poubelle' element={<ViderPoubelle/>}/>
+        <Route path='details-zone-depot' element={<ZoneDepotDetails/>}/>
         <Route path='modifier-mot-de-passe' element={<ModifierMotDePasse/>}/>
         <Route path='profile' element={<ProfileUpdate/>}/>	
       </Route>

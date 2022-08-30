@@ -6,6 +6,12 @@ import InterfaceInternaute from '../interface/internaute/InterfaceInternaute';
 import ProfileUpdate from '../Global/AuthPage/ProfileUpdate';
 import InterfaceResponsableTechnique from '../interface/responsable-technique/InterfaceResponsableTechnique';
 import DashboardResponsableTechnique from '../interface/responsable-technique/pages/DashboardResponsableTechnique';
+import Camion from '../interface/responsable-technique/pages/Camion';
+import Mecanicien from '../interface/responsable-technique/pages/Mecanicien';
+import PanneCamions from '../interface/responsable-technique/pages/PanneCamions';
+import PannePoubelle from '../interface/responsable-technique/pages/PannePoubelle';
+import Poubelle from '../interface/responsable-technique/pages/Poubelle';
+import ReparateurPoubelle from '../interface/responsable-technique/pages/ReparateurPoubelle';
 import ModifierMotDePasse from '../Global/AuthPage/ModifierMotDePasse';
 
 export default function LinkResponsableTechnique() {
@@ -15,6 +21,12 @@ export default function LinkResponsableTechnique() {
       <Route path='/login' element={<Navigate to="/responsable-technique"/>}></Route>
       <Route path='/responsable-technique' element={<InterfaceResponsableTechnique/>}>	
         <Route index element={<DashboardResponsableTechnique/>}/>
+        <Route path='reparateurs-poubelles' element={<ReparateurPoubelle/>}/>
+        <Route path='mecanicien' element={<Mecanicien/>}/>
+        <Route path='poubelles' element={<Poubelle/>}/>
+        <Route path='camions' element={<Camion/>}/>
+        <Route path='pannes-poubelles' element={<PannePoubelle/>}/>
+        <Route path='pannes-camions' element={<PanneCamions/>}/>
         <Route path='modifier-mot-de-passe' element={<ModifierMotDePasse/>}/>
         <Route path='profile' element={<ProfileUpdate/>}/>	
       </Route>

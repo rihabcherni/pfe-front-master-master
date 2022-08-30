@@ -7,6 +7,7 @@ import ProfileUpdate from '../Global/AuthPage/ProfileUpdate';
 import InterfaceReparateurPoubelle from '../interface/reparateur-poubelle/InterfaceReparateurPoubelle';
 import DashboardReparateurPoubelle from '../interface/reparateur-poubelle/pages/DashboardReparateurPoubelle';
 import ModifierMotDePasse from '../Global/AuthPage/ModifierMotDePasse';
+import PannePoubelle from '../interface/reparateur-poubelle/pages/PannePoubelle';
 
 export default function LinkReparateurPoubelle() {
   return (
@@ -16,6 +17,7 @@ export default function LinkReparateurPoubelle() {
       <Route path='/reparateur-poubelle' element={<InterfaceReparateurPoubelle/>}>	
         <Route index element={<DashboardReparateurPoubelle/>}/>
         <Route path='modifier-mot-de-passe' element={<ModifierMotDePasse/>}/>
+        <Route path='pannes-poubelles' element={<PannePoubelle/>}/>
         <Route path='profile' element={<ProfileUpdate/>}/>	
       </Route>
       <Route path='/responsable-technique' element={<Page401/>}>	

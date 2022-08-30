@@ -7,4 +7,5 @@ import { VscTrash } from "react-icons/vsc";
 import AutoDeleteIcon from '@mui/icons-material/AutoDelete';
 export const LinkReparateurPoubelle = [
   {id: 1, name: "Dashboard",  path:"/reparateur-poubelle", icon: <ImStatsDots/>, size:"meduim"},
+  {id: 2, name: "Pannes poubelles",  path:"/reparateur-poubelle/pannes-poubelles", icon: <FaTrash/>, size:"meduim"},
  ];

@@ -39,6 +39,7 @@ export const linkDetailsGestionnaire = [
       {id: 2,name: "Acheteurs de déchets", path:"/gestionnaire/clients/acheteurs-dechets", icon: <FaRecycle/>, size:"meduim"},
     ]
     , size:"meduim"},
+    { id:9 ,name: "Déchets", path:"/gestionnaire/dechets", icon: <RiShoppingBasketFill/>, size:"meduim"},
     { id:9 ,name: "Commandes Déchets", path:"/gestionnaire/commandes-dechets", icon: <RiShoppingBasketFill/>, size:"meduim"},
     {id: 10, name: "Pannes", icon: <MdReportProblem/>,
     items: [

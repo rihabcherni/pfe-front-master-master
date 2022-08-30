@@ -38,17 +38,17 @@ const Interfooter = () => {
 
             <div className='section-last'>
                  <p className='title-footer'>Information Contact</p>  
-                <div class="section-last-left">
+                <div className="section-last-left">
                         <li><FontAwesomeIcon icon={faMap} className="icon" /><b>Adresse :</b>  42 Rue 8603,Charguia 1, 2035 Tunis</li>
                         <li><FontAwesomeIcon icon={faPhone} className="icon"/><b>Téléphone :</b> +216 58 080 333 | 58 080 111 | 31 148 488</li>                 
                         <li><FontAwesomeIcon icon={faEnvelope} className="icon"  /><b>Email :</b>info@reschool.education</li> 
                 </div>
-                <div class="wrapper">
+                <div className="wrapper">
                   <ul>
-                    <li class="facebook"><a class="facebook" to="https://www.facebook.com/RESCHOOL.EDUCATION"><FontAwesomeIcon icon={faFacebookF} className='fa fa-facebook'/></a></li>                 
-                    <li class="youtube"><a href=" https://www.youtube.com/channel/UCVz1D9WyNVZAFCB6cxqpDGQ"><FontAwesomeIcon icon={faYoutube} className='fa fa-youtube'/></a></li>                 
-                    <li class="google"><a href="https://reschoolwethink.education/"><FontAwesomeIcon icon={faGoogle} className='fa fa-google'/></a></li>                 
-                    <li class="instagram"><a href="https://www.instagram.com/reschool.la.boutique/"><FontAwesomeIcon icon={faInstagramSquare} className='fa fa-instagram '/></a></li>                   
+                    <li className="facebook"><a className="facebook" to="https://www.facebook.com/RESCHOOL.EDUCATION"><FontAwesomeIcon icon={faFacebookF} className='fa fa-facebook'/></a></li>                 
+                    <li className="youtube"><a href=" https://www.youtube.com/channel/UCVz1D9WyNVZAFCB6cxqpDGQ"><FontAwesomeIcon icon={faYoutube} className='fa fa-youtube'/></a></li>                 
+                    <li className="google"><a href="https://reschoolwethink.education/"><FontAwesomeIcon icon={faGoogle} className='fa fa-google'/></a></li>                 
+                    <li className="instagram"><a href="https://www.instagram.com/reschool.la.boutique/"><FontAwesomeIcon icon={faInstagramSquare} className='fa fa-instagram '/></a></li>                   
                   </ul>
                 </div>
             </div>

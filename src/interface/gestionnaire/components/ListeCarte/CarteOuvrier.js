@@ -42,12 +42,12 @@ export default function CarteOuvrier() {
       {ouvriers.length ? (ouvriers.map((ouvrier, index) => 
           <Grid item xs={2} sm={4} md={4} key={index}>
           <Item>
-            <div class="flip-card">
-            <div class="flip-card-inner">
-              <div class="flip-card-front">
+            <div className="flip-card">
+            <div className="flip-card-inner">
+              <div className="flip-card-front">
               {ouvrier.photo!==null ?<img src={`${url}storage/images/ouvrier/${ouvrier.photo}`}  alt="Avatar" className='img-card'/> :<img src={Client} alt="" id="img" className='img-card' />}
               </div>
-              <div class="flip-card-back">
+              <div className="flip-card-back">
                   <h4 style={{textAlign:"center"}}>{ouvrier.nom +' '+ ouvrier.prenom}</h4>
                   <ul style={{listStyle:"none" , marginLeft:"-10px"}}>
                   <li> <FontAwesomeIcon icon={faTruck} style={{fontSize:"15px"}} /><strong style={{marginLeft:"10px"}}>Camion:</strong>{' '+ ouvrier.id_camion}</li> 

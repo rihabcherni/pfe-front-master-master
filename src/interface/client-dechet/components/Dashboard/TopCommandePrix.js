@@ -32,7 +32,7 @@ const StyledTableRow = styled(TableRow)(({ theme }) => ({
     border: 0,
   },
 }));
-export default function LastCommande() {
+export default function TopCommandePrix() {
   const [data, setData] = useState(null)
   var myHeaders = new Headers();
   myHeaders.append("Authorization",  `Bearer ${localStorage.getItem('auth_token')}`);
@@ -54,30 +54,45 @@ export default function LastCommande() {
   if(data!==null){
   return (
     <TableContainer component={Paper}>
-            <Table sx={{ minWidth: 300 }} aria-label="customized table">
-            <TableHead>
-                <TableRow>
-                    <StyledTableCell align="center">Id commande</StyledTableCell>
-                    <StyledTableCell align="center">Type paiment</StyledTableCell>
-                    <StyledTableCell align="center">Montant total</StyledTableCell>
-                    <StyledTableCell align="center" style={{backgroundColor:"red"}}>Date commande</StyledTableCell>
-                    <StyledTableCell align="center">Date livraison</StyledTableCell> 
-                </TableRow>
-            </TableHead>
-            <TableBody>
-            
-            {data.map((row) => (
-                <StyledTableRow key={row.id}>
-                    <StyledTableCell align="center">{row.id}</StyledTableCell>
-                    <StyledTableCell align="center">{row.type_paiment}</StyledTableCell>
-                    <StyledTableCell align="center">{row.montant_total} DT</StyledTableCell>
-                    <StyledTableCell align="center" style={{backgroundColor:"red", color:"white"}}>{row.date_commande}</StyledTableCell>
-                    <StyledTableCell align="center">{row.date_livraison}</StyledTableCell>
-                      
-                </StyledTableRow>
-            ))}
-                </TableBody>
-            </Table>
+       <Table sx={{ minWidth: 300 }} aria-label="customized table">
+        <TableHead>
+            <TableRow>
+                <StyledTableCell align="center">Id commande</StyledTableCell>
+                <StyledTableCell align="center">Quantité plastique</StyledTableCell>
+                <StyledTableCell align="center">Quantité papier</StyledTableCell>
+                <StyledTableCell align="center">Quantité composte</StyledTableCell>
+                <StyledTableCell align="center">Quantité canette</StyledTableCell>
+                <StyledTableCell align="center">Prix plastique</StyledTableCell>
+                <StyledTableCell align="center">Prix papier</StyledTableCell>
+                <StyledTableCell align="center">Prix composte</StyledTableCell>
+                <StyledTableCell align="center">Prix canette</StyledTableCell>
+
+                <StyledTableCell align="center">Montant total</StyledTableCell>
+                <StyledTableCell align="center">Type paiment</StyledTableCell>
+                <StyledTableCell align="center" style={{backgroundColor:"red"}}>Date commande</StyledTableCell>
+                <StyledTableCell align="center">Date livraison</StyledTableCell> 
+            </TableRow>
+        </TableHead>
+        <TableBody>  
+          {data.map((row) => (
+              <StyledTableRow key={row.id}>
+                  <StyledTableCell align="center">{row.id}</StyledTableCell>
+                  <StyledTableCell align="center">{row.quantite_plastique}  KG</StyledTableCell>
+                  <StyledTableCell align="center">{row.quantite_papier} KG</StyledTableCell>
+                  <StyledTableCell align="center">{row.quantite_composte} KG</StyledTableCell>
+                  <StyledTableCell align="center">{row.quantite_canette} KG</StyledTableCell>
+                  <StyledTableCell align="center">{row.prix_plastique} DT</StyledTableCell>
+                  <StyledTableCell align="center">{row.prix_papier} DT</StyledTableCell>
+                  <StyledTableCell align="center">{row.prix_composte} DT</StyledTableCell>
+                  <StyledTableCell align="center">{row.prix_canette} DT</StyledTableCell>
+                  <StyledTableCell align="center">{row.montant_total} DT</StyledTableCell>
+                  <StyledTableCell align="center">{row.type_paiment} DT</StyledTableCell>
+                  <StyledTableCell align="center" style={{backgroundColor:"red", color:"white"}}>{row.date_commande}</StyledTableCell>
+                  <StyledTableCell align="center">{row.date_livraison}</StyledTableCell> 
+              </StyledTableRow>
+          ))}
+        </TableBody>
+      </Table>
     </TableContainer>     
   )
 }else{

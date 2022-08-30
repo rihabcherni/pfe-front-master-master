@@ -7,6 +7,7 @@ import { styled } from '@mui/material/styles';
 import {StyledTypography} from '../../../style'
 import QuantiteStockDechets from '../components/Dashboard/QuantiteStockDechets'
 import QuantiteDechetAcheteMois from '../components/Dashboard/QuantiteDechetAcheteMois'
+import LastCommande from '../components/Dashboard/LastCommande'
 export const Item = styled(Paper)(({ theme }) => ({
   backgroundColor: theme.palette.mode === 'dark' ? "#2c2c2c" : "#FFF",
   border: theme.palette.mode === 'dark' ? "rgb(88, 88, 88) solid 3px":'#FFF solid 3px', boxShadow:"0px 1px 8px 1px rgb(125, 125, 125)",
@@ -42,6 +43,10 @@ export default function DashboardClientDechet() {
        <Item >
           <StyledTypography className='title'>Quantité déchets achetées par mois</StyledTypography>
           <QuantiteDechetAcheteMois/>
+        </Item>
+        <Item >
+          <StyledTypography className='title'>Dernier commandes:</StyledTypography>
+          <LastCommande/>
         </Item>
     </div>
   )

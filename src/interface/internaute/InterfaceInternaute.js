@@ -61,7 +61,7 @@ export default function InterfaceInternaute() {
         </MobileIcon>
       
           <Drawer open={isOpen} direction='right' size={170} style={{padding:"10px"}} >
-          <Sidebar  as={Menu}  animation='overlay' icon='labeled' inverted  onHide={() => setVisible(false)} vertical visible='true'  width='300px'>
+          <Sidebar  as={Menu}  animation='overlay' icon='labeled' inverted  onHide={() => setVisible(false)} vertical visible={true}>
             <Button color='green' onClick={toggleDrawer} style={{color:"white", backgroundColor:"#1b1c1d" , margin:"10px 100px 10px 0 "}}><CloseIcon /></Button>
             <Container >
             <Menu.Item as='a' href='#accueil' name='accueil' active={activeItem === 'accueil'}  onClick={() => setActiveItem("accueil")}  ><Icon name='home' /> Accueil </Menu.Item>  

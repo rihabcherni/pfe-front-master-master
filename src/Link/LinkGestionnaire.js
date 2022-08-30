@@ -17,6 +17,7 @@ import ResponsableEtablissement from '../interface/gestionnaire/pages/clients/Re
 import ClientDechet from '../interface/gestionnaire/pages/clients/ClientDechet';
 import Fournisseur from '../interface/gestionnaire/pages/productionPoubelle/Fournisseur';
 import CommandeDechets from '../interface/gestionnaire/pages/commande/CommandeDechets';
+import Dechets from '../interface/gestionnaire/pages/commande/Dechets';
 import CalendrierGestionnaire from '../interface/gestionnaire/pages/CalendrierGestionnaire';
 import ModifierMotDePasse from '../Global/AuthPage/ModifierMotDePasse';
 import ContactUs from '../interface/gestionnaire/pages/ContactUs/ContactUs';
@@ -55,6 +56,7 @@ export default function LinkGestionnaire() {
             <Route path='historique-vidage-poubelle' element={<HistoriqueViderPoubelleGlobale/>}/>			
 
             <Route path='commandes-dechets' element={<CommandeDechets/>}/>
+            <Route path='dechets' element={<Dechets/>}/>
                             
             <Route path='pannes-poubelles' element={<PannePoubelle/>}/>
             <Route path='pannes-camions' element={<PanneCamion/>}/>
