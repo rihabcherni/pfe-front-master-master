@@ -9,8 +9,8 @@ import InterfaceClientDechet from '../interface/client-dechet/InterfaceClientDec
 import ReclamationClientDechets from '../interface/client-dechet/pages/ReclamationClientDechets';
 import PanierClientDechets from '../interface/client-dechet/pages/PanierClientDechets';
 import Historique from '../interface/client-dechet/pages/Historique';
-import Achat from '../interface/client-dechet/pages/Achat';
 import ModifierMotDePasse from '../Global/AuthPage/ModifierMotDePasse';
+import ProduitDechet from '../interface/client-dechet/pages/ProduitDechet';
 
 export default function LinkClientDechet() {
   return (
@@ -22,7 +22,7 @@ export default function LinkClientDechet() {
             <Route path='modifier-mot-de-passe' element={<ModifierMotDePasse/>}/>
             <Route path='reclamation' element={<ReclamationClientDechets/>}/>				
             <Route path='panier' element={<PanierClientDechets/>}/>
-            <Route path='achat-dechets' element={<Achat/>}/>
+            <Route path='produitsdechets' element={<ProduitDechet/>}/>
             <Route path='historique-client-dechets' element={<Historique/>}/>
             <Route path='profile' element={<ProfileUpdate/>}/>			
         </Route>

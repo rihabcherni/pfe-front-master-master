@@ -24,7 +24,7 @@ export default function PrixActuelle() {
     fetch(`${process.env.REACT_APP_API_KEY}/api/prixdechets`, requestOptions).then(response => response.json()).then(result => setTableData(result))
     .catch(error => console.log('error', error));
   }  
-  useEffect(() => { getData()}, [])
+  useEffect(() => { getData()}, [tableData])
   if(tableData!==null){
   return (
       <div className='container-prix'>

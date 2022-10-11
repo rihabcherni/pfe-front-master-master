@@ -5,7 +5,7 @@ import { Card} from '@mui/material';
 import { random } from '@mui/x-data-grid-generator';
 import Rating from '@mui/material/Rating';
 import StarIcon from '@mui/icons-material/Star';
-export default function Achat() {
+export default function ProduitDechet() {
   var myHeaders = new Headers();
   myHeaders.append("Authorization", `Bearer ${localStorage.getItem('auth_token')}`);
   var requestOptions = {
@@ -38,7 +38,7 @@ export default function Achat() {
     }
   return (
     <div style={{ display:'grid', gridTemplateColumns:'repeat(4,1fr)',  gridGap: '30px'}}>
-        {
+       <>hhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhh</> {
           produit.length!==0?(produit.map(p => 
             <Card sx={{padding:"20px"}}>
               <div  style={{textAlign:"center" , margin:"0 20px"}}>

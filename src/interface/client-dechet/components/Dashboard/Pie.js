@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import ReactApexChart from "react-apexcharts";
 import {TailSpin} from 'react-loader-spinner'
-
+import { QuantiteDechetAcheteTotalClientUrl } from "../../../../URLBackend/Client_dechet";
 export default function Pie () {
     var myHeaders = new Headers();
     myHeaders.append("Authorization",  `Bearer ${localStorage.getItem('auth_token')}`);   
@@ -11,38 +11,16 @@ export default function Pie () {
     const chartOptions = () => {
       setChart ({
         options: {
-          legend: {    
-            position: 'top',fontSize:"14px", fontWeight:700, 
-            labels: { colors: 'green'}},
-          tooltip: {           
-            style: { fontSize: '14px', fontWeight:900 }
-          }, 
+          legend: {position: 'top',fontSize:"14px", fontWeight:700,labels: { colors: 'green'}},
+          tooltip: {style: { fontSize: '14px', fontWeight:900 } }, 
           labels: ['plastique','composte', 'papier', 'canette'],
           responsive: [ { breakpoint: 480 }],
-          dataLabels: {
-            enabled: true, 
-            style: {
-                colors: ['#fff'],
-                fontWeight: 'bold', fontSize:"12px"
-            },
-          },
-          plotOptions: {
-            pie: {
-              customScale: 1,
-              donut: {
-                size: '55%',
-                labels: {
-                  show: true,
-                 
-                }
-              }
-            }
-          }
-        
+          dataLabels: { enabled: true, style: {colors: ['#fff'],fontWeight: 'bold', fontSize:"12px"}},
+          plotOptions: { pie: {  customScale: 1, donut: { size: '55%', labels: {  show: true}}}}   
         }
       });
     }
-    const getData = () => {fetch(`${process.env.REACT_APP_API_KEY}/api/auth-client-dechet/quantite-dechet-total-client`, requestOptions)
+    const getData = () => {fetch(QuantiteDechetAcheteTotalClientUrl, requestOptions)
       .then(response => response.json()).then(result => setTableData(result)).catch(error => console.log('error', error));
     }  
     useEffect(() => { getData()

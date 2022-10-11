@@ -8,6 +8,7 @@ import TableHead from '@mui/material/TableHead';
 import TableRow from '@mui/material/TableRow';
 import Paper from '@mui/material/Paper';
 import { Skeleton } from '@mui/material';
+import {HistoriqueCommandeClientUrl} from '../../../URLBackend/Client_dechet'
 
 const StyledTableCell = styled(TableCell)(({ theme }) => ({
   [`&.${tableCellClasses.head}`]: {
@@ -42,7 +43,7 @@ export default function Historique() {
     redirect: 'follow'
   };
   const getData = () => {
-    fetch(`${process.env.REACT_APP_API_KEY}/api/auth-client-dechet/commande-client`, requestOptions)
+    fetch(HistoriqueCommandeClientUrl, requestOptions)
       .then(response => response.json())
       .then(result => setData(result.data))
       .catch(error => console.log('error', error));
